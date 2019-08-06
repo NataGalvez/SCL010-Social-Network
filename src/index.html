@@ -5,9 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Social Network</title>
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyBZCjSxngOkdTvwIVi1BygDB_JfXh3aM-8",
+          authDomain: "matchgoal-a542a.firebaseapp.com",
+          databaseURL: "https://matchgoal-a542a.firebaseio.com",
+          projectId: "matchgoal-a542a",
+          storageBucket: "matchgoal-a542a.appspot.com",
+          messagingSenderId: "936608425621",
+          appId: "1:936608425621:web:ce11a16812473985"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      </script>
 </head>
 <body>
-    <h1>HOOOLA</h1>
+    <h1>MatchGoal</h1>
     <div id="root"></div>
     <ul>
         <li>

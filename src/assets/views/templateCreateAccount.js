@@ -4,7 +4,9 @@ const createAccount = () => {
 
 export const templateCreateAccount = () => {
     const containerCreateAccount = document.createElement("div");
-    const contentCreatAccount = `<p>Crear Cuenta</p>
+    const contentCreatAccount = `<input type="email" placeholder="Ingresa tu email">
+                                 <input id="password" type="password" placeholder="Ingresa una contraseña">
+                                 <input id="verified" type="password" placeholder="Confirma tu contraseña">
                                  <button id="create">Crear Cuenta</button>`
 containerCreateAccount.innerHTML = contentCreatAccount;
 

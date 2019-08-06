@@ -1,6 +1,4 @@
-const loginGoogle = () => {
-    console.log("Login con Google");
-}
+import { loginGoogle } from "./../js/auth.js";
 
 export const templateLogin = () => {
     const containerLogin = document.createElement("div");
@@ -13,4 +11,4 @@ btn.addEventListener("click", () => {
     loginGoogle ();
 })
 return containerLogin;
-                        }
+}
