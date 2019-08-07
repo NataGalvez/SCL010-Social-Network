@@ -28,7 +28,7 @@ const showTemplate = (hash) => {
         case "create":
             containerRoot.appendChild(templateCreateAccount());
         break;
-        case "loginFacebook":
+        case "facebook":
             containerRoot.appendChild(templateLoginFacebook());
         break
         default:
