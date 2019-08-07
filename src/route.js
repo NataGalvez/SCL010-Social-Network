@@ -1,6 +1,6 @@
-import { templateLogin } from "./assets/views/templateLogin.js";
-import { templateCreateAccount } from "./assets/views/templateCreateAccount.js";
-import { templateLoginFacebook } from "./assets/views/templateLoginFacebook.js";
+import { templateLogin } from "./views/templateLogin.js";
+import { templateCreateAccount } from "./views/templateCreateAccount.js";
+import { templateLoginFacebook } from "./views/templateLoginFacebook.js";
 
 //Envía el nuevo hash para mostrar el template que se va a mostrar a través de ese 
 //nuevo hash
