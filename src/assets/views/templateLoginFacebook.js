@@ -3,10 +3,10 @@ const loginFacebook = ()=>{
 }
 export const templateFacebook = ()=>{
 	const containerLoginFacebook= document.createElement("div");
-	const contentLoginFacebook= `<button id="loginFacebook"> Iniciar sesión con Facebook</button>`
+	const contentLoginFacebook= `<button id="facebook"> Iniciar sesión con Facebook</button>`
 	contentLoginFacebook.innerHTML=contentLoginFacebook;
 
-const btnF = contentLoginFacebook.querySelector("#loginFacebook");
+const btnF = contentLoginFacebook.querySelector("#facebook");
 btnF.addEventListener("click", () => {
     loginFacebook();
 })
