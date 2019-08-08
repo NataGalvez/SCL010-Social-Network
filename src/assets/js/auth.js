@@ -58,23 +58,29 @@ export const loginAccount = () => {
     })
 }
 
-export const loginFacebook =()=>{
-    var provider = new firebase.auth.FacebookAuthProvider();
+export const loginFacebook = () => {
+    let provider = new firebase.auth.FacebookAuthProvider();
     provider.addScope('user_birthday');
     firebase.auth().signInWithPopup(provider).then(function(result) {
   // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-      var token = result.credential.accessToken;
+      let token = result.credential.accessToken;
+      console.log(token);
       // The signed-in user info.
-      var user = result.user;
-      // ...
-  }).catch(function(error) {
+      let user = result.user;
+      console.log("Hi", user);
+})
+  .catch(function(error) {
       // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
+      let errorCode = error.code;
+      console.log(errorCode);
+      let errorMessage = error.message;
+      console.log(errorMessage);
       // The email of the user's account used.
-      var email = error.email;
+      let email = error.email;
+      console.log(email);
       // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-  // ...
+      let credential = error.credential;
+      console.log(credential);
+      
 });
 }

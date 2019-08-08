@@ -1,13 +1,13 @@
-const loginFacebook = ()=>{
-	console.log("ingresandoconfacebook");
-}
-export const templateFacebook = ()=>{
-	const containerLoginFacebook= document.createElement("div");
-	const contentLoginFacebook= `<button id="facebook"> Iniciar sesión con Facebook</button>`
-	containerLoginFacebook.innerHTML=contentLoginFacebook;
+import { loginFacebook } from "./../js/auth.js"
 
-const btnF = contentLoginFacebook.querySelector("#facebook");
-btnF.addEventListener("click", () => {
+export const templateFacebook = () => {
+	const containerLoginFacebook= document.createElement("div");
+	const contentLoginFacebook= `<button id="facebook" class="btn"> Iniciar sesión con Facebook</button>`
+	containerLoginFacebook.innerHTML = contentLoginFacebook;
+
+const btn = containerLoginFacebook.querySelector("#facebook");
+btn.addEventListener("click", () => {
     loginFacebook();
 })
-} return containerLoginFacebook;
+return containerLoginFacebook;
+}

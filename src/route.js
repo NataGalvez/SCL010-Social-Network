@@ -2,7 +2,7 @@
 import { templateLoginGoogle } from "./assets/views/templateLoginGoogle.js";
 import { templateLogin} from "./assets/views/templateLogin.js";
 import { templateCreateAccount } from "./assets/views/templateCreateAccount.js";
-import { templateLoginFacebook } from "./views/templateLoginFacebook.js";
+import { templateFacebook } from "./assets/views/templateLoginFacebook.js";
 
 //Envía el nuevo hash para mostrar el template que se va a mostrar a través de ese 
 //nuevo hash
@@ -36,8 +36,8 @@ const showTemplate = (hash) => {
         case "create":
             containerRoot.appendChild(templateCreateAccount());
         break;
-        case "facebook":
-            containerRoot.appendChild(templateLoginFacebook());
+        case "loginFacebook":
+            containerRoot.appendChild(templateFacebook());
         break
         default:
             containerRoot.innerHTML = 

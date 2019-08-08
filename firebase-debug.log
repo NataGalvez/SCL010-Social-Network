@@ -57,3 +57,34 @@
 [warn] ⚠  hosting: Port 5000 is not available. Trying another port...
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5005
+[debug] [2019-08-08T15:17:57.068Z] ----------------------------------------------------------------------
+[debug] [2019-08-08T15:17:57.113Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-08-08T15:17:57.113Z] CLI Version:   7.2.2
+[debug] [2019-08-08T15:17:57.113Z] Platform:      darwin
+[debug] [2019-08-08T15:17:57.113Z] Node Version:  v10.16.0
+[debug] [2019-08-08T15:17:57.382Z] Time:          Thu Aug 08 2019 11:17:57 GMT-0400 (GMT-04:00)
+[debug] [2019-08-08T15:17:57.382Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-08T15:17:57.489Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-08T15:17:57.489Z] > authorizing via signed-in user
+[debug] [2019-08-08T15:17:57.490Z] [iam] checking project matchgoal-a542a for permissions ["firebase.projects.get"]
+[debug] [2019-08-08T15:17:57.492Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-08-08T15:17:57.492Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-08-08T15:17:58.569Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-08T15:17:58.640Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/matchgoal-a542a:testIamPermissions  
+
+[debug] [2019-08-08T15:17:59.748Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-08T15:17:59.750Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a  
+ 
+[debug] [2019-08-08T15:18:00.974Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/ScarletteVillarreal/SCL010-Social-Network'...
+[info] 
+[debug] [2019-08-08T15:18:01.009Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a/webApps/-/config  
+ 
+[debug] [2019-08-08T15:18:02.510Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5010
