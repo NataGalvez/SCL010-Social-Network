@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+    <title>Social Network</title>
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="./assets/CSS/style.css">
+
     <script>
-        let firebaseConfig = {
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
           apiKey: "AIzaSyBZCjSxngOkdTvwIVi1BygDB_JfXh3aM-8",
           authDomain: "matchgoal-a542a.firebaseapp.com",
           databaseURL: "https://matchgoal-a542a.firebaseio.com",
@@ -19,23 +25,34 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-    </script>
-    <title>Social Network</title>
+      </script>
 </head>
 <body>
-    <h1>HOOOLA</h1>
-    <div id="root"></div>
-    <ul>
-        <li>
-            <a href="#/loginGoogle">Login Google</a>
-        </li>
-        <li>
-            <a href="#/create">Crear Cuenta</a>
-        </li>
-        <li> 
-            <a href="#/loginFacebook"> Login Facebook</a>
-        </li>
-    </ul>
+    <div id="enter">
+        <h1>MATCHGOAL</h1>
+        <div id="root">
+            <form>
+                <div id="googleSingIn">
+                    <div id="customBtn" class="customGoogleSignIn">
+                        <span class="icon"></span>
+                        <a href="#/loginGoogle"><span class="buttonText">Registrarse con Google</a></span>
+                    </div>
+                </div>
+                <div id="newAccountSingIn">
+                        <div id="customBtn" class="customNewAccountSignIn">
+                            <span class="icon"></span>
+                            <a href="#/create"><span class="buttonText">Registrarse</a></span>
+                        </div>
+                </div>
+                <div id="accountSingIn">
+                    <div id="customBtn" class="customAccountSignIn">
+                        <span class="icon"></span>
+                        <a href="#/login"><span class="buttonText">Iniciar Sesión</a></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     <script type="module" src="./app.js"></script>
 </body>
 </html>
