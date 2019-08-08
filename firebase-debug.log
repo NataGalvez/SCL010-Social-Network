@@ -1,0 +1,59 @@
+[debug] [2019-08-06T15:29:26.285Z] ----------------------------------------------------------------------
+[debug] [2019-08-06T15:29:26.307Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-08-06T15:29:26.307Z] CLI Version:   7.2.2
+[debug] [2019-08-06T15:29:26.307Z] Platform:      darwin
+[debug] [2019-08-06T15:29:26.307Z] Node Version:  v10.16.0
+[debug] [2019-08-06T15:29:26.485Z] Time:          Tue Aug 06 2019 11:29:26 GMT-0400 (GMT-04:00)
+[debug] [2019-08-06T15:29:26.485Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-06T15:29:26.540Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-06T15:29:26.541Z] > authorizing via signed-in user
+[debug] [2019-08-06T15:29:26.541Z] [iam] checking project matchgoal-a542a for permissions ["firebase.projects.get"]
+[debug] [2019-08-06T15:29:26.543Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-08-06T15:29:26.544Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-08-06T15:29:27.024Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-06T15:29:27.113Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/matchgoal-a542a:testIamPermissions  
+
+[debug] [2019-08-06T15:29:28.360Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-06T15:29:28.362Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a  
+ 
+[debug] [2019-08-06T15:29:29.589Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/ScarletteVillarreal/SCL010-Social-Network'...
+[info] 
+[debug] [2019-08-06T15:29:29.628Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a/webApps/-/config  
+ 
+[debug] [2019-08-06T15:29:30.203Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-08-07T18:37:47.987Z] ----------------------------------------------------------------------
+[debug] [2019-08-07T18:37:48.008Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-08-07T18:37:48.009Z] CLI Version:   7.2.2
+[debug] [2019-08-07T18:37:48.009Z] Platform:      darwin
+[debug] [2019-08-07T18:37:48.009Z] Node Version:  v10.16.0
+[debug] [2019-08-07T18:37:48.042Z] Time:          Wed Aug 07 2019 14:37:48 GMT-0400 (GMT-04:00)
+[debug] [2019-08-07T18:37:48.042Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-07T18:37:48.120Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-07T18:37:48.120Z] > authorizing via signed-in user
+[debug] [2019-08-07T18:37:48.120Z] [iam] checking project matchgoal-a542a for permissions ["firebase.projects.get"]
+[debug] [2019-08-07T18:37:48.123Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-08-07T18:37:48.123Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-08-07T18:37:48.301Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-07T18:37:48.375Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/matchgoal-a542a:testIamPermissions  
+
+[debug] [2019-08-07T18:37:49.478Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-07T18:37:49.480Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a  
+ 
+[debug] [2019-08-07T18:37:50.628Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/ScarletteVillarreal/SCL010-Social-Network'...
+[info] 
+[debug] [2019-08-07T18:37:50.632Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a/webApps/-/config  
+ 
+[debug] [2019-08-07T18:37:51.845Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5005
