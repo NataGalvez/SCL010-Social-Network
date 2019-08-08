@@ -1,6 +1,5 @@
 //Routes
 import { initRouter } from "./route.js";
-
 const init = () => {
     initRouter();
 }
