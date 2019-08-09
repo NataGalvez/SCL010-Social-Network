@@ -1,10 +1,42 @@
+let ifIsNewUser = (firebaseAuthResult) => {
+    let isNew = firebaseAuthResult.additionalUserInfo.isNewUser;
+        console.log("es nuevo: "+isNew);
+    if (isNew) {
+        // aqui va la llamada funcion que envia ese usuario a la base de datos
+        console.log("Hi ", firebaseAuthResult.user.displayName + ". Id: "+firebaseAuthResult.user.uid+ ", email: "+ firebaseAuthResult.user.email);
+        writeUserData(firebaseAuthResult.user);
+    }
+}
+
+const writeUserData = (user) => {
+    //TAREA CLAUDIA ESCRIBIR FUNCION SIMILAR QUE NO SOBREESCRIBA LOS DATOS PARA LOGIN GOOGLE Y LOGIN FACEBOOL
+    console.log("write user data");
+    firebase.firestore().collection('Users').doc(user.uid).set({
+    //firebase.firestore().collection('Users').add({
+      username: user.displayName,
+      email: user.email,
+      userId: user.uid,
+      type: "",
+      photo: ""
+      //some more user data
+    }).then(() => {
+        console.log("Document successfully written!");
+    })
+    .catch(error => {
+        console.error("Error writing document: ", error);
+    });
+    console.log("terminé de agregar datos");
+  }
+
 export const loginGoogle = () => {
+    console.log("ingresé a loginGoogle");
     let provider = new firebase.auth.GoogleAuthProvider();
 
     firebase.auth().signInWithPopup(provider)
     .then(function(result) {
         let user = result.user;
-        console.log("Hi", user.displayName);
+        //comprobar si el usuario se logueó por primera vez
+        ifIsNewUser(result);        
       })
     .catch(function(error) {
         // Handle Errors here.
@@ -23,6 +55,12 @@ export const createAccount = () => {
         alert("Las contraseñas no coinciden");
     } else {
     firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(function(result) {
+        let user = result.user;
+        // aqui va la llamada funcion que envia ese usuario a la base de datos
+        console.log("Hi ", user.displayName + ". Id: "+user.uid+ ", email: "+ user.email);
+        writeUserData(user);
+      })
     .catch(function(error) {
         // Handle Errors here.
         let errorCode = error.code;
@@ -67,7 +105,8 @@ export const loginFacebook = () => {
       console.log(token);
       // The signed-in user info.
       let user = result.user;
-      console.log("Hi", user);
+      //comprobar si el usuario se logueó por primera vez
+      ifIsNewUser(result); 
 })
   .catch(function(error) {
       // Handle Errors here.
