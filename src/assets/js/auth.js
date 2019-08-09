@@ -62,7 +62,7 @@ export const loginFacebook = () => {
     let provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithPopup(provider).then(result)=> {
       let user = result.user;
-      console.log("Hi", user);
+      console.log("Hi", user.displayName);
 }
   .catch(function(error) {
       // Handle Errors here.
