@@ -22,11 +22,9 @@ export const createAccount = () => {
     if (verified !== password) {
         alert("Las contraseñas no coinciden");
     } else {
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(function(){
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
       verification();
     })
-
     .catch(function(error) {
         // Handle Errors here.
         let errorCode = error.code;
@@ -86,8 +84,8 @@ export const loginFacebook = () => {
 export const verification = ()=>{
       let user = firebase.auth().currentUser;
       user.sendEmailVerification().then(function() {
-        console.log("enviando Correo")
-      }).catch(function(error) {
-        console.log("no se enviará correo")
-      });
+        console.log("enviando Correo");
+    }).catch(function(error) {
+        console.log("no se enviará correo");
+    });
 }
