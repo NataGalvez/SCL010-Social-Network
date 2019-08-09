@@ -1,0 +1,29 @@
+nav {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+nav img {
+    max-width: 140px;
+    max-height: 45px;
+    margin-left: 80px;
+}
+
+.nav-content{
+    margin-right: 80px;
+}
+
+nav a {
+    color: #242424;
+    text-decoration: none;
+    margin: 10px;
+}
+nav a:hover {
+    color: #6570F4;
+}
+
+
