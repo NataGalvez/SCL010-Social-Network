@@ -25,7 +25,7 @@ export const createAccount = () => {
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
       verification();
     })
-   /* .catch(function(error) {
+    .catch(function(error) {
         // Handle Errors here.
         let errorCode = error.code;
         if (errorCode === "auth/invalid-email") {
@@ -37,7 +37,7 @@ export const createAccount = () => {
         } else if (errorCode === "auth/email-already-in-use") {
             alert("Este email ya esta en uso"); 
         }
-    })*/
+    })
 }
 };
 
