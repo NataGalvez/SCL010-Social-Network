@@ -22,9 +22,11 @@ export const createAccount = () => {
     if (verified !== password) {
         alert("Las contraseñas no coinciden");
     } else {
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(function(){
       verification();
     })
+
     .catch(function(error) {
         // Handle Errors here.
         let errorCode = error.code;
