@@ -22,9 +22,9 @@ export const createAccount = () => {
     if (verified !== password) {
         alert("Las contraseñas no coinciden");
     } else {
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
-      verification();
-    })
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(verifitacion());
+      
+    }
     .catch(function(error) {
         // Handle Errors here.
         let errorCode = error.code;
@@ -38,8 +38,8 @@ export const createAccount = () => {
             alert("Este email ya esta en uso"); 
         }
     })
-}
 };
+
 
 export const loginAccount = () => {
     const email = document.getElementById("emailLogin").value;
@@ -83,7 +83,7 @@ export const loginFacebook = () => {
 }
 export const verification = ()=>{
       let user = firebase.auth().currentUser;
-      user.sendEmailVerification().then(function() {
+      user.sendEmailVerification().then(function () {
         console.log("enviando Correo");
     }).catch(function(error) {
         console.log("no se enviará correo");
