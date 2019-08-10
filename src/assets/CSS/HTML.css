@@ -1,3 +1,6 @@
+body {
+    background-color: #fff;
+}
 nav {
     background-color: #fff;
     padding: 20px;
@@ -5,6 +8,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     font-size: 12px;
+    border-bottom: 1px solid #d6d9dc;
 }
 
 nav img {
@@ -24,6 +28,17 @@ nav a {
 }
 nav a:hover {
     color: #6570F4;
+}
+.container-img {
+    margin: 0px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    height: 520px;
+}
+.template {
+    max-width: 1080px;
+    background-image: url("http://127.0.0.1:5500/src/assets/img/pasto.jpg");
 }
 
 
