@@ -9,10 +9,9 @@ let ifIsNewUser = (firebaseAuthResult) => {
 }
 
 const writeUserData = (user) => {
-    //TAREA CLAUDIA ESCRIBIR FUNCION SIMILAR QUE NO SOBREESCRIBA LOS DATOS PARA LOGIN GOOGLE Y LOGIN FACEBOOL
+    //TAREA CLAUDIA ESCRIBIR FUNCION SIMILAR QUE NO SOBREESCRIBA LOS DATOS PARA LOGIN GOOGLE Y LOGIN FACEBOOK
     console.log("write user data");
     firebase.firestore().collection('Users').doc(user.uid).set({
-    //firebase.firestore().collection('Users').add({
       username: user.displayName,
       email: user.email,
       userId: user.uid,
@@ -35,7 +34,7 @@ export const loginGoogle = () => {
     firebase.auth().signInWithPopup(provider)
     .then(function(result) {
         let user = result.user;
-        //comprobar si el usuario se logueó por primera vez
+        //comprobar si el usuario se logueó por primera vez. Si ya estaba logueado, no sobreescribirá sus datos
         ifIsNewUser(result);        
       })
     .catch(function(error) {
@@ -105,7 +104,7 @@ export const loginFacebook = () => {
       console.log(token);
       // The signed-in user info.
       let user = result.user;
-      //comprobar si el usuario se logueó por primera vez
+      //comprobar si el usuario se logueó por primera vez. Si ya estaba logueado, no sobreescribirá sus datos
       ifIsNewUser(result); 
 })
   .catch(function(error) {
