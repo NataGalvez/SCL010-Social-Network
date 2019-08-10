@@ -8,6 +8,7 @@
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
     <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-firestore.js"></script>
     <link rel="stylesheet" href="./assets/CSS/style.css">
@@ -28,37 +29,20 @@
       </script>
 </head>
 <body>
-    <div id="enter">
+    <nav>
         <h1>MATCHGOAL</h1>
-        <div id="root">
-            <form>
-                <div id="googleSingIn">
-                    <div id="customBtn" class="customGoogleSignIn">
-                        <span class="icon"></span>
-                        <a href="#/loginGoogle"><span class="buttonText">Registrarse con Google</a></span>
-                    </div>
-                </div>
-                <div id="newAccountSingIn">
-                        <div id="customBtn" class="customNewAccountSignIn">
-                            <span class="icon"></span>
-                            <a href="#/create"><span class="buttonText">Registrarse</a></span>
-                        </div>
-                </div>
-                <div id="accountSingIn">
-                    <div id="customBtn" class="customAccountSignIn">
-                        <span class="icon"></span>
-                        <a href="#/login"><span class="buttonText">Iniciar Sesión</a></span>
-                    </div>
-                </div>
-                <div id="facebookSingIn">
-                        <div id="customBtn" class="customAccountSignIn">
-                            <span class="icon"></span>
-                            <a href="#/loginFacebook"><span class="buttonText">Registrarse con Facebook</a></span>
-                        </div>
-                    </div>
-            </form>
-        </div>
-    </div>
+        <div class="nav-content">
+                <a href="#/home">Inicio</a>
+                <a href="#">Sobre Nosotros</a>
+                <a href="#">Preguntas Frecuentes</a>
+                <a href="#">Contacto</a>
+                <a href="#/login">Iniciar Sesión</a>
+                <a href="#/create">Regístrate</a>
+            </div>
+    </nav>   
+    <main>
+        <div id="root"></div>
+    </main> 
     <script type="module" src="./app.js"></script>
 </body>
 </html>
