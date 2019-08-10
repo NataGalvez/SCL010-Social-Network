@@ -22,7 +22,9 @@ export const createAccount = () => {
     if (verified !== password) {
         alert("Las contraseñas no coinciden");
     } else {
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
+      verification();
+    })
     .catch(function(error) {
         // Handle Errors here.
         let errorCode = error.code;
@@ -60,14 +62,9 @@ export const loginAccount = () => {
 
 export const loginFacebook = () => {
     let provider = new firebase.auth.FacebookAuthProvider();
-    provider.addScope('user_birthday');
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-  // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-      let token = result.credential.accessToken;
-      console.log(token);
-      // The signed-in user info.
+    firebase.auth().signInWithPopup(provider).then(function(result){
       let user = result.user;
-      console.log("Hi", user);
+      console.log("Hi", user.displayName);
 })
   .catch(function(error) {
       // Handle Errors here.
@@ -82,5 +79,13 @@ export const loginFacebook = () => {
       let credential = error.credential;
       console.log(credential);
       
-});
+})
+}
+export const verification = ()=>{
+      let user = firebase.auth().currentUser;
+      user.sendEmailVerification().then(function() {
+        console.log("enviando Correo");
+    }).catch(function(error) {
+        console.log("no se enviará correo");
+    })
 }
