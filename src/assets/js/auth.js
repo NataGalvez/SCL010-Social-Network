@@ -1,10 +1,41 @@
+let ifIsNewUser = (firebaseAuthResult) => {
+    let isNew = firebaseAuthResult.additionalUserInfo.isNewUser;
+        console.log("es nuevo: "+isNew);
+    if (isNew) {
+        // aqui va la llamada funcion que envia ese usuario a la base de datos
+        console.log("Hi ", firebaseAuthResult.user.displayName + ". Id: "+firebaseAuthResult.user.uid+ ", email: "+ firebaseAuthResult.user.email);
+        writeUserData(firebaseAuthResult.user);
+    }
+}
+
+const writeUserData = (user) => {
+    //TAREA CLAUDIA ESCRIBIR FUNCION SIMILAR QUE NO SOBREESCRIBA LOS DATOS PARA LOGIN GOOGLE Y LOGIN FACEBOOK
+    console.log("write user data");
+    firebase.firestore().collection('Users').doc(user.uid).set({
+      username: user.displayName,
+      email: user.email,
+      userId: user.uid,
+      type: "",
+      photo: ""
+      //some more user data
+    }).then(() => {
+        console.log("Document successfully written!");
+    })
+    .catch(error => {
+        console.error("Error writing document: ", error);
+    });
+    console.log("terminé de agregar datos");
+  }
+
 export const loginGoogle = () => {
+    console.log("ingresé a loginGoogle");
     let provider = new firebase.auth.GoogleAuthProvider();
 
     firebase.auth().signInWithPopup(provider)
     .then(function(result) {
         let user = result.user;
-        console.log("Hi", user.displayName);
+        //comprobar si el usuario se logueó por primera vez. Si ya estaba logueado, no sobreescribirá sus datos
+        ifIsNewUser(result);        
       })
     .catch(function(error) {
         // Handle Errors here.
@@ -22,9 +53,14 @@ export const createAccount = () => {
     if (verified !== password) {
         alert("Las contraseñas no coinciden");
     } else {
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
-      verification();
-    })
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(function(result) {
+        let user = result.user;
+        // aqui va la llamada funcion que envia ese usuario a la base de datos
+        console.log("Hi ", user.displayName + ". Id: "+user.uid+ ", email: "+ user.email);
+        writeUserData(user);
+      })
+
     .catch(function(error) {
         // Handle Errors here.
         let errorCode = error.code;
@@ -64,7 +100,8 @@ export const loginFacebook = () => {
     let provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result){
       let user = result.user;
-      console.log("Hi", user.displayName);
+      //comprobar si el usuario se logueó por primera vez. Si ya estaba logueado, no sobreescribirá sus datos
+      ifIsNewUser(result); 
 })
   .catch(function(error) {
       // Handle Errors here.
