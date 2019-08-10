@@ -11,7 +11,8 @@
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-firestore.js"></script>
-    <link rel="stylesheet" href="./assets/CSS/style.css">
+    <link rel="stylesheet" href="./assets/CSS/HTML.css">
+    <link rel="stylesheet" href="./assets/CSS/templateLogin.css">
 
     <script>
         // Your web app's Firebase configuration
@@ -32,15 +33,13 @@
     <nav>
         <h1>MATCHGOAL</h1>
         <div class="nav-content">
-                <a href="#/home">Inicio</a>
-                <a href="#">Sobre Nosotros</a>
-                <a href="#">Preguntas Frecuentes</a>
-                <a href="#">Contacto</a>
-                <a href="#/login">Iniciar Sesión</a>
-                <a href="#/create">Regístrate</a>
+                <a class="mbl-none" href="#/home">Inicio</a>
+                <a class="mbl-none" href="#">Sobre Nosotros</a>
+                <button class="select-login"><a href="#/login">Iniciar Sesión</a></button>
+                <button class="select-enter"><a href="#/create">Regístrate</a></button>
             </div>
     </nav>   
-    <main>
+    <main id="main">
         <div id="root"></div>
     </main> 
     <script type="module" src="./app.js"></script>
