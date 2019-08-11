@@ -11,6 +11,8 @@ export const templateAditionalInfo = () => {
                         <option value=""> Mediocampista</option>
                         <option value=""> Delantero</option>
                     </select>
+                    </div>
+                    <div class="container-info-perfil">
                     <label>Region</label>
                     <select id="region">
                         <option value=""> Seleccione una Región</option>
@@ -31,13 +33,19 @@ export const templateAditionalInfo = () => {
                         <option value=""> Región de Aysén del General Carlos Ibáñez del Campo</option>
                         <option value=""> Región de Magallanes y la Antártica Chilena</option>   
                     </select>
+                    </div>
+                    <div class="container-info-perfil">
                      <label class="search">Genero</label>
                     <select id="gender">
                         <option value=""> Seleccione un género</option>
                         <option value=""> Mujer</option>
                         <option value=""> Hombre</option>
                         <option value=""> Sin Genero</option>
-                    </select> </div>`
+                    </select> 
+                    </div>
+                    <div class="container-info-perfil">
+                    <input type="submit" id="infoProfile"> Enviar datos 
+                    </div>`
     containerAditionalInfo.innerHTML = contentInfo;
     return containerAditionalInfo;
 } 
