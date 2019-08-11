@@ -35,7 +35,8 @@ export const loginGoogle = () => {
     .then(function(result) {
         let user = result.user;
         //comprobar si el usuario se logueó por primera vez. Si ya estaba logueado, no sobreescribirá sus datos
-        ifIsNewUser(result);        
+        ifIsNewUser(result); 
+         window.location.hash = "#/info";       
       })
     .catch(function(error) {
         // Handle Errors here.
@@ -59,7 +60,9 @@ export const createAccount = () => {
         // aqui va la llamada funcion que envia ese usuario a la base de datos
         console.log("Hi ", user.displayName + ". Id: "+user.uid+ ", email: "+ user.email);
         writeUserData(user);
-      })
+        verification();
+        window.location.hash = "#/info";
+      }) 
 
     .catch(function(error) {
         // Handle Errors here.
@@ -80,7 +83,9 @@ export const createAccount = () => {
 export const loginAccount = () => {
     const email = document.getElementById("emailLogin").value;
     const password = document.getElementById("passwordLogin").value;
-    firebase.auth().signInWithEmailAndPassword(email, password)
+    firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
+       window.location.hash = "#/info";
+    })
     .catch(function(error) {
         // Handle Errors here.
         let errorCode = error.code;
@@ -102,6 +107,7 @@ export const loginFacebook = () => {
       let user = result.user;
       //comprobar si el usuario se logueó por primera vez. Si ya estaba logueado, no sobreescribirá sus datos
       ifIsNewUser(result); 
+       window.location.hash = "#/info";
 })
   .catch(function(error) {
       // Handle Errors here.
