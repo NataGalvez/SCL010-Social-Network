@@ -1,15 +1,44 @@
 let ifIsNewUser = (firebaseAuthResult) => {
     let isNew = firebaseAuthResult.additionalUserInfo.isNewUser;
-        console.log("es nuevo: "+isNew);
+    console.log("es nuevo: "+isNew);
     if (isNew) {
-        // aqui va la llamada funcion que envia ese usuario a la base de datos
         console.log("Hi ", firebaseAuthResult.user.displayName + ". Id: "+firebaseAuthResult.user.uid+ ", email: "+ firebaseAuthResult.user.email);
-        writeUserData(firebaseAuthResult.user);
+        //comprobar si el usuario había sido eliminado alguna vez y ahora volvió.
+        //si el correo del usuario está en database, borra el documento antiguo para escribir el nuevo.
+        ifIsReturningUser(firebaseAuthResult)
     }
 }
 
+const deleteDocumentById = (documentId) => {
+    firebase.firestore().collection("Users").doc(documentId).delete().then(function() {
+        console.log("Document successfully deleted!");
+    }).catch(function(error) {
+        console.error("Error removing document: ", error);
+    });
+}
+
+let ifIsReturningUser = (firebaseAuthResult) => {
+    let emailNewUser = firebaseAuthResult.user.email;
+    console.log("emailNewUser:", emailNewUser);
+
+    firebase.firestore().collection("Users").get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+            console.log(doc.id, " => ", doc.data().email);
+            if (emailNewUser === doc.data().email) {
+                console.log("YEI id", doc.id);
+                console.log("ya hay un id con el mismo email en database. Vamos a borrarlo");
+                deleteDocumentById(doc.id);
+            }
+        });
+        //escribir el database del nuevo usuario (o del usuario que volvió)
+        writeUserData(firebaseAuthResult.user);
+    });
+} 
+
 const writeUserData = (user) => {
-    //TAREA CLAUDIA ESCRIBIR FUNCION SIMILAR QUE NO SOBREESCRIBA LOS DATOS PARA LOGIN GOOGLE Y LOGIN FACEBOOK
     console.log("write user data");
     firebase.firestore().collection('Users').doc(user.uid).set({
       username: user.displayName,
@@ -33,9 +62,8 @@ export const loginGoogle = () => {
 
     firebase.auth().signInWithPopup(provider)
     .then(function(result) {
-        let user = result.user;
-        //comprobar si el usuario se logueó por primera vez. Si ya estaba logueado, no sobreescribirá sus datos
-        ifIsNewUser(result);        
+        //comprobar si el usuario se logueó por primera vez. 
+        ifIsNewUser(result);     
       })
     .catch(function(error) {
         // Handle Errors here.
@@ -59,6 +87,7 @@ export const createAccount = () => {
         // aqui va la llamada funcion que envia ese usuario a la base de datos
         console.log("Hi ", user.displayName + ". Id: "+user.uid+ ", email: "+ user.email);
         writeUserData(user);
+        verification();
       })
 
     .catch(function(error) {
@@ -99,23 +128,14 @@ export const loginAccount = () => {
 export const loginFacebook = () => {
     let provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result){
-      let user = result.user;
-      //comprobar si el usuario se logueó por primera vez. Si ya estaba logueado, no sobreescribirá sus datos
+      //comprobar si el usuario se logueó por primera vez. 
       ifIsNewUser(result); 
 })
   .catch(function(error) {
-      // Handle Errors here.
-      let errorCode = error.code;
-      console.log(errorCode);
-      let errorMessage = error.message;
-      console.log(errorMessage);
-      // The email of the user's account used.
-      let email = error.email;
-      console.log(email);
-      // The firebase.auth.AuthCredential type that was used.
-      let credential = error.credential;
-      console.log(credential);
-      
+    let errorCode = error.code;
+      if (errorCode === "auth/account-exists-with-different-credential") {
+          alert("Ya existe una cuenta con este correo electrónico. Inicia sesión usando la cuenta asociada al correo electrónico.")
+      }      
 })
 }
 export const verification = ()=>{
