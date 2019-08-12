@@ -37,19 +37,14 @@ export const templateAditionalInfo = () => {
                     <div class="container-info-perfil">
                       <button id="create" class="login btn">Crear Cuenta</button>
                     </div>`
-	//Imprimir contenido en el container
+	
 	containerAditionalInfo.innerHTML = contentInfo;
-	//Boton para crear una cuenta de usuario
+	
 	const btnEnter = containerAditionalInfo.querySelector("#create");
 	btnEnter.addEventListener("click", () => {
     let positionSelect=document.getElementById("position").value;
 	let regionSelect=document.getElementById("region").value;
 	document.getElementById("root").innerHTML = regionSelect +" y " +positionSelect;
-
-	//document.getElementById("root").innerHTML = positionSelect;
-
-	console.log(positionSelect);
-	console.log(regionSelect);
 	})
 
 	return containerAditionalInfo;
