@@ -1,83 +1,25 @@
-[debug] [2019-08-10T22:11:22.051Z] ----------------------------------------------------------------------
-[debug] [2019-08-10T22:11:22.059Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Nata Gálvez\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
-[debug] [2019-08-10T22:11:22.060Z] CLI Version:   7.2.2
-[debug] [2019-08-10T22:11:22.060Z] Platform:      win32
-[debug] [2019-08-10T22:11:22.060Z] Node Version:  v10.16.0
-[debug] [2019-08-10T22:11:22.063Z] Time:          Sat Aug 10 2019 18:11:22 GMT-0400 (GMT-04:00)
-[debug] [2019-08-10T22:11:22.063Z] ----------------------------------------------------------------------
+[debug] [2019-08-12T18:33:29.706Z] ----------------------------------------------------------------------
+[debug] [2019-08-12T18:33:29.713Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Nata Gálvez\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-08-12T18:33:29.714Z] CLI Version:   7.2.2
+[debug] [2019-08-12T18:33:29.714Z] Platform:      win32
+[debug] [2019-08-12T18:33:29.714Z] Node Version:  v10.16.0
+[debug] [2019-08-12T18:33:29.717Z] Time:          Mon Aug 12 2019 14:33:29 GMT-0400 (GMT-04:00)
+[debug] [2019-08-12T18:33:29.718Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2019-08-10T22:11:22.098Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-08-10T22:11:22.101Z] > authorizing via signed-in user
-[debug] [2019-08-10T22:11:22.102Z] [iam] checking project matchgoal-a542a for permissions ["firebase.projects.get"]
-[debug] [2019-08-10T22:11:22.110Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/matchgoal-a542a:testIamPermissions  
+[debug] [2019-08-12T18:33:29.752Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-12T18:33:29.756Z] > authorizing via signed-in user
+[debug] [2019-08-12T18:33:29.757Z] [iam] checking project matchgoal-a542a for permissions ["firebase.projects.get"]
+[debug] [2019-08-12T18:33:29.763Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/matchgoal-a542a:testIamPermissions  
 
-[debug] [2019-08-10T22:11:23.357Z] <<< HTTP RESPONSE 200
-[debug] [2019-08-10T22:11:23.365Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a  
+[debug] [2019-08-12T18:33:31.944Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-12T18:33:31.950Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a  
  
-[debug] [2019-08-10T22:11:24.730Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-12T18:33:34.472Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from 'C:\Users\Nata Gálvez\Desktop\SCL010-Social-Network'...
 [info] 
-[debug] [2019-08-10T22:11:24.737Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a/webApps/-/config  
+[debug] [2019-08-12T18:33:34.479Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a/webApps/-/config  
  
-[debug] [2019-08-10T22:11:25.940Z] <<< HTTP RESPONSE 200
-[info] i  hosting: Serving hosting files from: src
-[info] +  hosting: Local server: http://localhost:5000
-[debug] [2019-08-10T23:47:02.505Z] ----------------------------------------------------------------------
-[debug] [2019-08-10T23:47:02.513Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Nata Gálvez\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
-[debug] [2019-08-10T23:47:02.514Z] CLI Version:   7.2.2
-[debug] [2019-08-10T23:47:02.514Z] Platform:      win32
-[debug] [2019-08-10T23:47:02.514Z] Node Version:  v10.16.0
-[debug] [2019-08-10T23:47:02.518Z] Time:          Sat Aug 10 2019 19:47:02 GMT-0400 (GMT-04:00)
-[debug] [2019-08-10T23:47:02.518Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2019-08-10T23:47:02.556Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-08-10T23:47:02.560Z] > authorizing via signed-in user
-[debug] [2019-08-10T23:47:02.560Z] [iam] checking project matchgoal-a542a for permissions ["firebase.projects.get"]
-[debug] [2019-08-10T23:47:02.567Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2019-08-10T23:47:02.568Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- <request body omitted>
-[debug] [2019-08-10T23:47:02.879Z] <<< HTTP RESPONSE 200
-[debug] [2019-08-10T23:47:02.941Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/matchgoal-a542a:testIamPermissions  
-
-[debug] [2019-08-10T23:47:04.064Z] <<< HTTP RESPONSE 200
-[debug] [2019-08-10T23:47:04.068Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a  
- 
-[debug] [2019-08-10T23:47:10.273Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'C:\Users\Nata Gálvez\Desktop\SCL010-Social-Network'...
-[info] 
-[debug] [2019-08-10T23:47:10.281Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a/webApps/-/config  
- 
-[debug] [2019-08-10T23:47:16.728Z] <<< HTTP RESPONSE 200
-[info] i  hosting: Serving hosting files from: src
-[info] +  hosting: Local server: http://localhost:5000
-[debug] [2019-08-11T04:21:30.401Z] ----------------------------------------------------------------------
-[debug] [2019-08-11T04:21:30.409Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Nata Gálvez\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
-[debug] [2019-08-11T04:21:30.410Z] CLI Version:   7.2.2
-[debug] [2019-08-11T04:21:30.410Z] Platform:      win32
-[debug] [2019-08-11T04:21:30.410Z] Node Version:  v10.16.0
-[debug] [2019-08-11T04:21:30.414Z] Time:          Sun Aug 11 2019 00:21:30 GMT-0400 (GMT-04:00)
-[debug] [2019-08-11T04:21:30.414Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2019-08-11T04:21:30.460Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-08-11T04:21:30.464Z] > authorizing via signed-in user
-[debug] [2019-08-11T04:21:30.465Z] [iam] checking project matchgoal-a542a for permissions ["firebase.projects.get"]
-[debug] [2019-08-11T04:21:30.472Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2019-08-11T04:21:30.474Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- <request body omitted>
-[debug] [2019-08-11T04:21:30.849Z] <<< HTTP RESPONSE 200
-[debug] [2019-08-11T04:21:30.946Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/matchgoal-a542a:testIamPermissions  
-
-[debug] [2019-08-11T04:21:32.127Z] <<< HTTP RESPONSE 200
-[debug] [2019-08-11T04:21:32.135Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a  
- 
-[debug] [2019-08-11T04:21:33.478Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'C:\Users\Nata Gálvez\Desktop\SCL010-Social-Network'...
-[info] 
-[debug] [2019-08-11T04:21:33.505Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a/webApps/-/config  
- 
-[debug] [2019-08-11T04:21:34.724Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-12T18:33:36.081Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] +  hosting: Local server: http://localhost:5000
