@@ -1,7 +1,5 @@
-console.log("holi");
-
+//Routes
 import { initRouter } from "./route.js";
-
 const init = () => {
     initRouter();
 }
