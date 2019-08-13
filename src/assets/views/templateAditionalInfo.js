@@ -44,8 +44,7 @@ export const templateAditionalInfo = () => {
 	btnEnter.addEventListener("click", () => {
     let positionSelect=document.getElementById("position").value;
 	let regionSelect=document.getElementById("region").value;
-	document.getElementById("root").innerHTML = regionSelect +" y " +positionSelect;
-	})
-
-	return containerAditionalInfo;
+	document.getElementById("root").innerHTML = regionSelect+" y " +positionSelect;
+})
+return containerAditionalInfo;
 }
