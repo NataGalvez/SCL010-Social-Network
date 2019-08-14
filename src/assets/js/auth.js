@@ -59,6 +59,7 @@ export const createAccount = () => {
         // aqui va la llamada funcion que envia ese usuario a la base de datos
         console.log("Hi ", user.displayName + ". Id: "+user.uid+ ", email: "+ user.email);
         writeUserData(user);
+        verification ();
       })
 
     .catch(function(error) {

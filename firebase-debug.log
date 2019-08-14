@@ -1,0 +1,54 @@
+[debug] [2019-08-10T22:03:09.650Z] ----------------------------------------------------------------------
+[debug] [2019-08-10T22:03:09.695Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-08-10T22:03:09.696Z] CLI Version:   7.2.2
+[debug] [2019-08-10T22:03:09.696Z] Platform:      darwin
+[debug] [2019-08-10T22:03:09.696Z] Node Version:  v10.16.0
+[debug] [2019-08-10T22:03:09.944Z] Time:          Sat Aug 10 2019 18:03:09 GMT-0400 (GMT-04:00)
+[debug] [2019-08-10T22:03:09.944Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-10T22:03:10.028Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-10T22:03:10.028Z] > authorizing via signed-in user
+[debug] [2019-08-10T22:03:10.028Z] [iam] checking project matchgoal-a542a for permissions ["firebase.projects.get"]
+[debug] [2019-08-10T22:03:10.031Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/matchgoal-a542a:testIamPermissions  
+
+[debug] [2019-08-10T22:03:13.604Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-10T22:03:13.607Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a  
+ 
+[debug] [2019-08-10T22:03:14.942Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/ScarletteVillarreal/SCL010-Social-Network'...
+[info] 
+[debug] [2019-08-10T22:03:15.034Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a/webApps/-/config  
+ 
+[debug] [2019-08-10T22:03:16.340Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-08-11T04:06:32.459Z] ----------------------------------------------------------------------
+[debug] [2019-08-11T04:06:32.463Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-08-11T04:06:32.463Z] CLI Version:   7.2.2
+[debug] [2019-08-11T04:06:32.463Z] Platform:      darwin
+[debug] [2019-08-11T04:06:32.463Z] Node Version:  v10.16.0
+[debug] [2019-08-11T04:06:32.717Z] Time:          Sun Aug 11 2019 00:06:32 GMT-0400 (GMT-04:00)
+[debug] [2019-08-11T04:06:32.717Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-11T04:06:32.940Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-11T04:06:32.940Z] > authorizing via signed-in user
+[debug] [2019-08-11T04:06:32.940Z] [iam] checking project matchgoal-a542a for permissions ["firebase.projects.get"]
+[debug] [2019-08-11T04:06:32.943Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-08-11T04:06:32.943Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-08-11T04:06:33.243Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-11T04:06:33.557Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/matchgoal-a542a:testIamPermissions  
+
+[debug] [2019-08-11T04:06:34.648Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-11T04:06:34.649Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a  
+ 
+[debug] [2019-08-11T04:06:35.868Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/ScarletteVillarreal/SCL010-Social-Network'...
+[info] 
+[debug] [2019-08-11T04:06:35.890Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a/webApps/-/config  
+ 
+[debug] [2019-08-11T04:06:37.269Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
