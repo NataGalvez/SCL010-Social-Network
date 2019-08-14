@@ -35,12 +35,12 @@ export const templateAditionalInfo = () => {
                     </select>
                     </div>
                     <div class="container-info-perfil">
-                      <button id="create" class="login btn"> Guardar Cambios</button>
+                      <button id="create" class=""> Guardar </button>
                     </div>`
 	
 	containerAditionalInfo.innerHTML = contentInfo;
 	
-	const btnEnter = containerAditionalInfo.querySelector("#create");
+	let btnEnter = containerAditionalInfo.querySelector("#create");
 	btnEnter.addEventListener("click", () => {
     let positionSelect=document.getElementById("position").value;
 	let regionSelect=document.getElementById("region").value;
