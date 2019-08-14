@@ -91,6 +91,7 @@ export const createAccount = () => {
        ifIsNewUser(result);
         verification();
         window.location.hash = "#/info";
+
       })
 
     .catch(function(error) {
