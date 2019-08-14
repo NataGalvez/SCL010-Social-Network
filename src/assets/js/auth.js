@@ -62,7 +62,6 @@ export const loginGoogle = () => {
 
     firebase.auth().signInWithPopup(provider)
     .then(function(result) {
-        let user = result.user;
         //comprobar si el usuario se logueó por primera vez. Si ya estaba logueado, no sobreescribirá sus datos
         ifIsNewUser(result); 
          window.location.hash = "#/info";       
@@ -88,14 +87,11 @@ export const createAccount = () => {
     } else {
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(function(result) {
-        let user = result.user;
         // aqui va la llamada funcion que envia ese usuario a la base de datos
-        console.log("Hi ", user.displayName + ". Id: "+user.uid+ ", email: "+ user.email);
-        writeUserData(user);
+       ifIsNewUser(result);
         verification();
         window.location.hash = "#/info";
-      }) 
-      }
+      })
 
     .catch(function(error) {
         // Handle Errors here.
@@ -109,8 +105,9 @@ export const createAccount = () => {
         } else if (errorCode === "auth/email-already-in-use") {
             alert("Este email ya esta en uso"); 
         }
-    })
-}
+    });
+}    
+};
 
 export const loginAccount = () => {
     const email = document.getElementById("emailLogin").value;

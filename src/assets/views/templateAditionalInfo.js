@@ -35,7 +35,7 @@ export const templateAditionalInfo = () => {
                     </select>
                     </div>
                     <div class="container-info-perfil">
-                      <button id="create" class=""> Guardar </button>
+                      <button id="create" class=""> Ir a MatchGoal </button>
                     </div>`
 	
 	containerAditionalInfo.innerHTML = contentInfo;
