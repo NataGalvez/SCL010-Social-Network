@@ -62,6 +62,10 @@ export const loginGoogle = () => {
 
     firebase.auth().signInWithPopup(provider)
     .then(function(result) {
+        //comprobar si el usuario se logueó por primera vez. Si ya estaba logueado, no sobreescribirá sus datos
+        ifIsNewUser(result); 
+         window.location.hash = "#/info";       
+
         //comprobar si el usuario se logueó por primera vez. 
         ifIsNewUser(result);     
       })
@@ -83,11 +87,10 @@ export const createAccount = () => {
     } else {
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(function(result) {
-        let user = result.user;
         // aqui va la llamada funcion que envia ese usuario a la base de datos
-        console.log("Hi ", user.displayName + ". Id: "+user.uid+ ", email: "+ user.email);
-        writeUserData(user);
+       ifIsNewUser(result);
         verification();
+        window.location.hash = "#/info";
       })
 
     .catch(function(error) {
@@ -102,14 +105,16 @@ export const createAccount = () => {
         } else if (errorCode === "auth/email-already-in-use") {
             alert("Este email ya esta en uso"); 
         }
-    })
-}
+    });
+}    
 };
 
 export const loginAccount = () => {
     const email = document.getElementById("emailLogin").value;
     const password = document.getElementById("passwordLogin").value;
-    firebase.auth().signInWithEmailAndPassword(email, password)
+    firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
+       window.location.hash = "#/info";
+    })
     .catch(function(error) {
         // Handle Errors here.
         let errorCode = error.code;
@@ -130,6 +135,7 @@ export const loginFacebook = () => {
     firebase.auth().signInWithPopup(provider).then(function(result){
       //comprobar si el usuario se logueó por primera vez. 
       ifIsNewUser(result); 
+       window.location.hash = "#/info";
 })
   .catch(function(error) {
     let errorCode = error.code;
