@@ -44,7 +44,8 @@ const writeUserData = (user) => {
       username: user.displayName,
       email: user.email,
       userId: user.uid,
-      type: "",
+      position: "",
+      region: "",
       photo: ""
       //some more user data
     }).then(() => {
@@ -63,7 +64,8 @@ export const loginGoogle = () => {
     firebase.auth().signInWithPopup(provider)
     .then(function(result) {
         //comprobar si el usuario se logueó por primera vez. 
-        ifIsNewUser(result);     
+        ifIsNewUser(result);  
+        window.location.hash = "#/wall";   
       })
     .catch(function(error) {
         // Handle Errors here.
@@ -83,11 +85,11 @@ export const createAccount = () => {
     } else {
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(function(result) {
-        let user = result.user;
-        // aqui va la llamada funcion que envia ese usuario a la base de datos
-        console.log("Hi ", user.displayName + ". Id: "+user.uid+ ", email: "+ user.email);
-        writeUserData(user);
+        //comprobar si el usuario es nuevo y si se encuentra en database
+        //(si fue eliminado y después vuelve, podría estar en database aunque no esté en auth)
+        ifIsNewUser(result);
         verification();
+        //window.location.hash = "#/info";
       })
 
     .catch(function(error) {

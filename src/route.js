@@ -1,6 +1,7 @@
 import { templateLogin} from "./assets/views/templateLogin.js";
 import { templateCreateAccount } from "./assets/views/templateCreateAccount.js";
 import { templateHome } from "./assets/views/templateHome.js";
+import { templateWall } from "./assets/views/templateWall.js";
 
 //Envía el nuevo hash para mostrar el template que se va a mostrar a través de ese 
 //nuevo hash
@@ -15,6 +16,9 @@ const changeRouter = (hash) => {
     return showTemplate(hash);
 }
     if (hash === "#/create") {
+        return showTemplate(hash);
+    }
+    if (hash === "#/wall") {
         return showTemplate(hash);
     }
 }
@@ -33,6 +37,9 @@ const showTemplate = (hash) => {
         break;
         case "create":
             containerRoot.appendChild(templateCreateAccount());
+        break;
+        case "wall":
+            containerRoot.appendChild(templateWall());
         break;
         default:
             containerRoot.innerHTML = `<p>Página no encontrada, Error 404</p>`
