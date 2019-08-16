@@ -1,5 +1,13 @@
+html {
+    font-family: Montserrat;
+}
 body {
-    background-image: url("https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/fondo%20matchgoal.jpg");
+    background-image: 
+    linear-gradient(
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05)
+      ),
+    url("../img/background.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -7,42 +15,79 @@ body {
     background-color: #fff;
 }
 nav {
-    background-color: #fff;
+    background-color: transparent;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 12px;
-    border-bottom: 1px solid #d6d9dc;
+    font-size: 14px;
+    /* border-bottom: 0.2px solid #D0CECE; */
 }
 nav img {
-    max-width: 140px;
-    max-height: 45px;
-    margin-left: 80px;
+    width: 200px;
+    height: auto;
+    margin-left: 10px;
 }
-
 .nav-content{
-    margin-right: 80px;
+    margin-right: 10px;
 }
-
-nav a {
-    color: #242424;
+nav a, .container-text a, .container-text p {
+    font-size: 14px;
+    color: #fff;
     text-decoration: none;
     margin: 10px;
 }
-nav a:hover {
+nav a:hover, .container-text a:hover {
     color: #6570F4;
 }
-/* .container-img {
-    margin: 0px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    height: 520px;
+.select {
+    width: 170px;
+    border: 1px solid transparent;
+    border-color: #D0CECE;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #D8B53C;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
 }
-.template {
-    max-width: 1080px;
-    background-image: url("https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/fondo%20matchgoal.jpg");
-} */
-
-
+div.container-home {
+    display: flex;
+    justify-content: space-between;
+}
+.home-text, {
+    width: 450px;
+    padding: 40px 20px 20px 20px;
+    margin-left: 10px;
+}
+.slogan {
+    color: #fff;
+    padding: 1px;
+}
+.slogan h4 {
+    font-size: 120px;
+    margin: 0;
+}
+.slogan p {
+    margin: 0;
+    font-size: 40px;
+    justify-content: flex-start;
+}
+div.ball-home {   
+    width: 400px;
+}
+img.ball {
+    max-width: 350px;
+}
+.container-text {
+    width: 650px;
+    padding-top: 10px; 
+    margin-left: 10px;
+}
+.container-text p {
+    font-size: 23px;
+    font-weight: normal;
+}

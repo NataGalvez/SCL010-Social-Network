@@ -1,10 +1,22 @@
 export const templateHome = () => {
-    const cointainerHome = document.createElement("div");
-    cointainerHome.className = "container-img"
+    const containerHome = document.createElement("div");
     const contentHome = `
-<div class="container-img">
-<span type="image" class="template" alt="Cancha de fútbol"><h4>¡Ingresa - Confirma - Juega!</h4></span>
-</div>`
-    cointainerHome.innerHTML = contentHome;
-    return cointainerHome;
-} 
+    <div class="container-home">
+        <div class="home-text">
+            <span class="slogan"><h4>JUEGA</h4><p>SIN LÍMITES</p></span>
+            </div>
+            <div class="ball-home">
+            <img class="ball" src="./assets/img/ball-home.png">
+        </div>
+    </div>
+    <div class="container-text">
+        <p>Encuentra partidos, jugadores, 
+                equipos rivales o competiciones para 
+                hacer lo que más te gusta.  Únete a la 
+                comunidad más grande de amantes 
+                del fútbol</p>
+        <button class="select join"><a href="#/create">Unirme</a></button>
+    </div>`
+containerHome.innerHTML = contentHome;
+return containerHome;
+}

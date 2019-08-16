@@ -1,7 +1,7 @@
 import { templateLogin} from "./assets/views/templateLogin.js";
 import { templateCreateAccount } from "./assets/views/templateCreateAccount.js";
-import { templateHome } from "./assets/views/templateHome.js";
 import { templateAditionalInfo} from "./assets/views/templateAditionalInfo.js";
+import { templateHome } from "./assets/views/templateHome.js";
 
 //Envía el nuevo hash para mostrar el template que se va a mostrar a través de ese 
 //nuevo hash
@@ -13,8 +13,8 @@ const changeRouter = (hash) => {
         return showTemplate(hash);
     }
     if (hash === "#/login") {
-    return showTemplate(hash);
-}
+        return showTemplate(hash);
+    }
     if (hash === "#/create") {
         return showTemplate(hash);
     }
