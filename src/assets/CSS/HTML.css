@@ -1,4 +1,9 @@
 body {
+    background-image: url("https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/fondo%20matchgoal.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     background-color: #fff;
 }
 nav {
@@ -10,7 +15,6 @@ nav {
     font-size: 12px;
     border-bottom: 1px solid #d6d9dc;
 }
-
 nav img {
     max-width: 140px;
     max-height: 45px;
@@ -29,7 +33,7 @@ nav a {
 nav a:hover {
     color: #6570F4;
 }
-.container-img {
+/* .container-img {
     margin: 0px;
     padding: 20px;
     display: flex;
@@ -38,7 +42,7 @@ nav a:hover {
 }
 .template {
     max-width: 1080px;
-    background-image: url("http://127.0.0.1:5500/src/assets/img/pasto.jpg");
-}
+    background-image: url("https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/fondo%20matchgoal.jpg");
+} */
 
 
