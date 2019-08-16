@@ -88,6 +88,27 @@ window.onclick = function(event) {
     }
 }
 
+//cuando cargue el usuario actual, si tiene equipos, mostrarlos
+const containerTeam = cointainerWall.querySelector("#team-content");
+let contentTeam = document.createElement("P");
+let user = firebase.auth().currentUser;
+if (user != null) {
+    //imprimir equipos del usuario actual en consola
+    firebase.firestore().collection("Users").doc(user.uid).collection("teams").get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+        console.log(doc.id, " => ", doc.data());
+        // doc.data() is never undefined for query doc snapshots
+        let textNode = document.createTextNode("Nombre del Equipo: "+doc.data().teamName+", Tipo: "+ doc.data().teamType+ ", Miembros: "+ doc.data().members);
+        contentTeam.appendChild(textNode);
+        contentTeam.appendChild(document.createElement("br"));
+        
+        });
+    });
+    containerTeam.appendChild(contentTeam);
+}
+
+
 //cuando presione "btnCreateTeam" guarda el equipo en el array teams del database del usuario actual
 //mejoras:
 //---detectar cuando hay un equipo con el mismo nombre antes de crear
@@ -101,24 +122,20 @@ btnsaveTeam.addEventListener("click", () => {
             teamType: cointainerWall.querySelector("#teamType").value,
             members: 0
         });
-        //CREO LA COLLECTION PERO NO PUEDO LLAMARLA. ARREGLAR
-        let subCollection = firebase.firestore().collection("Users").doc(user.uid).collection("teams").get()
-        .then(function(doc) {
-            if (doc.exists) {
-              console.log("Document teamName:", doc.data().teamName);
-              console.log("Document teamType:", doc.data().teamType);
-              console.log("Document members:", doc.data().members);
-            } else {
-              // doc.data() will be undefined in this case
-              console.log("No such document!");
-            }
-          }).catch(function(error) {
-            console.log("Error getting document:", error);
-          });
-        //${data.Poster}//comentario para sintaxis
-        const contentTeam = `
-        <p>Nombre del Equipo: ${user.Poster}</p>
-        `
+        //imprimir equipos del usuario cuando ya creó equipo nuevo
+        firebase.firestore().collection("Users").doc(user.uid).collection("teams").get()
+        .then(function(querySnapshot) {
+            contentTeam.innerHTML = "";//borra para que no se acumulen
+            querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            //console.log(doc.id, " => ", doc.data());
+
+            let textNode = document.createTextNode("Nombre del Equipo: "+doc.data().teamName+", Tipo: "+ doc.data().teamType+ ", Miembros: "+ doc.data().members);
+            contentTeam.appendChild(textNode);
+            contentTeam.appendChild(document.createElement("br"));
+            });
+        });
+        containerTeam.appendChild(contentTeam);
     }
     createTeamModal.style.display = "none";
 })
