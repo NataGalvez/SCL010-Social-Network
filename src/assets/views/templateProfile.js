@@ -1,5 +1,7 @@
 export const profile = () =>{
-	const divProfile = document.createElement("div");
-    divProfile.className = "container";
-    const contentProfile = ` `
+	let containerProfile = document.createElement("div");
+	containerProfile.className= "profile";
+	contenProfile= window.innerProfile;
+
 }
+profile();

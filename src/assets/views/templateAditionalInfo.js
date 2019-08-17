@@ -1,19 +1,12 @@
+import { writeUserData } from "../js/auth.js";
+import { getCurrentUser} from "../js/auth.js";
 export const templateAditionalInfo = () => {
     const containerAditionalInfo = document.createElement("div");
-    containerAditionalInfo.className = "container";
-    const contentInfo = ` 
-    <div class="container-info-perfil">
-<label> Posición </label>
-                    <select id="position">
-                        <option value="0"> Seleccione una posición de juego</option>
-                        <option value="Arquero"> Arquero </option>
-                        <option value="Defensa"> Defensa</option>
-                        <option value="Mediocampista"> Mediocampista</option>
-                        <option value="Delantero"> Delantero</option>
-                    </select>
-                    </div>
-                    <div class="container-info-perfil">
-                    <label>Region</label>
+    containerAditionalInfo.className = "container-info-perfil";
+    const contentInfo = `
+     <div> <i class="fas fa-user"></i> 
+	    <div class="container-info-perfil">
+        <label>Region</label>
                     <select id="region">
                         <option value="1"> Seleccione una Región</option>
                         <option value="Región de Arica y Parinacota"> Región de Arica y Parinacota</option>
@@ -33,18 +26,38 @@ export const templateAditionalInfo = () => {
                         <option value="Región de Aysén del General Carlos Ibáñez del Campo"> Región de Aysén del General Carlos Ibáñez del Campo</option>
                         <option value="Región de Magallanes y la Antártica Chilena"> Región de Magallanes y la Antártica Chilena</option>   
                     </select>
-                    </div>
-                    <div class="container-info-perfil">
-                      <button id="create" class=""> Ir a MatchGoal </button>
-                    </div>`
+    </div>
+    	<div class="container-info-perfil">
+		<label> Posición </label>
+                    <select id="position">
+                        <option value="0"> Seleccione una posición de juego</option>
+                        <option value="Arquero"> Arquero </option>
+                        <option value="Defensa"> Defensa</option>
+                        <option value="Mediocampista"> Mediocampista</option>
+                        <option value="Delantero"> Delantero</option>
+                    </select>
+    </div>
+     </div>
+
+    
+    				<div class="container-info-perfil">
+                      <button id="saveProfile" class=""> Ir a MatchGoal </button>
+ 				   </div>`
 	
 	containerAditionalInfo.innerHTML = contentInfo;
 	
-	let btnEnter = containerAditionalInfo.querySelector("#create");
+	let btnEnter = containerAditionalInfo.querySelector("#saveProfile");
 	btnEnter.addEventListener("click", () => {
     let positionSelect=document.getElementById("position").value;
 	let regionSelect=document.getElementById("region").value;
-	document.getElementById("root").innerHTML = regionSelect+" y " +positionSelect;
+	let currentUser = getCurrentUser();
+	console.log(currentUser);
+
+	writeUserData(getCurrentUser(), {
+		position: positionSelect,
+		region: regionSelect,
+
+	})
 })
 return containerAditionalInfo;
 }

@@ -38,16 +38,19 @@ let ifIsReturningUser = (firebaseAuthResult) => {
     });
 } 
 
-const writeUserData = (user) => {
+export const writeUserData = (user, infoProfile) => {
     console.log("write user data");
     firebase.firestore().collection('Users').doc(user.uid).set({
       username: user.displayName,
       email: user.email,
       userId: user.uid,
-      type: "",
+      type: infoProfile ? infoProfile.position : "",
+      region: infoProfile ? infoProfile.region :"",
       photo: ""
       //some more user data
-    }).then(() => {
+    })
+    
+    .then(() => {
         console.log("Document successfully written!");
     })
     .catch(error => {
@@ -64,10 +67,7 @@ export const loginGoogle = () => {
     .then(function(result) {
         //comprobar si el usuario se logueó por primera vez. Si ya estaba logueado, no sobreescribirá sus datos
         ifIsNewUser(result); 
-         window.location.hash = "#/info";       
-
-        //comprobar si el usuario se logueó por primera vez. 
-        ifIsNewUser(result);     
+         window.location.hash = "#/info";           
       })
     .catch(function(error) {
         // Handle Errors here.
@@ -140,7 +140,7 @@ export const loginFacebook = () => {
   .catch(function(error) {
     let errorCode = error.code;
       if (errorCode === "auth/account-exists-with-different-credential") {
-          alert("Ya existe una cuenta con este correo electrónico. Inicia sesión usando la cuenta asociada al correo electrónico.")
+          alert("Ya existe una cuenta con este correo electrónico. Inicia sesión usando la cuenta asociada al correo electrónico.");
       }      
 })
 }
@@ -151,4 +151,7 @@ export const verification = ()=>{
     }).catch(function(error) {
         console.log("no se enviará correo");
     })
+}
+export const getCurrentUser = () => {
+  return firebase.auth().currentUser;
 }
