@@ -66,10 +66,7 @@ export const loginGoogle = () => {
         //comprobar si el usuario se logueó por primera vez. Si ya estaba logueado, no sobreescribirá sus datos
         ifIsNewUser(result); 
          window.location.hash = "#/info";       
-
-        //comprobar si el usuario se logueó por primera vez. 
-        ifIsNewUser(result);  
-        window.location.hash = "#/wall";   
+         //window.location.hash = "#/wall";   
       })
     .catch(function(error) {
         // Handle Errors here.
@@ -94,6 +91,7 @@ export const createAccount = () => {
         ifIsNewUser(result);
         verification();
         window.location.hash = "#/info";
+        //window.location.hash = "#/wall";  
       })
 
     .catch(function(error) {
@@ -117,6 +115,7 @@ export const loginAccount = () => {
     const password = document.getElementById("passwordLogin").value;
     firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
        window.location.hash = "#/info";
+       //window.location.hash = "#/wall";  
     })
     .catch(function(error) {
         // Handle Errors here.
@@ -139,6 +138,7 @@ export const loginFacebook = () => {
       //comprobar si el usuario se logueó por primera vez. 
       ifIsNewUser(result); 
        window.location.hash = "#/info";
+       //window.location.hash = "#/wall";  
 })
   .catch(function(error) {
     let errorCode = error.code;
