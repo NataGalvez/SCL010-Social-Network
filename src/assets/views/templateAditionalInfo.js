@@ -2,20 +2,17 @@ export const templateAditionalInfo = () => {
     const containerAditionalInfo = document.createElement("div");
     containerAditionalInfo.className = "container";
     const contentInfo = ` 
-    <div class="container-info-perfil">
-<label> Posición </label>
+    <div class="login-content">
+                    <div class="selectors">
                     <select id="position">
-                        <option value="0"> Seleccione una posición de juego</option>
+                        <option value="0"> Seleccionar posición</option>
                         <option value="Arquero"> Arquero </option>
                         <option value="Defensa"> Defensa</option>
                         <option value="Mediocampista"> Mediocampista</option>
                         <option value="Delantero"> Delantero</option>
                     </select>
-                    </div>
-                    <div class="container-info-perfil">
-                    <label>Region</label>
                     <select id="region">
-                        <option value="1"> Seleccione una Región</option>
+                        <option value="1"> Seleccionar región</option>
                         <option value="Región de Arica y Parinacota"> Región de Arica y Parinacota</option>
                         <option value="Región de Tarapacá"> Región de Tarapacá</option>
                         <option value="Región de Antofagasta"> Región de Antofagasta</option>
@@ -34,9 +31,8 @@ export const templateAditionalInfo = () => {
                         <option value="Región de Magallanes y la Antártica Chilena"> Región de Magallanes y la Antártica Chilena</option>   
                     </select>
                     </div>
-                    <div class="container-info-perfil">
-                      <button id="create" class=""> Ir a MatchGoal </button>
-                    </div>`
+    <button id="create" class="btn">Ir a MatchGoal</button>
+    </div>`
 	
 	containerAditionalInfo.innerHTML = contentInfo;
 	
