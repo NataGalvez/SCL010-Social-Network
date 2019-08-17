@@ -1,5 +1,6 @@
 import { templateLogin} from "./assets/views/templateLogin.js";
 import { templateCreateAccount } from "./assets/views/templateCreateAccount.js";
+import { templateAditionalInfo} from "./assets/views/templateAditionalInfo.js";
 import { templateHome } from "./assets/views/templateHome.js";
 import { templateWall } from "./assets/views/templateWall.js";
 
@@ -13,12 +14,15 @@ const changeRouter = (hash) => {
         return showTemplate(hash);
     }
     if (hash === "#/login") {
-    return showTemplate(hash);
-}
+        return showTemplate(hash);
+    }
     if (hash === "#/create") {
         return showTemplate(hash);
     }
     if (hash === "#/wall") {
+        return showTemplate(hash);
+    }
+    if (hash === "#/info") {
         return showTemplate(hash);
     }
 }
@@ -40,6 +44,9 @@ const showTemplate = (hash) => {
         break;
         case "wall":
             containerRoot.appendChild(templateWall());
+        break;
+        case "info":
+            containerRoot.appendChild(templateAditionalInfo());
         break;
         default:
             containerRoot.innerHTML = `<p>Página no encontrada, Error 404</p>`

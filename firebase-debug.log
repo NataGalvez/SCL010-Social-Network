@@ -1,0 +1,29 @@
+[debug] [2019-08-16T16:51:23.650Z] ----------------------------------------------------------------------
+[debug] [2019-08-16T16:51:23.684Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-08-16T16:51:23.685Z] CLI Version:   7.2.2
+[debug] [2019-08-16T16:51:23.685Z] Platform:      darwin
+[debug] [2019-08-16T16:51:23.685Z] Node Version:  v10.16.0
+[debug] [2019-08-16T16:51:23.744Z] Time:          Fri Aug 16 2019 12:51:23 GMT-0400 (GMT-04:00)
+[debug] [2019-08-16T16:51:23.744Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-16T16:51:23.890Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-16T16:51:23.890Z] > authorizing via signed-in user
+[debug] [2019-08-16T16:51:23.890Z] [iam] checking project matchgoal-a542a for permissions ["firebase.projects.get"]
+[debug] [2019-08-16T16:51:23.893Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-08-16T16:51:23.893Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-08-16T16:51:24.319Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-16T16:51:24.396Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/matchgoal-a542a:testIamPermissions  
+
+[debug] [2019-08-16T16:51:25.504Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-16T16:51:25.506Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a  
+ 
+[debug] [2019-08-16T16:51:26.727Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/ScarletteVillarreal/SCL010-Social-Network'...
+[info] 
+[debug] [2019-08-16T16:51:26.729Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a/webApps/-/config  
+ 
+[debug] [2019-08-16T16:51:28.163Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
