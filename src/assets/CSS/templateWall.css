@@ -6,6 +6,14 @@
   border-width: 1px !important;
 }
 
+.team-content {
+  border: 1px solid transparent;
+  border-color: #a0a3a7 !important;
+  border-radius: 5px !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+}
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */

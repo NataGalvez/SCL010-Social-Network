@@ -1,5 +1,5 @@
 export const templateWall = () => {
-    const cointainerWall = document.createElement("div");
+    const containerWall = document.createElement("div");
     const contentWall = `
 <div class="container wall">
     <div class="wall-content">
@@ -12,7 +12,7 @@ export const templateWall = () => {
                 <h3>Tus Equipos</h3>
                 <button id="createTeam" class="btn">Crear Equipo</button>
             </header>
-            <div class="team-content" id="team-content">
+            <div class="containerTeam" id="containerTeam">
         </div>
         <div id="matches">
             <div id="nextMatches"></div>
@@ -39,11 +39,12 @@ export const templateWall = () => {
             <td><p>Jugadores</p></td>
             <td>
             <select id="teamType">
-            <option value="mixed">Mixto</option>
-            <option value="femenine">Femenino</option>
-            <option value="masculine">Masculino</option>
+            <option value="Mixto">Mixto</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Masculino">Masculino</option>
         </select>
             </td>
+            <td><input type="text" id="teamPhoto" placeholder="url..."></td>
         </tr>
     </table>
     <button id="saveTeam">Crear Equipo</button>
@@ -64,16 +65,15 @@ export const templateWall = () => {
 `
 
 //Imprimir contenido en el container
-cointainerWall.innerHTML = contentWall;
-//const btnFacebook = containerLogin.querySelector("#loginFacebook");
+containerWall.innerHTML = contentWall;
 
 
 // Get the modal
-let createTeamModal = cointainerWall.querySelector("#createTeamModal");
+let createTeamModal = containerWall.querySelector("#createTeamModal");
 // Get the <span> element that closes the modal
-let createMatchClose = cointainerWall.querySelector("#createTeamClose");
+let createMatchClose = containerWall.querySelector("#createTeamClose");
 //hacer click en el enlace "Crear Equipo" abre modal con formulario
-const btnCreateTeam = cointainerWall.querySelector("#createTeam");
+const btnCreateTeam = containerWall.querySelector("#createTeam");
 btnCreateTeam.addEventListener("click", () => {
     createTeamModal.style.display = "block";
 })
@@ -89,61 +89,85 @@ window.onclick = function(event) {
 }
 
 //cuando cargue el usuario actual, si tiene equipos, mostrarlos
-const containerTeam = cointainerWall.querySelector("#team-content");
-let contentTeam = document.createElement("P");
+//const containerTeam = document.createElement("div");
+const containerTeam = containerWall.querySelector("#containerTeam");
+
+//containerTeam.innerHTML = contentTeam;
+
 let user = firebase.auth().currentUser;
-if (user != null) {
-    //imprimir equipos del usuario actual en consola
+if (user != null) {//mostrar divs de los equipos del usuario actual
+    
     firebase.firestore().collection("Users").doc(user.uid).collection("teams").get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
-        console.log(doc.id, " => ", doc.data());
+        console.log(doc.id, " => ", doc.data());//imprimir equipos del usuario actual en consola
         // doc.data() is never undefined for query doc snapshots
-        let textNode = document.createTextNode("Nombre del Equipo: "+doc.data().teamName+", Tipo: "+ doc.data().teamType+ ", Miembros: "+ doc.data().members);
-        contentTeam.appendChild(textNode);
-        contentTeam.appendChild(document.createElement("br"));
+        const contentTeam = document.createElement("div");
+        contentTeam.innerHTML = `
+            <div class="team-content" id="team-content">
+                <div class="team-photo"><a href="${doc.data().photo}</div>
+                <p class="team-type">${doc.data().teamType}</p>
+                <h4 class="team-name">${doc.data().teamName}</h4>
+                <p class="team-info">${doc.data().info}</p>
+                <p class="team-members">${doc.data().members}</p>
+            </div>
+            `
+        containerTeam.appendChild(contentTeam);
+
+        //let textNode = document.createTextNode("Nombre del Equipo: "+doc.data().teamName+", Tipo: "+ doc.data().teamType+ ", Miembros: "+ doc.data().members);
+        //contentTeam.appendChild(textNode);
+        //contentTeam.appendChild(document.createElement("br"));
         
         });
     });
-    containerTeam.appendChild(contentTeam);
+    containerWall.querySelector("#containerTeam");
 }
 
 
 //cuando presione "btnCreateTeam" guarda el equipo en el array teams del database del usuario actual
 //mejoras:
 //---detectar cuando hay un equipo con el mismo nombre antes de crear
-const btnsaveTeam = cointainerWall.querySelector("#saveTeam");
+const btnsaveTeam = containerWall.querySelector("#saveTeam");
 btnsaveTeam.addEventListener("click", () => {
     let user = firebase.auth().currentUser;//Obtén el usuario con sesión activa
 
     if (user != null) { //añade una sub collección al usuario
         firebase.firestore().collection("Users").doc(user.uid).collection("teams").add({
-            teamName: cointainerWall.querySelector("#teamName").value,
-            teamType: cointainerWall.querySelector("#teamType").value,
-            members: 0
+            teamName: containerWall.querySelector("#teamName").value,
+            teamType: containerWall.querySelector("#teamType").value,
+            members: 0,
+            photo: ""
         });
         //imprimir equipos del usuario cuando ya creó equipo nuevo
         firebase.firestore().collection("Users").doc(user.uid).collection("teams").get()
         .then(function(querySnapshot) {
-            contentTeam.innerHTML = "";//borra para que no se acumulen
+            containerTeam.innerHTML = "";//borra para que no se acumulen
             querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
             //console.log(doc.id, " => ", doc.data());
+            const contentTeam = document.createElement("div");
+            contentTeam.innerHTML = `
+                <div class="team-content" id="team-content">
+                    <div class="team-photo"><a href="${doc.data().photo}</div>
+                    <p class="team-type">${doc.data().teamType}</p>
+                    <h4 class="team-name">${doc.data().teamName}</h4>
+                    <p class="team-info">${doc.data().info}</p>
+                    <p class="team-members">${doc.data().members}</p>
+                </div>
+                `
+            containerTeam.appendChild(contentTeam);
 
-            let textNode = document.createTextNode("Nombre del Equipo: "+doc.data().teamName+", Tipo: "+ doc.data().teamType+ ", Miembros: "+ doc.data().members);
-            contentTeam.appendChild(textNode);
-            contentTeam.appendChild(document.createElement("br"));
+            //let textNode = document.createTextNode("Nombre del Equipo: "+doc.data().teamName+", Tipo: "+ doc.data().teamType+ ", Miembros: "+ doc.data().members);
+            //contentTeam.appendChild(textNode);
+            //contentTeam.appendChild(document.createElement("br"));
             });
         });
-        containerTeam.appendChild(contentTeam);
+        //containerTeam.appendChild(contentTeam);
     }
     createTeamModal.style.display = "none";
 })
 
 
 
-  
-
-
-return cointainerWall;
+return containerWall;
 }
