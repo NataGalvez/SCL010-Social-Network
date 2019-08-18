@@ -68,6 +68,8 @@ export const loginGoogle = () => {
         //comprobar si el usuario se logueó por primera vez. Si ya estaba logueado, no sobreescribirá sus datos
         ifIsNewUser(result); 
          window.location.hash = "#/info";           
+         //window.location.hash = "#/info";       
+         // window.location.hash = "#/wall";   
       })
     .catch(function(error) {
         // Handle Errors here.
@@ -87,10 +89,12 @@ export const createAccount = () => {
     } else {
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(function(result) {
-        // aqui va la llamada funcion que envia ese usuario a la base de datos
-       ifIsNewUser(result);
+        //comprobar si el usuario es nuevo y si se encuentra en database
+        //(si fue eliminado y después vuelve, podría estar en database aunque no esté en auth)
+        ifIsNewUser(result);
         verification();
-        window.location.hash = "#/info";
+        //window.location.hash = "#/info";
+        window.location.hash = "#/wall";  
       })
 
     .catch(function(error) {
@@ -113,7 +117,8 @@ export const loginAccount = () => {
     const email = document.getElementById("emailLogin").value;
     const password = document.getElementById("passwordLogin").value;
     firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
-       window.location.hash = "#/info";
+       //window.location.hash = "#/info";
+       window.location.hash = "#/wall";  
     })
     .catch(function(error) {
         // Handle Errors here.
@@ -135,7 +140,8 @@ export const loginFacebook = () => {
     firebase.auth().signInWithPopup(provider).then(function(result){
       //comprobar si el usuario se logueó por primera vez. 
       ifIsNewUser(result); 
-       window.location.hash = "#/info";
+       //window.location.hash = "#/info";
+       window.location.hash = "#/wall";  
 })
   .catch(function(error) {
     let errorCode = error.code;
@@ -151,7 +157,11 @@ export const verification = ()=>{
     }).catch(function(error) {
         console.log("no se enviará correo");
     })
+
 }
 export const getCurrentUser = () => {
   return firebase.auth().currentUser;
 }
+
+
+

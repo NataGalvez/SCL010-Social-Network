@@ -9,6 +9,7 @@ export const templateLogin = () => {
     <div class="login-content">
         <button id="loginGoogle" class="login-google btn">Iniciar sesión con Google</button>
         <button id="loginFacebook" class="login-facebook btn">Iniciar sesión con Facebook</button>
+        <p>––––––––––––––– o –––-––––––––––––</p>
         <input type="email" id="emailLogin" placeholder="Correo Electrónico">
         <input type="password" id="passwordLogin" placeholder="Contraseña"><p><a href="#">¿Se te olvidó tu contraseña?</a></p>
         <button id="login" class="login btn">Iniciar sesión</button>

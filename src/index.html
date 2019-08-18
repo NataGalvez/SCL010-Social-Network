@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Social Network</title>
     <script src="https://kit.fontawesome.com/2cc889939c.js"></script>
 
@@ -15,6 +16,8 @@
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-firestore.js"></script>
     <link rel="stylesheet" href="./assets/CSS/HTML.css">
     <link rel="stylesheet" href="./assets/CSS/templateLogin.css">
+    <link rel="stylesheet" href="./assets/CSS/templateWall.css">
+    <link rel="stylesheet" href="./assets/CSS/style.css">
 
     <script>
         // Your web app's Firebase configuration
@@ -32,18 +35,24 @@
       </script>
 </head>
 <body>
-    <nav>
-        <h1>MATCHGOAL</h1>
-        <div class="nav-content">
-                <a class="mbl-none" href="#/home">Inicio</a>
-                <a class="mbl-none" href="#">Sobre Nosotros</a>
-                <button class="select-login"><a href="#/login">Iniciar Sesión</a></button>
-                <button class="select-enter"><a href="#/create">Regístrate</a></button>
+    <header>
+        <div class="menu-bar">
+            <a href="#" class="btn-menu"><span class="icon-menu"></span></a>
+        </div>
+        <nav>
+            <a href="#"><img src="./assets/img/MatchGoal.png"></a>
+            <div class="nav-content">
+                <a class="mbl-none" href="#">Sobre MatchGoal</a>
+                <button class="select login"><a href="#/login">Iniciar sesión</a></button>
+                <button class="select enter"><a href="#/create">Regístrate</a></button>
             </div>
-    </nav>   
+        </nav>
+    </header>
     <main id="main">
-        <div id="root"></div>
-    </main>  
+        <div id="root"></div> 
+    </main>
     <script type="module" src="./app.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="./assets/views/menu.js"></script>
 </body>
 </html>

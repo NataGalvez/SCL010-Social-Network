@@ -10,6 +10,7 @@ export const templateCreateAccount = () => {
         <div class="login-content">
             <button id="enterGoogle" class="login-google btn">Registrarse con Google</button>
             <button id="enterFacebook" class="login-facebook btn">Registrarse con Facebook</button>
+            <p>––––––––––––––– o –––-––––––––––––</p>
             <input type="email" id="email" placeholder="Correo Electrónico">
             <input id="password" type="password" placeholder="Ingresa una contraseña">
             <input id="verified" type="password" placeholder="Confirma tu contraseña">
