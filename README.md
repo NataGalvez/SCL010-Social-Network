@@ -7,18 +7,17 @@
     *  [Preámbulo](#preámbulo)
      * [MatchGoal](#matchgoal)
      * [Funcionalidades](#funcionalidades)
-     * [Público Objetivo](#usuarios)
-         * [Principales usuarios](#usuarios)
-        * [Potenciales clientes](#clientes)
+     * [Público Objetivo](#objetivo)
+         * [Principales usuarios](#principales-usuarios)
+        * [Potenciales clientes](#potenciales-clientes)
      * [Visión](#visión)
       * [Misión](#misión)
-      * [Cómo usar la aplicación](#usar)
+      * [Cómo usar la aplicación](#cómo-usar-la-aplicación)
   - [Metodología](#metodología)
      * [UX: Experiencia de Usuario](#ux)
         *   [Hipótesis](#hipótesis)
              * [Investigación](#investigación)
              *  [Benchmarking](#benchmarking)
-             * [Conclusión](#conclusión)
         * [Definición de historias de usuario](#historias)
         * [Diagrama de flujo](#diagrama)
         * [Prototipo de baja fidelidad](#baja)
@@ -30,7 +29,6 @@
           *  [Testeo con usuarios](#testeo)
           *  [Modificaciones](#modificaciones)
     * [Planificación](#planificación)
-        *   [Recursos utilizados](#recursos)
 - [Herramientas utilizadas](#herramientas)
  - [Equipo de trabajo](#equipo-de-trabajo)
 -  [Proyecciones Futuras](#proyecciones-futuras)
@@ -123,29 +121,32 @@ Para acceder a la encuesta haz clic [aquí](https://forms.gle/E9W4kzqcDkDve7Y19)
 Se consideró dentro del Benchmarking las siguientes aplicaciones:
 
 - [Equipo Completo](https://www.equipocompleto.cl/)
+
 Equipo completo entrega el servicio de mejorar la gestión y organización de actividades deportivas grupales en distintos deportes. 
 
 - [Meetup](https://www.meetup.com/)
+
 Meetup es un servicio usado para organizar grupos _online_ que organizan eventos en persona para personas con similares intereses. Se analizó la manera de organizar y presentar la información tanto de grupos como eventos, ya que consideramos es una forma óptima y sencilla de utilizar por los usuarios, logrando adaptar su modelo a nuestra aplicación.
 
 - [Pitz](https://play.google.com/store/apps/details?id=com.amplemind.dev.pitz&hl=es_CL)
+
 Pitz es una aplicación que permite organizar partidos de fútbol. Se comparó nuestro diagrama de flujo con la usabilidad de la aplicación para durimentar el flujo de decisión de los usuarios dentro de MatchGoal. Además, se analizaron los procesos de creación de partidos y creación de equipos para adaptarlos a nustra aplicación.
 
 ### Definición de historias de usuario
 
 La definición fue basada en las funcionalidades que la aplicación debe realizar para cumplir con las necesidades de sus usuarios.
 
-- **Historia de usuario #1: Ingresar a la aplicación**: Yo como jugador(a) de fútbol quisiera ingresar mediante inicio de sesión o registro a la aplicación para acceder a sus servicios
+- **Historia de usuario #1 Ingresar a la aplicación**: Yo como jugador(a) de fútbol quisiera ingresar mediante inicio de sesión o registro a la aplicación para acceder a sus servicios
 
-- **Historia de usuario #2: Muro/_timeline_**: Yo como jugador(a) de futbol quisiera visualizar en un sólo lugar los equipos, partidos y ligas disponibles para participar.
+- **Historia de usuario #2 Muro/_timeline_**: Yo como jugador(a) de futbol quisiera visualizar en un sólo lugar los equipos, partidos y ligas disponibles para participar.
 
-- **Historia de usuario #3: Perfil**: Yo como jugador(a) de fútbol quisiera tener un perfil para poder participar dentro de la comunidad
+- **Historia de usuario #3 Perfil**: Yo como jugador(a) de fútbol quisiera tener un perfil para poder participar dentro de la comunidad
 
-- **Historia de usuario #4: Partidos**: Yo como jugador(a) de futbol quisiera crear, participar o desistir de encuentros futbolísticos
+- **Historia de usuario #4 Partidos**: Yo como jugador(a) de futbol quisiera crear, participar o desistir de encuentros futbolísticos
 
-- **Historia de usuario #5: Equipos**: Yo como jugador(a) de fútbol quisiera poder crear y participar de equipos para aumentar mis posibilidades de jugar
+- **Historia de usuario #5 Equipos**: Yo como jugador(a) de fútbol quisiera poder crear y participar de equipos para aumentar mis posibilidades de jugar
 
-- **Historia de usuario #6: Ligas**: Yo como jugador(a) de fútbol quisiera poder participar de ligas como jugador(a) o con mi equipo para aumentar mis posibilidades de jugar e interactuar con la comunidad
+- **Historia de usuario #6 Ligas**: Yo como jugador(a) de fútbol quisiera poder participar de ligas como jugador(a) o con mi equipo para aumentar mis posibilidades de jugar e interactuar con la comunidad
 
 
 ### Diagrama de flujo
@@ -189,8 +190,6 @@ Se definieron los colores en base a lo que representa la aplicación, también s
 
 #### Testeo con usuarios
 
-
-
 #### Modificaciones
 
 ## Planificación
@@ -204,21 +203,27 @@ Reuniones diarias para inspeccionar el trabajo realizado el día anterior y plan
 # Herramientas utilizadas
 
 - [Balsamiq](https://balsamiq.com/)
+
 Herramienta utilizada para elaborar el prototipo de baja fidelidad _Wireframe_. 
 
 - [Lucidchart](https://lucidchart.com/‎)
+
 Herramienta utilizada para elaborar el diagrama de flujo.
 
 - [Google Forms](https://www.google.com/intl/es-419_cl/forms/about/)
+
 Herramienta utilizada para elaborar la encuesta de nuestra hipótesis.
 
 - [Trello](https://trello.com/)
+
 Herramienta utilizada para elaborar el tablero de planificación Kanban.
 
 - [Adobe XD](https://www.adobe.com/la/products/xd.html)
+
 Herramienta utilizada para elaborar el prototipo de alta fidelidad.
 
 - [Firebase](https://firebase.google.com/)
+
 Herramienta utilizada para compilar nuestro proyecto.
 
 # Equipo de trabajo
