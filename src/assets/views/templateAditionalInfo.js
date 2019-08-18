@@ -4,10 +4,11 @@ export const templateAditionalInfo = () => {
     const containerAditionalInfo = document.createElement("div");
 
     containerAditionalInfo.className = "container-info-perfil";
-    const contentInfo = `
+    let contentInfo = `
      
     <div class="login-content">
                     <div class="selectors">
+                    {displayName}
                     <select id="position">
                         <option value="0"> Seleccionar posición</option>
                         <option value="Arquero"> Arquero </option>
@@ -40,10 +41,14 @@ export const templateAditionalInfo = () => {
                     </div>
     	<button id="create" class="btn">Ir a MatchGoal</button>
     </div>`
+
+    let currentUser = getCurrentUser();
+    contentInfo = contentInfo.replace("{displayName}", currentUser.displayName);
 	
 	containerAditionalInfo.innerHTML = contentInfo;
-	
-	let btnEnter = containerAditionalInfo.querySelector("#saveProfile");
+
+
+	let btnEnter = containerAditionalInfo.querySelector("#create");
 	btnEnter.addEventListener("click", () => {
     let positionSelect=document.getElementById("position").value;
 	let regionSelect=document.getElementById("region").value;

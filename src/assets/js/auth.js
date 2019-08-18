@@ -66,10 +66,16 @@ export const loginGoogle = () => {
     firebase.auth().signInWithPopup(provider)
     .then(function(result) {
         //comprobar si el usuario se logueó por primera vez. Si ya estaba logueado, no sobreescribirá sus datos
-        ifIsNewUser(result); 
+        ifIsNewUser(result);
+        firebase.firestore().collection("Users").doc(result.user.uid).get().then((userData)=>{
+          let user = userData.data()
+          if (user.type && user.region)
+            window.location.hash = "#/wall";
+          else
+            window.location.hash = "#/info";
+        }) 
          window.location.hash = "#/info";           
-         //window.location.hash = "#/info";       
-         // window.location.hash = "#/wall";   
+       
       })
     .catch(function(error) {
         // Handle Errors here.
