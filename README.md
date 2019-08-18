@@ -38,8 +38,7 @@
 ***
 # Idea
 
-![Logo](./src/assets/img/logo.png)
-![img](./src/assets/img/img.png)
+![Logo](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/Logo.jpg)
 
 ## Preámbulo
 
@@ -100,7 +99,7 @@ Promover, de manera inclusiva, la práctica de jugar al fútbol a todo aquel que
 - Para ver la información de un partido o desistir de participar, se debe dar clic sobre su tarjeta ubicada en la sección "Tus próximos partidos" o para participar en uno desde la sección "Otros partidos"
 - Para ver la información de un equipo o retirarse de el, se debe dar clic sobre su tarjeta ubicada en la sección "Tus equipos" o para unirte a uno desde la sección "Otros equipos"
 - Para ver la información de una liga activa o retirarse, se debe dar clic sobre su tarjeta ubicada en el perfil de jugador
-- 
+
 # Metodología
 
 ## UX: Experiencia de Usuario
@@ -115,7 +114,7 @@ Con base en lo anterior, se discutió como equipo de trabajo la posibilidad de q
 
 Para la comprobación de la hipótesis se utilizó, como fundamento de nuestra investigación, una encuesta online la cual tuvo un alcance de 31 jugadores(as) de fútbol de todos los niveles.
 
-![Encuesta](./src/assets/img/readme/encuesta.jpg)
+![Encuesta](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/Readme/encuesta.jpg)
 
 Para acceder a la encuesta haz clic [aquí](https://forms.gle/E9W4kzqcDkDve7Y19)
 
@@ -152,7 +151,7 @@ La definición fue basada en las funcionalidades que la aplicación debe realiza
 ### Diagrama de flujo
 
 Detalla el proceso que sigue el uso de la aplicación, basado en las historias de usuarios antes definidas.  
-![Diagrama](./src/assets/img/readme/diagrama.jpg)
+![Diagrama](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/Readme/Diagrama.jpg)
 
 ### Prototipo de baja fidelidad
 
@@ -180,13 +179,13 @@ Algunas consideraciones recibidas respecto al nombre fueron:
 
 Se realizó en la aplicación Adobe XD basado en las ideas abstraidas del benchmarking y siguiendo los principios de diseño de balance, énfasis, repetición y proximidad.
 
-![Matchgoal-web](./src/assets/img/readme/web.jpg)
+![Matchgoal-web](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/Readme/web.jpg)
 
 #### Definición de colores
 
 Se definieron los colores en base a lo que representa la aplicación, también se utilizó una imagen de fondo representativa del pasto de una cancha de fútbol. El color verde como símbolo de la salud, el deporte, el bienestar y la energía, aspectos a los que aspira MatchGoal a entregar a sus usuarios a través de la promoción del jugar al fútbol. Y amarillo como símbolo de la competitividad, el movimiento y la extroversion, con la finalidad de promover la actividad física en comunidad.
 
-![Paleta-de-colores](./src/assets/img/readme/colores.jpg)
+![Paleta-de-colores](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/Readme/Colores.png)
 
 #### Testeo con usuarios
 
