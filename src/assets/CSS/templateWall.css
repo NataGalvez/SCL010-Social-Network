@@ -1,18 +1,16 @@
-.wall-content {
+.wall-content, .team-content {
   border: 1px solid transparent;
-  border-color: #a0a3a7 !important;
-  border-radius: 5px !important;
-  border-style: solid !important;
-  border-width: 1px !important;
+    border-color: #D0CECE !important;
+    border-radius: 5px;
+    border-style: solid !important;
+    border-width: 1px !important;
+    font-size: 14px;
+
+    display: flex;
+    flex-direction: column;
+    background-color: #fff !important;
 }
 
-.team-content {
-  border: 1px solid transparent;
-  border-color: #a0a3a7 !important;
-  border-radius: 5px !important;
-  border-style: solid !important;
-  border-width: 1px !important;
-}
 
 /* The Modal (background) */
 .modal {
