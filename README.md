@@ -3,125 +3,232 @@
 
 ## Índice
 
- - 1. [Idea](#idea)
-    *  1.1 [Preámbulo](#preámbulo)
-     * 1.2 [MatchGoal](#matchgoal)
-     * 1.3 [Funcionalidades](#funcionalidades)
-     * 1.4 [Público Objetivo](#usuarios)
-         * 1.4.1 [Principales usuarios](#usuarios)
-        * 1.4.2 [Potenciales clientes](#clientes)
-     * 1.5 [Visión](#visión)
-      * 1.6 [Misión](#misión)
-      * 1.7 [Cómo usar la aplicación](#usar)
-  - 2.  [Metodología](#metodología)
-     * 2.1 [UX: Experiencia de Usuario](#ux)
-        *   2.1.1 [Hipótesis](#hipótesis)
-             * 2.1.1.1 [Investigación](#investigación)
-             *  2.1.1.2 [Benchmarking](#benchmarking)
-             * 2.1.1.2 [Conclusión](#conclusión)
-        * 2.1.2 [Definición de historias de usuario](#historias)
-        * 2.1.3 [Diagrama de flujo](#diagrama)
-        * 2.1.4 [Prototipo de baja fidelidad](#baja)
-          * 2.1.4.1 [Wireframe](#wireframe)
-        * 2.1.5 [Prototipo de alta fidelidad](#alta)
-           * 2.1.5.1 [Definición del nombre de la aplicación](#nombre)
-          *  2.1.5.2 [Definición de colores](#colores)
-          *  2.1.5.3 [Definición de estilo](#estilo)
-          *   2.1.5.4 [Testeo con usuarios](#testeo)
-          *   2.1.5.5 [Modificaciones](#modificaciones)
-    * 2.2 [Planificación](#planificación)
-        *  2.2.1 [Recursos utilizados](#recursos)
-- 3.  [Herramientas utilizadas](#herramientas)
- - 4.  [Equipo de trabajo](#equipo-de-trabajo)
--  5.  [Proyecciones Futuras](#proyecciones-futuras)
+ - [Idea](#idea)
+    *  [Preámbulo](#preámbulo)
+     * [MatchGoal](#matchgoal)
+     * [Funcionalidades](#funcionalidades)
+     * [Público Objetivo](#usuarios)
+         * [Principales usuarios](#usuarios)
+        * [Potenciales clientes](#clientes)
+     * [Visión](#visión)
+      * [Misión](#misión)
+      * [Cómo usar la aplicación](#usar)
+  - [Metodología](#metodología)
+     * [UX: Experiencia de Usuario](#ux)
+        *   [Hipótesis](#hipótesis)
+             * [Investigación](#investigación)
+             *  [Benchmarking](#benchmarking)
+             * [Conclusión](#conclusión)
+        * [Definición de historias de usuario](#historias)
+        * [Diagrama de flujo](#diagrama)
+        * [Prototipo de baja fidelidad](#baja)
+          * [Wireframe](#wireframe)
+        *  [Prototipo de alta fidelidad](#alta)
+           * [Definición del nombre de la aplicación](#nombre)
+          *  [Definición de colores](#colores)
+          *  [Definición de estilo](#estilo)
+          *  [Testeo con usuarios](#testeo)
+          *  [Modificaciones](#modificaciones)
+    * [Planificación](#planificación)
+        *   [Recursos utilizados](#recursos)
+- [Herramientas utilizadas](#herramientas)
+ - [Equipo de trabajo](#equipo-de-trabajo)
+-  [Proyecciones Futuras](#proyecciones-futuras)
+
 ***
-# 1. Idea
+# Idea
 
 ![Logo](./src/assets/img/logo.png)
-## 1.1 Preámbulo
+![img](./src/assets/img/img.png)
+
+## Preámbulo
 
 Practicar deportes de equipo no siempre es una tarea fácil. Principalmente en las grandes ciudades, coordinarse con amigos es, en ocasiones, una tarea imposible, por lo que más de una vez tenemos que colgar nuestras botas y mirarlas con anhelo. Pero hoy, conectarnos está al alcance de la mano. Las redes sociales y las app de contacto se han especializado en cada ámbito de nuestra vida, y el deporte no iba a ser menos.
 
-## 1.2 MatchGoal
+## MatchGoal
 
+¿Ganas de jugar al fútbol pero no hay con quienes disputar un partido? Al parecer este es el problema más recurrente entre los aficionados jugadores de fútbol, y es que no es tarea fácil juntar equipos completos para disputar un partido, ya que deben coordinar sus horarios, definir un lugar accesible para la mayoría y contar con una cantidad mínima de participantes y, algo importante también que se debe considerar, las distintas categorías de juego que existen como fútbol 11, futbolito y baby fútbol y sus modalidades, partidos mixtos, masculinos o femeninos.
 
-![img](./src/assets/img/img.png)
+MatchGoal es una red social que permite al alcance de la mano y en poco tiempo, participar de partidos de fútbol con quienes comparten la misma pasión. También permite formar parte de una gran comunidad futbolística uniéndose a equipos o ligas con un sólo clic.
 
-¿Ganas de jugar al fútbol pero no hay con quienes disputar un partido? Al parecer este es el problema más recurrente entre los aficionados jugadores de fútbol, y es que no es tarea fácil juntar equipos completos para disputar un partido, ya que deben coordinar sus horarios, definir un lugar accesible para la mayoría y contar con una cantidad mínima de participantes y, algo importante también que se debe considerar, las distintas categorías de juego que existen como fútbol 11, futbolito y baby fútbol.
+¿Cómo funciona? ¡Rápido y sencillo! Solo debes crear un perfil en la aplicación, inscribirte para jugar en un partido con un sólo clic y listo, ya puedes divertirte jugando a lo que más te gusta.
 
-MatchGoal es una red social que permite al alcance de la mano y en poco tiempo, participar de partidos de fútbol con quienes comparten la misma pasión. También podrás formar parte de una gran comunidad futbolística uniendote a equipos o ligas con un sólo clic.
+> [Demo MatchGoal]() 
 
-¿Cómo funciona? ¡Rápido y sencillo! Solo se debe crear un perfil en la aplicación, seleccionar la posición de juego de preferencia e indicar tu ubicación.
+## Funcionalidades
 
-> Demo MatchGoal 
-
-## 1.3 Funcionalidades
-
-Con MatchGoal podrás:
-- Buscar partidos de fútbol e inscribirte con un solo clic
+MatchGoal permitirá:
+- Encontrar partidos de fútbol e inscribirte para jugar con un solo clic
+- Acceder a tu perfil de jugador
 - Conformar equipos e invitar a otros jugadores a unirse   
 - Participar de distintas competiciones como jugador o con tu equipo 
-- Crear tus propios eventos futbolísticos
-- Tener un perfil de jugador 
-- Reservar un lugar para llevar a cabo tus encuentros
+- Crear tus propios partidos o ligas competitivas
+- Formar parte de equipos o ligas organizadas por la comunidad
 
-## 1.4 Público Objetivo
+## Público Objetivo
 
-### 1.4.1 Principales usuarios
+### Principales usuarios
 
-MatchGoal es para hombres y mujeres con ganas de jugar al fútbol en sus distintas categorías y modalidades.
+MatchGoal es para todos aquellos hombres y mujeres mayores de 16 años que desean jugar al fútbol. Los partidos consideran las distintas categorías, modalidades y niveles de juego. 
 ¡Bienvenidos todos a este hermoso deporte!
 
-### 1.4.2 Potenciales clientes
+### Potenciales clientes
 
-## 1.5 Visión
+Se evaluaron distintas posibilidades futuras de generación de ingresos, sin dejar de ser una aplicación de acceso gratuito para sus usuarios. Dentro de las más atractivas están:
 
-## 1.6 Misión
+- **Patrocinio de centros deportivos:** permitir arrendar instalaciones deportivas para llevar a cabo partidos de fútbol o competiciones a través de la aplicación.
+- **Marketing y exposición online de marcas:** anuncios publicitarios dentro de la aplicación de las diferentes marcas patrocinadoras. 
+ - **Actividades patrocinadas:** los patrocinadores podrán exponer publicidad durante las actividades como también colocar stands para la venta de productos, entre otras formas de negocios. 
 
-## 1.7 Cómo usar la aplicación
+## Visión
 
-# 2.  Metodología
+Convertirnos en la comunidad de jugadores y jugadoras de fútbol más grande del país. 
 
-## 2.1 UX: Experiencia de Usuario
+## Misión
 
-### 2.1.1 Hipótesis
+Promover, de manera inclusiva, la práctica de jugar al fútbol a todo aquel que lo desee practicar, a través de la gestión y organización de partidos de cualquier nivel, ofreciendo una aplicación de encuentro entre jugadores y equipos.
 
-#### 2.1.1.1 Investigación
+## Cómo usar la aplicación
 
-#### 2.1.1.2 Benchmarking
+- El usuario debe acceder al sitio web de [MatchGoal]()
+- Para ingresar dentro de la aplicación deberá iniciar sesión o registrarse
+- Al registrarse deberá completar información adicional de su perfil como lo son la posición de juego de su preferencia y la Región donde se ubica.
+- Al ingresar a la aplicación se visualizará el muro (panel) de acceso a su perfil de jugador, notificaciones, sus equipos, sus próximos partidos, partidos disponibles para participar, otros equipos y el navegador de búsqueda.
+- Para editar la información de usuario, modificar las ligas activas y cerrar sesión se debe acceder al perfil de jugador desde el muro
+- Para crear un partido se debe dar clic en "Crear partido" ubicado en la sección del muro "Tus próximos partidos"
+- Para crear un equipo se debe dar clic en "Crear equipo" ubicado en la sección del muro "Tus equipos"
+- Para ver la información de un partido o desistir de participar, se debe dar clic sobre su tarjeta ubicada en la sección "Tus próximos partidos" o para participar en uno desde la sección "Otros partidos"
+- Para ver la información de un equipo o retirarse de el, se debe dar clic sobre su tarjeta ubicada en la sección "Tus equipos" o para unirte a uno desde la sección "Otros equipos"
+- Para ver la información de una liga activa o retirarse, se debe dar clic sobre su tarjeta ubicada en el perfil de jugador
+- 
+# Metodología
 
-#### 2.1.1.2 Conclusión
+## UX: Experiencia de Usuario
 
-### 2.1.2 Definición de historias de usuario
+### Hipótesis
 
-### 2.1.3 Diagrama de flujo
+La idea surgió a raíz de la problemática que dos de las integrantes del equipo de trabajo comparten: las pocas instancias para jugar al fútbol por la falta de organización con los demás jugadores y los pocos espacios para practicar fútbol femenino. 
 
-### 2.1.4 Prototipo de baja fidelidad
+Con base en lo anterior, se discutió como equipo de trabajo la posibilidad de que esta problemática la tuvieran también otros futbolistas. Se planteó entonces como hipótesis que, **la falta de organización o jugadores es una problemática constante entre quienes desean jugar al fútbol**.
 
-#### 2.1.4.1 Wireframe
+#### Investigación
 
-### 2.1.5 Prototipo de alta fidelidad
+Para la comprobación de la hipótesis se utilizó, como fundamento de nuestra investigación, una encuesta online la cual tuvo un alcance de 31 jugadores(as) de fútbol de todos los niveles.
 
-#### 2.1.5.1 Definición del nombre de la aplicación
+![Encuesta](./src/assets/img/readme/encuesta.jpg)
 
-#### 2.1.5.2 Definición de colores
+Para acceder a la encuesta haz clic [aquí](https://forms.gle/E9W4kzqcDkDve7Y19)
 
-#### 2.1.5.3 Definición de estilo
+### Benchmarking
 
-#### 2.1.5.4 Testeo con usuarios
+Se consideró dentro del Benchmarking las siguientes aplicaciones:
 
-#### 2.1.5.5 Modificaciones
+- [Equipo Completo](https://www.equipocompleto.cl/)
+Equipo completo entrega el servicio de mejorar la gestión y organización de actividades deportivas grupales en distintos deportes. 
 
-## 2.2 Planificación
-- Trello
-Para la planificación de las tareas del proyecto se utilizó la metodología ágil Kanban mediante la aplicación [Trello](https://trello.com/). El tablero se encuentra disponible [aquí](https://trello.com/b/4CMhkDxt)
+- [Meetup](https://www.meetup.com/)
+Meetup es un servicio usado para organizar grupos _online_ que organizan eventos en persona para personas con similares intereses. Se analizó la manera de organizar y presentar la información tanto de grupos como eventos, ya que consideramos es una forma óptima y sencilla de utilizar por los usuarios, logrando adaptar su modelo a nuestra aplicación.
 
-### 2.2.1 Recursos utilizados
+- [Pitz](https://play.google.com/store/apps/details?id=com.amplemind.dev.pitz&hl=es_CL)
+Pitz es una aplicación que permite organizar partidos de fútbol. Se comparó nuestro diagrama de flujo con la usabilidad de la aplicación para durimentar el flujo de decisión de los usuarios dentro de MatchGoal. Además, se analizaron los procesos de creación de partidos y creación de equipos para adaptarlos a nustra aplicación.
 
-# 3.  Herramientas utilizadas
-- Balsamiq
-El diseño de la interfaz de usuario de baja fidelidad se elaboró a través de la aplicación [Balsamiq](https://balsamiq.com/). 
+### Definición de historias de usuario
 
-# 4.  Equipo de trabajo
+La definición fue basada en las funcionalidades que la aplicación debe realizar para cumplir con las necesidades de sus usuarios.
 
-# 5.  Proyecciones Futuras
+- **Historia de usuario #1: Ingresar a la aplicación**: Yo como jugador(a) de fútbol quisiera ingresar mediante inicio de sesión o registro a la aplicación para acceder a sus servicios
+
+- **Historia de usuario #2: Muro/_timeline_**: Yo como jugador(a) de futbol quisiera visualizar en un sólo lugar los equipos, partidos y ligas disponibles para participar.
+
+- **Historia de usuario #3: Perfil**: Yo como jugador(a) de fútbol quisiera tener un perfil para poder participar dentro de la comunidad
+
+- **Historia de usuario #4: Partidos**: Yo como jugador(a) de futbol quisiera crear, participar o desistir de encuentros futbolísticos
+
+- **Historia de usuario #5: Equipos**: Yo como jugador(a) de fútbol quisiera poder crear y participar de equipos para aumentar mis posibilidades de jugar
+
+- **Historia de usuario #6: Ligas**: Yo como jugador(a) de fútbol quisiera poder participar de ligas como jugador(a) o con mi equipo para aumentar mis posibilidades de jugar e interactuar con la comunidad
+
+
+### Diagrama de flujo
+
+Detalla el proceso que sigue el uso de la aplicación, basado en las historias de usuarios antes definidas.  
+![Diagrama](./src/assets/img/readme/diagrama.jpg)
+
+### Prototipo de baja fidelidad
+
+#### Wireframe
+
+Se elaboró el prototipo de baja fidelidad según las primeras lluvias de ideas sobre la aplicación. el cual fue la principal guía para la elaboración del diseño y estructura
+
+Se puede visualizar el _wireframe_ completo [aquí](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/Registrarse/src/assets/img/bajaFidelidad)
+
+#### Definición del nombre de la aplicación
+
+La definición del nombre se realizó mediante el testeo, con seis compañeras del _Bootcamp_, de las cuatro siguientes alternativas:
+- MatchGoal
+- Todos Jugamos
+- FutbolGO
+- MatchRival
+
+Tras obtener 5 votos a favor, MatchGoal fue elegido como nombre para la aplicación.
+
+Algunas consideraciones recibidas respecto al nombre fueron:
+- Es corto y fácil de recordar
+- Se asocia al fútbol porque es una palabra compuesta entre partido (match) y gol (goal)
+
+### Prototipo de alta fidelidad
+
+Se realizó en la aplicación Adobe XD basado en las ideas abstraidas del benchmarking y siguiendo los principios de diseño de balance, énfasis, repetición y proximidad.
+
+![Matchgoal-web](./src/assets/img/readme/web.jpg)
+
+#### Definición de colores
+
+Se definieron los colores en base a lo que representa la aplicación, también se utilizó una imagen de fondo representativa del pasto de una cancha de fútbol. El color verde como símbolo de la salud, el deporte, el bienestar y la energía, aspectos a los que aspira MatchGoal a entregar a sus usuarios a través de la promoción del jugar al fútbol. Y amarillo como símbolo de la competitividad, el movimiento y la extroversion, con la finalidad de promover la actividad física en comunidad.
+
+![Paleta-de-colores](./src/assets/img/readme/colores.jpg)
+
+#### Testeo con usuarios
+
+
+
+#### Modificaciones
+
+## Planificación
+
+- Kanban
+Para la planificación y gestión de las tareas del proyecto se utilizó la metodología ágil Kanban. El tablero se encuentra disponible [aquí](https://trello.com/b/4CMhkDxt)
+
+- _Daily Meeting_
+Reuniones diarias para inspeccionar el trabajo realizado el día anterior y planificar las actividades del día
+
+# Herramientas utilizadas
+
+- [Balsamiq](https://balsamiq.com/)
+Herramienta utilizada para elaborar el prototipo de baja fidelidad _Wireframe_. 
+
+- [Lucidchart](https://lucidchart.com/‎)
+Herramienta utilizada para elaborar el diagrama de flujo.
+
+- [Google Forms](https://www.google.com/intl/es-419_cl/forms/about/)
+Herramienta utilizada para elaborar la encuesta de nuestra hipótesis.
+
+- [Trello](https://trello.com/)
+Herramienta utilizada para elaborar el tablero de planificación Kanban.
+
+- [Adobe XD](https://www.adobe.com/la/products/xd.html)
+Herramienta utilizada para elaborar el prototipo de alta fidelidad.
+
+- [Firebase](https://firebase.google.com/)
+Herramienta utilizada para compilar nuestro proyecto.
+
+# Equipo de trabajo
+
+[Claudia Quezada](https://github.com/ClaudiaQuezadaRiquelme)
+
+[Natalia Galvez](https://github.com/natagalvez)
+
+[Scarlette Villarreal Á.](https://github.com/VillarrealScarlette/)
+
+# Proyecciones Futuras
+
