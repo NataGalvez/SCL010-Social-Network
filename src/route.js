@@ -2,6 +2,7 @@ import { templateLogin} from "./assets/views/templateLogin.js";
 import { templateCreateAccount } from "./assets/views/templateCreateAccount.js";
 import { templateAditionalInfo} from "./assets/views/templateAditionalInfo.js";
 import { templateHome } from "./assets/views/templateHome.js";
+import { templateWall } from "./assets/views/templateWall.js";
 
 //Envía el nuevo hash para mostrar el template que se va a mostrar a través de ese 
 //nuevo hash
@@ -16,6 +17,9 @@ const changeRouter = (hash) => {
         return showTemplate(hash);
     }
     if (hash === "#/create") {
+        return showTemplate(hash);
+    }
+    if (hash === "#/wall") {
         return showTemplate(hash);
     }
     if (hash === "#/info") {
@@ -37,6 +41,9 @@ const showTemplate = (hash) => {
         break;
         case "create":
             containerRoot.appendChild(templateCreateAccount());
+        break;
+        case "wall":
+            containerRoot.appendChild(templateWall());
         break;
         case "info":
             containerRoot.appendChild(templateAditionalInfo());
