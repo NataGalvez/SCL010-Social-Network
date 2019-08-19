@@ -1,8 +1,9 @@
 import { templateLogin} from "./assets/views/templateLogin.js";
 import { templateCreateAccount } from "./assets/views/templateCreateAccount.js";
-import { templateAditionalInfo} from "./assets/views/templateAditionalInfo.js";
 import { templateHome } from "./assets/views/templateHome.js";
+import { templateAditionalInfo } from "./assets/views/templateAditionalInfo.js";
 import { templateWall } from "./assets/views/templateWall.js";
+import { templateProfile} from "./assets/views/templateProfile.js";
 
 //Envía el nuevo hash para mostrar el template que se va a mostrar a través de ese 
 //nuevo hash
@@ -14,7 +15,9 @@ const changeRouter = (hash) => {
         return showTemplate(hash);
     }
     if (hash === "#/login") {
-        return showTemplate(hash);
+
+    return showTemplate(hash);
+
     }
     if (hash === "#/create") {
         return showTemplate(hash);
@@ -25,6 +28,10 @@ const changeRouter = (hash) => {
     if (hash === "#/info") {
         return showTemplate(hash);
     }
+    if (hash=== "#/profile") {
+        return showTemplate(hash);
+    }
+    
 }
 //Completar el hash según el cambio en la ruta
 const showTemplate = (hash) => {
@@ -48,6 +55,10 @@ const showTemplate = (hash) => {
         case "info":
             containerRoot.appendChild(templateAditionalInfo());
         break;
+        case "profile":
+        containerRoot.appendChild(templateProfile());
+        break;
+
         default:
             containerRoot.innerHTML = `<p>Página no encontrada, Error 404</p>`
     }

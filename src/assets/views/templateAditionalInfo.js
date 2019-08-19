@@ -1,9 +1,14 @@
+import { writeUserData } from "../js/auth.js";
+import { getCurrentUser} from "../js/auth.js";
 export const templateAditionalInfo = () => {
     const containerAditionalInfo = document.createElement("div");
-    containerAditionalInfo.className = "container";
-    const contentInfo = ` 
+
+    containerAditionalInfo.className = "container-info-perfil";
+    let contentInfo = `
+     
     <div class="login-content">
                     <div class="selectors">
+                    {displayName}
                     <select id="position">
                         <option value="0"> Seleccionar posición</option>
                         <option value="Arquero"> Arquero </option>
@@ -30,17 +35,30 @@ export const templateAditionalInfo = () => {
                         <option value="Región de Aysén del General Carlos Ibáñez del Campo"> Región de Aysén del General Carlos Ibáñez del Campo</option>
                         <option value="Región de Magallanes y la Antártica Chilena"> Región de Magallanes y la Antártica Chilena</option>   
                     </select>
+
+    
+
                     </div>
-    <button id="create" class="btn">Ir a MatchGoal</button>
+    	<button id="create" class="btn">Ir a MatchGoal</button>
     </div>`
+
+    let currentUser = getCurrentUser();
+    contentInfo = contentInfo.replace("{displayName}", currentUser.displayName);
 	
 	containerAditionalInfo.innerHTML = contentInfo;
-	
+
+
 	let btnEnter = containerAditionalInfo.querySelector("#create");
 	btnEnter.addEventListener("click", () => {
     let positionSelect=document.getElementById("position").value;
 	let regionSelect=document.getElementById("region").value;
-	document.getElementById("root").innerHTML = regionSelect+" y " +positionSelect;
+	let currentUser = getCurrentUser();
+	writeUserData(getCurrentUser(), {
+		position: positionSelect,
+		region: regionSelect,
+
+	})
+	window.location.hash= "#/wall";
 })
 return containerAditionalInfo;
 }

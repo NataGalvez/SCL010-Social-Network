@@ -1,3 +1,4 @@
+
 export const templateWall = () => {
     document.querySelector(".menu-bar").style.display="none";
     document.querySelector(".nav-content").style.display="none";
