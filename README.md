@@ -14,7 +14,7 @@
       * [Misión](#misión)
       * [Cómo usar la aplicación](#cómo-usar-la-aplicación)
   - [Metodología](#metodología)
-     * [UX: Experiencia de Usuario](#ux:-experiencia-de-usuario)
+     * [Experiencia de Usuario](#experiencia-de-usuario)
         *   [Hipótesis](#hipótesis)
              * [Investigación](#investigación)
              *  [Benchmarking](#benchmarking)
