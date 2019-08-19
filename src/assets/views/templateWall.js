@@ -17,6 +17,7 @@ export const templateWall = () => {
         <div id="teams">
             <div class="your-team">
                 <h3>Tus Equipos</h3>
+
                 <button id="createTeam" class="create">Crear Equipo</button>
             </div>
             <div class="containerTeam" id="containerTeam">
@@ -257,7 +258,6 @@ window.onclick = function(event) {
 }
 
 
-
 //cuando cargue el usuario actual, si tiene equipos, mostrarlos
 const containerTeam = containerWall.querySelector("#containerTeam");
 //cuando cargue el usuario actual, si tiene partidos, mostrarlos
@@ -278,10 +278,18 @@ if (user != null) {
                 <div class="team-type"><p>${doc.data().teamType}</p></div>
                 <div class="team-name"><h4>${doc.data().teamName}</h4></div>
                 <div class="team-info"><p>${doc.data().info}</p></div>
-                <div class="team-members"><p>${doc.data().members}</p></div>
+                <button class="joinMe" id="${doc.data().teamId}" value="${doc.data().teamId}">Unirme</button>
+                 <p id="team-userJoins-${doc.data().teamId}"></p>
             </div>
             `
         containerTeam.appendChild(contentTeam);
+            counterUserJoins(user, doc);//actualizar html id team-userJoins...
+            const btnJoinMe = containerWall.querySelector("#"+doc.data().teamId);
+            btnJoinMe.addEventListener("click", () => {
+                console.log("asignó el listener que querimoh");
+                //cuando presione botón, se guarda en una colección de usuarios del equipo los usuarios que se unieron (para partir, sólo puedo unirme yo mismo)
+                userJoins(user, doc);
+            })
         });
     });
     containerWall.querySelector("#containerTeam");
@@ -301,9 +309,18 @@ if (user != null) {
                 <div class="match-matchType"><p>${doc.data().matchType}</p></div>
                 <div class="match-organizer"><p>Organizado por: ${doc.data().challengingTeamName}</p></div>
                 <div class="match-address"><span class="icon-location"></span><p>${doc.data().address}</p></div>
+                <button class="takePart" id="${doc.data().matchId}" value="${doc.data().matchId}">Participar</button>
+                <p id="match-takePart-${doc.data().matchId}"></p>
             </div>
             `
-        containerMatch.appendChild(contentMatch);
+            containerMatch.appendChild(contentMatch);
+            counterUsersTakePart(user, doc);//actualizar html id match-takePart-...
+            const btnTakePart = containerWall.querySelector("#"+doc.data().matchId);
+            btnTakePart.addEventListener("click", () => {
+                console.log("asignó el listener que querimoh");
+                //cuando presione botón, se guarda en una colección de usuarios del equipo los usuarios que se unieron (para partir, sólo puedo unirme yo mismo)
+                userTakePart(user, doc);
+            })
         });
     });
     containerWall.querySelector("#containerMatch");
@@ -317,32 +334,46 @@ const btnsaveTeam = containerWall.querySelector("#saveTeam");
 btnsaveTeam.addEventListener("click", () => {
     let user = firebase.auth().currentUser;//Obtén el usuario con sesión activa
 
-    if (user != null) { //añade una sub collección al usuario
+    if (user != null) {//añade una sub collección al usuario
         firebase.firestore().collection("Users").doc(user.uid).collection("teams").add({
             teamName: containerWall.querySelector("#teamName").value,
             teamType: containerWall.querySelector("#teamType").value,
             members: 1,
             photo: "",
-            info: ""
+            info: "",
+            teamId: ""
         });
         //imprimir equipos del usuario cuando ya creó equipo nuevo
         firebase.firestore().collection("Users").doc(user.uid).collection("teams").get()
         .then(function(querySnapshot) {
             containerTeam.innerHTML = "";//borra para que no se acumulen
             querySnapshot.forEach(function(doc) {
-            // doc.data() is never undefined for query doc snapshots
-            //console.log(doc.id, " => ", doc.data());
+                // doc.data() is never undefined for query doc snapshots
+                //console.log(doc.id, " => ", doc.data());
+
+                //(1)update id de cada team para que quede guardado en database (no se puede guardar el id con .add, por eso lo añadimos aquí). Se actualizará forever and ever
+                firebase.firestore().collection("Users").doc(user.uid).collection("teams").doc(doc.id).update({
+                    "teamId": doc.id
+                })
+        
             const contentTeam = document.createElement("div");
             contentTeam.innerHTML = `
                 <div class="team-content" id="team-content">
                     <div class="team-photo"><a href="${doc.data().photo}</div>
                     <div class="team-type"><p>${doc.data().teamType}</p></div>
-                    <div  class="team-name"><h4>${doc.data().teamName}</h4></div>
-                    <div  class="team-info"><p>${doc.data().info}</p></div>
-                    <div  class="team-members"><p>${doc.data().members}</p></div>
+                    <div class="team-name"><h4>${doc.data().teamName}</h4></div>
+                    <div class="team-info"><p>${doc.data().info}</p></div>
+                    <button class="joinMe" id="${doc.data().teamId}" value="${doc.data().teamId}">Unirme</button>
+                     <p id="team-userJoins-${doc.data().teamId}"></p>
                 </div>
                 `
             containerTeam.appendChild(contentTeam);
+                const btnJoinMe = containerWall.querySelector("#"+doc.data().teamId);
+                btnJoinMe.addEventListener("click", () => {
+                    console.log("asignó el listener que querimoh");
+                    //cuando presione botón, se guarda en una colección de usuarios del equipo los usuarios que se unieron (para partir, sólo puedo unirme yo mismo)
+                    userJoins(user, doc);
+                })
             });
         });
     }
@@ -362,34 +393,123 @@ btnsaveMatch.addEventListener("click", () => {
             matchGame: containerWall.querySelector("#matchGame").value,
             teamTypeMatch: containerWall.querySelector("#teamTypeMatch").value,
             matchType: containerWall.querySelector("#matchType").value,
+            organizer: containerWall.querySelector("#organizer").value,
             date: containerWall.querySelector("#day").value +" "+ containerWall.querySelector("#month").value +" "+ containerWall.querySelector("#year").value,
             schedule: containerWall.querySelector("#hour").value +":"+ containerWall.querySelector("#min").value,
-            address: containerWall.querySelector("#address").value
+            address: containerWall.querySelector("#address").value,
+            organizer: containerWall.querySelector("#organizer").value
+            matchId: ""
         });
         //imprimir partidos del usuario cuando ya creó un partido nuevo
         firebase.firestore().collection("Users").doc(user.uid).collection("matches").get()
         .then(function(querySnapshot) {
             containerMatch.innerHTML = "";//borra para que no se acumulen
             querySnapshot.forEach(function(doc) {
-            // doc.data() is never undefined for query doc snapshots
-            //console.log(doc.id, " => ", doc.data());
-            const contentMatch = document.createElement("div");
-            contentMatch.innerHTML = `
-            <div class="match-content" id="match-content">
+                // doc.data() is never undefined for query doc snapshots
+                //console.log(doc.id, " => ", doc.data());
+
+                //(1)update id de cada team para que quede guardado en database (no se puede guardar el id con .add, por eso lo añadimos aquí). Se actualizará forever and ever
+                firebase.firestore().collection("Users").doc(user.uid).collection("matches").doc(doc.id).update({
+                    "matchId": doc.id
+                })
+
+                const contentMatch = document.createElement("div");
+                contentMatch.innerHTML = `
+                <div class="match-content" id="match-content">
                 <div class="match-rivals"><p>${doc.data().challengingTeamName} vs ${doc.data().challengedTeamName}</p></div>
                 <div class="match-date"><p>${doc.data().date}, ${doc.data().schedule}</p></div>
                 <div class="match-matchGame&teamType"><p>${doc.data().matchGame}, ${doc.data().teamTypeMatch}</p></div>
                 <div class="match-matchType"><p>${doc.data().matchType}</p></div>
                 <div class="match-organizer"><p>Organizado por: ${doc.data().challengingTeamName}</p></div>
                 <div class="match-address"><span class="icon-location"></span><p>${doc.data().address}</p></div>
-            </div>
-            `
-            containerMatch.appendChild(contentMatch);
+                 <button class="takePart" id="${doc.data().matchId}" value="${doc.data().matchId}">Participar</button>
+                 <p id="match-takePart-${doc.data().matchId}"></p>
+                </div>
+                `
+                containerMatch.appendChild(contentMatch);
+                const btnTakePart = containerWall.querySelector("#"+doc.data().matchId);
+                btnTakePart.addEventListener("click", () => {
+                    console.log("asignó el listener que querimoh");
+                    //cuando presione botón, se guarda en una colección de usuarios del equipo los usuarios que se unieron (para partir, sólo puedo unirme yo mismo)
+                    userTakePart(user, doc);
+                })
             });
         });
     }
     createMatchModal.style.display = "none";
 })
+
+
+const userTakePart = (user, doc) => {
+    firebase.firestore().collection("Users").doc(user.uid).collection("matches").doc(doc.data().matchId).collection("takePart").doc(user.uid).set({
+        username: user.displayName,
+        email: user.email,
+        userId: user.uid,
+        position: "",
+        region: "",
+        photo: ""
+        //some more user data
+    }).then(() => {
+        console.log("Document successfully written!");
+        //añadir la cantidad de personas que se unieron al partido al html
+        counterUsersTakePart(user, doc);
+    })
+    .catch(error => {
+        console.error("Error writing document: ", error);
+    });
+    console.log("terminé de agregar datos");
+}
+
+const userJoins = (user, doc) => {
+    firebase.firestore().collection("Users").doc(user.uid).collection("teams").doc(doc.data().teamId).collection("usersJoin").doc(user.uid).set({
+        username: user.displayName,
+        email: user.email,
+        userId: user.uid,
+        position: "",
+        region: "",
+        photo: ""
+        //some more user data
+    }).then(() => {
+        console.log("Document successfully written!");
+        //añadir la cantidad de personas que se unieron al partido al html
+        counterUserJoins(user, doc);
+    })
+    .catch(error => {
+        console.error("Error writing document: ", error);
+    });
+    console.log("terminé de agregar datos");
+}
+
+const counterUserJoins = (user, doc) => {//añadir la cantidad de personas que se unieron al partido al html
+    firebase.firestore().collection("Users").doc(user.uid).collection("teams").doc(doc.data().teamId).collection("usersJoin").get()
+    .then(function(querySnapshot) {
+        containerWall.querySelector("#team-userJoins-"+doc.data().teamId).innerHTML = "";//borra para que no se acumulen
+        let counter = 0;
+        console.log("counter: "+counter);
+        
+        querySnapshot.forEach(function(doc) {
+            counter++;
+            console.log("counter: "+counter);
+        });
+        containerWall.querySelector("#team-userJoins-"+doc.data().teamId).innerHTML = "Miembros: "+ counter;
+    });
+}
+
+const counterUsersTakePart = (user, doc) => {
+    //añadir la cantidad de personas que se unieron al partido al html
+    firebase.firestore().collection("Users").doc(user.uid).collection("matches").doc(doc.data().matchId).collection("takePart").get()
+    .then(function(querySnapshot) {
+        containerWall.querySelector("#match-takePart-"+doc.data().matchId).innerHTML = "";//borra para que no se acumulen
+        let counter = 0;
+        console.log("counter: "+counter);
+        
+        querySnapshot.forEach(function(doc) {
+            counter++;
+            console.log("counter: "+counter);
+        });
+        containerWall.querySelector("#match-takePart-"+doc.data().matchId).innerHTML = "Participantes: "+counter;
+    });
+}
 
 
 return containerWall;
