@@ -13,7 +13,7 @@ export const templateWall = () => {
     const contentWall = `
     <div class="wall-content">
         <div id="header">
-            <input id="search" placeholder="Búsqueda">
+            <input id="search" type="text" placeholder="Búsqueda">
         </div>
         <div id="teams">
             <div class="your-team">
@@ -510,7 +510,5 @@ const counterUsersTakePart = (user, doc) => {
         containerWall.querySelector("#match-takePart-"+doc.data().matchId).innerHTML = "Participantes: "+counter;
     });
 }
-
-
 return containerWall;
-}
+};
