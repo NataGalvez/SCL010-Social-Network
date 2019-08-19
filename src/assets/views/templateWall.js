@@ -278,13 +278,13 @@ if (user != null) {
                 <div class="team-type"><p>${doc.data().teamType}</p></div>
                 <div class="team-name"><h4>${doc.data().teamName}</h4></div>
                 <div class="team-info"><p>${doc.data().info}</p></div>
-                <button class="select join" id="${doc.data().teamId}" value="${doc.data().teamId}">Unirme</button>
+                <button class="select join" id="id_${doc.data().teamId}" value="${doc.data().teamId}">Unirme</button>
                  <p id="team-userJoins-${doc.data().teamId}"></p>
             </div>
             `
         containerTeam.appendChild(contentTeam);
             counterUserJoins(user, doc);//actualizar html id team-userJoins...
-            const btnJoinMe = containerWall.querySelector("#"+doc.data().teamId);
+            const btnJoinMe = containerWall.querySelector("#id_"+doc.data().teamId);
             btnJoinMe.addEventListener("click", () => {
                 console.log("asignó el listener que querimoh");
                 //cuando presione botón, se guarda en una colección de usuarios del equipo los usuarios que se unieron (para partir, sólo puedo unirme yo mismo)
@@ -309,13 +309,13 @@ if (user != null) {
                 <div class="match-matchType"><p>${doc.data().matchType}</p></div>
                 <div class="match-organizer"><p>Organizado por: ${doc.data().challengingTeamName}</p></div>
                 <div class="match-address"><span class="icon-location"></span><p>${doc.data().address}</p></div>
-                <button class="select takePart" id="${doc.data().matchId}" value="${doc.data().matchId}">Participar</button>
+                <button class="select takePart" id="id_${doc.data().matchId}" value="${doc.data().matchId}">Participar</button>
                 <p id="match-takePart-${doc.data().matchId}"></p>
             </div>
             `
             containerMatch.appendChild(contentMatch);
             counterUsersTakePart(user, doc);//actualizar html id match-takePart-...
-            const btnTakePart = containerWall.querySelector("#"+doc.data().matchId);
+            const btnTakePart = containerWall.querySelector("#id_"+doc.data().matchId);
             btnTakePart.addEventListener("click", () => {
                 console.log("asignó el listener que querimoh");
                 //cuando presione botón, se guarda en una colección de usuarios del equipo los usuarios que se unieron (para partir, sólo puedo unirme yo mismo)
@@ -363,12 +363,12 @@ btnsaveTeam.addEventListener("click", () => {
                     <div class="team-type"><p>${doc.data().teamType}</p></div>
                     <div class="team-name"><h4>${doc.data().teamName}</h4></div>
                     <div class="team-info"><p>${doc.data().info}</p></div>
-                    <button class="select join" id="${doc.data().teamId}" value="${doc.data().teamId}">Unirme</button>
+                    <button class="select join" id="id_${doc.data().teamId}" value="${doc.data().teamId}">Unirme</button>
                      <p id="team-userJoins-${doc.data().teamId}"></p>
                 </div>
                 `
             containerTeam.appendChild(contentTeam);
-                const btnJoinMe = containerWall.querySelector("#"+doc.data().teamId);
+                const btnJoinMe = containerWall.querySelector("#id_"+doc.data().teamId);
                 btnJoinMe.addEventListener("click", () => {
                     console.log("asignó el listener que querimoh");
                     //cuando presione botón, se guarda en una colección de usuarios del equipo los usuarios que se unieron (para partir, sólo puedo unirme yo mismo)
@@ -393,11 +393,10 @@ btnsaveMatch.addEventListener("click", () => {
             matchGame: containerWall.querySelector("#matchGame").value,
             teamTypeMatch: containerWall.querySelector("#teamTypeMatch").value,
             matchType: containerWall.querySelector("#matchType").value,
-            organizer: containerWall.querySelector("#organizer").value,
+            organizer: containerWall.querySelector("#challengingTeamName").value,
             date: containerWall.querySelector("#day").value +" "+ containerWall.querySelector("#month").value +" "+ containerWall.querySelector("#year").value,
             schedule: containerWall.querySelector("#hour").value +":"+ containerWall.querySelector("#min").value,
             address: containerWall.querySelector("#address").value,
-            organizer: containerWall.querySelector("#organizer").value,
             matchId: ""
         });
         //imprimir partidos del usuario cuando ya creó un partido nuevo
@@ -422,12 +421,12 @@ btnsaveMatch.addEventListener("click", () => {
                 <div class="match-matchType"><p>${doc.data().matchType}</p></div>
                 <div class="match-organizer"><p>Organizado por: ${doc.data().challengingTeamName}</p></div>
                 <div class="match-address"><span class="icon-location"></span><p>${doc.data().address}</p></div>
-                <div class="container-takePart><button class="select takePart" id="${doc.data().matchId}" value="${doc.data().matchId}">Participar</button></div>
+                <button class="select takePart" id="id_${doc.data().matchId}" value="${doc.data().matchId}">Participar</button>
                  <p id="match-takePart-${doc.data().matchId}"></p>
                 </div>
                 `
                 containerMatch.appendChild(contentMatch);
-                const btnTakePart = containerWall.querySelector("#"+doc.data().matchId);
+                const btnTakePart = containerWall.querySelector("#id_"+doc.data().matchId);
                 btnTakePart.addEventListener("click", () => {
                     console.log("asignó el listener que querimoh");
                     //cuando presione botón, se guarda en una colección de usuarios del equipo los usuarios que se unieron (para partir, sólo puedo unirme yo mismo)
