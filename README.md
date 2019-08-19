@@ -1,315 +1,238 @@
 # Creando una Red Social
+> Este proyecto fue desarrollado en Laboratoria SCL y tuvo por objetivo crear una red social que permita a cualquier usuario crear una cuenta de acceso y loguearse con ella; crear, editar, borrar y _"likear"_ publicaciones.
 
 ## Índice
 
-* [Preámbulo](#preámbulo)
-* [Resumen del proyecto](#resumen-del-proyecto)
-* [Objetivos de aprendizaje](#objetivos-de-aprendizaje)
-* [Consideraciones generales](#consideraciones-generales)
-* [Parte obligatoria](#parte-obligatoria)
-* [Hacker Edition](#hacker-edition)
-* [Consideraciones técnicas](#consideraciones-técnicas-front-end)
-* [Contenido de referencia](#pistas-/-tips-/-lecturas-complementarias)
+ - [Idea](#idea)
+    *  [Preámbulo](#preámbulo)
+     * [MatchGoal](#matchgoal)
+     * [Funcionalidades](#funcionalidades)
+     * [Público Objetivo](#objetivo)
+         * [Principales usuarios](#principales-usuarios)
+        * [Potenciales clientes](#potenciales-clientes)
+     * [Visión](#visión)
+      * [Misión](#misión)
+      * [Cómo usar la aplicación](#cómo-usar-la-aplicación)
+  - [Metodología](#metodología)
+     * [UX: Experiencia de Usuario](#ux)
+        *   [Hipótesis](#hipótesis)
+             * [Investigación](#investigación)
+             *  [Benchmarking](#benchmarking)
+        * [Definición de historias de usuario](#historias)
+        * [Diagrama de flujo](#diagrama)
+        * [Prototipo de baja fidelidad](#baja)
+          * [Wireframe](#wireframe)
+        *  [Prototipo de alta fidelidad](#alta)
+           * [Definición del nombre de la aplicación](#nombre)
+          *  [Definición de colores](#colores)
+          *  [Definición de estilo](#estilo)
+          *  [Testeo con usuarios](#testeo)
+          *  [Modificaciones](#modificaciones)
+    * [Planificación](#planificación)
+- [Herramientas utilizadas](#herramientas)
+ - [Equipo de trabajo](#equipo-de-trabajo)
+-  [Proyecciones Futuras](#proyecciones-futuras)
 
 ***
+# Idea
+
+![Logo](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/Logo.jpg)
 
 ## Preámbulo
 
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
-sociales han invadido nuestras vidas. Las amamos u odiamos, y much@s no podemos
-vivir sin ellas.
+Practicar deportes de equipo no siempre es una tarea fácil. Principalmente en las grandes ciudades, coordinarse con amigos es, en ocasiones, una tarea imposible, por lo que más de una vez tenemos que colgar nuestras botas y mirarlas con anhelo. Pero hoy, conectarnos está al alcance de la mano. Las redes sociales y las app de contacto se han especializado en cada ámbito de nuestra vida, y el deporte no iba a ser menos.
 
-Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
-en una ronda de financiamiento con inversionistas, se presentó una red social
-para químicos en la que los usuarios podían publicar artículos sobre sus
-investigaciones, comentar en los artículos de sus colegas, y filtrar artículos
-de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo
-más comentado.
+## MatchGoal
 
-## Resumen del proyecto
+¿Ganas de jugar al fútbol pero no hay con quienes disputar un partido? Al parecer este es el problema más recurrente entre los aficionados jugadores de fútbol, y es que no es tarea fácil juntar equipos completos para disputar un partido, ya que deben coordinar sus horarios, definir un lugar accesible para la mayoría y contar con una cantidad mínima de participantes y, algo importante también que se debe considerar, las distintas categorías de juego que existen como fútbol 11, futbolito y baby fútbol y sus modalidades, partidos mixtos, masculinos o femeninos.
 
-En este proyecto construirás una Red Social sobre lo que decidan tú y tu equipo.
-Podría ser, por ejemplo, sobre alimentación saludable, feminismo, educación,
-salud, energías renovables, amantes de las [empanadas](https://es.wikipedia.org/wiki/Empanada) o de
-los [tacos de canasta](https://es.wikipedia.org/wiki/Taco), etc.
+MatchGoal es una red social que permite al alcance de la mano y en poco tiempo, participar de partidos de fútbol con quienes comparten la misma pasión. También permite formar parte de una gran comunidad futbolística uniéndose a equipos o ligas con un sólo clic.
 
-Tu Red Social tendrá que permitir a cualquier usuario crear una cuenta de
-acceso y loguearse con ella; crear, editar, borrar y _"likear"_ publicacciones.
+¿Cómo funciona? ¡Rápido y sencillo! Solo debes crear un perfil en la aplicación, inscribirte para jugar en un partido con un sólo clic y listo, ya puedes divertirte jugando a lo que más te gusta.
 
-## Objetivos de Aprendizaje
+> [Demo MatchGoal]() 
 
-El objetivo principal de aprendizaje de este proyecto es construir una
-[Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
-[_responsive_](https://github.com/Laboratoria/curricula-js/tree/master/topics/css/02-responsive)
- (con más de una vista / página) en la que podamos **leer y escribir datos.**
+## Funcionalidades
 
-## Consideraciones generales
+MatchGoal permitirá:
+- Encontrar partidos de fútbol e inscribirte para jugar con un solo clic
+- Acceder a tu perfil de jugador
+- Conformar equipos e invitar a otros jugadores a unirse   
+- Participar de distintas competiciones como jugador o con tu equipo 
+- Crear tus propios partidos o ligas competitivas
+- Formar parte de equipos o ligas organizadas por la comunidad
 
-- Este proyecto se debe "resolver" en tríos.
+## Público Objetivo
 
-- La lógica del proyecto debe estar implementada completamente en JavaScript (ES6+),
-HTML y CSS :smiley:. Para este proyecto no está permitido utilizar
-frameworks o librerías de CSS y JS.
+### Principales usuarios
 
-- La división del trabajo debe permitir que todo el equipo
-practique el aprendizaje de todo lo esperado **cada sprint**. _No se dividan el
-trabajo como en una fábrica._
+MatchGoal es para todos aquellos hombres y mujeres mayores de 16 años que desean jugar al fútbol. Los partidos consideran las distintas categorías, modalidades y niveles de juego. 
+¡Bienvenidos todos a este hermoso deporte!
 
-- Trabajen en una sola historia por vez, no pueden avanzar a la siguiente sin
-haber completado la anterior.
+### Potenciales clientes
 
-Para comenzar tendrás que hacer un _fork_ y _clonar_ este
-repositorio.
+Se evaluaron distintas posibilidades futuras de generación de ingresos, sin dejar de ser una aplicación de acceso gratuito para sus usuarios. Dentro de las más atractivas están:
 
-## Parte obligatoria
+- **Patrocinio de centros deportivos:** permitir arrendar instalaciones deportivas para llevar a cabo partidos de fútbol o competiciones a través de la aplicación.
+- **Marketing y exposición online de marcas:** anuncios publicitarios dentro de la aplicación de las diferentes marcas patrocinadoras. 
+ - **Actividades patrocinadas:** los patrocinadores podrán exponer publicidad durante las actividades como también colocar stands para la venta de productos, entre otras formas de negocios. 
 
-### General
+## Visión
 
-Este proyecto no incluye un _boilerplate_, así es que tendrás que definir la
-estructura de carpetas y escribir tus propias Pruebas Unitarias (tests). Para
-hacerlo, puedes guiarte de los proyectos anteriores.
+Convertirnos en la comunidad de jugadores y jugadoras de fútbol más grande del país. 
 
-### Definición del producto
+## Misión
 
-En el `README.md` cuéntanos brevemente cómo descubriste las necesidades de los
-usuarios y cómo llegaste a la definición final de tu producto. Comparte fotos de
-entrevistas (si las tienes), cuestionarios y tus sketches/(bocetos).
+Promover, de manera inclusiva, la práctica de jugar al fútbol a todo aquel que lo desee practicar, a través de la gestión y organización de partidos de cualquier nivel, ofreciendo una aplicación de encuentro entre jugadores y equipos.
 
-Es importante que detalles:
+## Cómo usar la aplicación
 
-* Quiénes son los principales usuarios de producto.
-* Qué problema resuelve el producto / para qué le servirá a estos usuarios.
+- El usuario debe acceder al sitio web de [MatchGoal]()
+- Para ingresar dentro de la aplicación deberá iniciar sesión o registrarse
+- Al registrarse deberá completar información adicional de su perfil como lo son la posición de juego de su preferencia y la Región donde se ubica.
+- Al ingresar a la aplicación se visualizará el muro (panel) de acceso a su perfil de jugador, notificaciones, sus equipos, sus próximos partidos, partidos disponibles para participar, otros equipos y el navegador de búsqueda.
+- Para editar la información de usuario, modificar las ligas activas y cerrar sesión se debe acceder al perfil de jugador desde el muro
+- Para crear un partido se debe dar clic en "Crear partido" ubicado en la sección del muro "Tus próximos partidos"
+- Para crear un equipo se debe dar clic en "Crear equipo" ubicado en la sección del muro "Tus equipos"
+- Para ver la información de un partido o desistir de participar, se debe dar clic sobre su tarjeta ubicada en la sección "Tus próximos partidos" o para participar en uno desde la sección "Otros partidos"
+- Para ver la información de un equipo o retirarse de el, se debe dar clic sobre su tarjeta ubicada en la sección "Tus equipos" o para unirte a uno desde la sección "Otros equipos"
+- Para ver la información de una liga activa o retirarse, se debe dar clic sobre su tarjeta ubicada en el perfil de jugador
 
-### Historias de usuario
+# Metodología
 
-Una vez que entiendas las necesidades de tus usuarixs, escribe las Historias de
-Usuario que representen todo lo que necesitan hacer/ver en la Red Social.
-
-Cada una de tus Historias de Usuario debe tener:
-- **Criterios de Aceptación:** todo lo que debe ocurrir para satisfacer las
-  necesidades del usuario.
+## UX: Experiencia de Usuario
 
-- **Definición de terminado:** todos los aspectos técnicos que deben cumplirse
-para que, como equipo, sepan que esa historia está terminada y lista
-para publicarse. **Todas** tus Historias de Usuario (salvo excepciones), deben
-incluir estos aspectos en su Definición de Terminado (más todas las que
-  necesiten agregar):
+### Hipótesis
 
-  * Debe ser una SPA.
-  * Debe ser _responsive_.
-  * Debes haber recibido _code review_ de al menos una compañera de otro equipo.
-  * Haces _test_ unitarios y, además, has testeado tu producto manualmente.
-  * Hiciste _pruebas_ de usabilidad e incorporaste el _feedback_ del usuario.
-  * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
+La idea surgió a raíz de la problemática que dos de las integrantes del equipo de trabajo comparten: las pocas instancias para jugar al fútbol por la falta de organización con los demás jugadores y los pocos espacios para practicar fútbol femenino. 
 
-### Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
+Con base en lo anterior, se discutió como equipo de trabajo la posibilidad de que esta problemática la tuvieran también otros futbolistas. Se planteó entonces como hipótesis que, **la falta de organización o jugadores es una problemática constante entre quienes desean jugar al fútbol**.
 
-Debes definir cuál será el flujo que seguirá el usuario dentro de tu producto y
-con eso deberás diseñar la Interfaz de Usuario (UI por sus siglas en inglés) de
-esta red social que siga este flujo.
-Este diseño debe representar la solución que se implementará finalmente en
-código.
+#### Investigación
 
-### Responsive
+Para la comprobación de la hipótesis se utilizó, como fundamento de nuestra investigación, una encuesta online la cual tuvo un alcance de 31 jugadores(as) de fútbol de todos los niveles.
 
-Debe verse bien en dispositivos de pantallas grandes
-(computadoras/es, laptops, etc.) y pequeñas (tablets, celulares, etc.). Te
-sugerimos seguir la técnica de `mobile first` (más detalles sobre esta técnica
-al final).
-
-### Pruebas unitarias (unit tests)
-
-Los tests unitarios deben cubrir un mínimo del 70% de _statements_, _functions_,
-_lines_, y _branches_.
-
-### Implementación de la Interfaz de Usuario (UI y comportamiento de Interfaz de Usuario)
-
-Estas son consideraciones para que escribas las Definiciones de Terminado de
-tus H.U.:
-
-#### Creación de cuenta de usuario e inicio de sesión
-
-* Login con Firebase:
-  - Para el login y las publicaciones en el muro puedes utilizar [Firebase](https://firebase.google.com/products/database/)
-  - Creación de cuenta de acceso y autenticación con cuenta de correo y
-    contraseña, y con cuenta de Google.
-* Validaciones:
-  - La aplicación solo permitirá el acceso a usuarios con cuentas válidas.
-  - No pueden haber usuarios repetidos.
-  - La cuenta de usuario debe ser un correo electrónico válido.
-  - Lo que se escriba en el campo (_input_) de contraseña debe ser secreto.
-* Comportamiento:
-  - Al enviarse un formulario de registro o inicio de sesión, debe validarse.
-  - En caso haya errores, el sistema debe mostrar mensajes de error para
-    ayudar al usuario a corregirlos.
-  - Al recargar la aplicación, se debe verificar si el usuario está
-    logueado antes de mostrarle el contenido.
-
-
-#### Muro/timeline de la red social
-
-* Validaciones:
-  - Al apretar el botón de publicar, debe validar que exista contenido en
-  el _input_.
-* Comportamiento:
-  - Poder publicar un _post_.
-  - Poder dar y quitar _like_ a una publicación.
-  - Llevar un conteo de los _likes_.
-  - Poder eliminar un post específico.
-  - Pedir confirmación antes de eliminar un _post_.
-  - Al dar _click_ para editar un _post_, debe cambiar el texto por un _input_
-    que permita editar el texto y luego guardar los cambios.
-  - Al guardar los cambios debe cambiar de vuelta a un texto normal pero con la
-    información editada.
-  - Al recargar la página debo de poder ver los textos editados.
-
-### Hacker edition
-
-* Permite crear posts con imágenes.
-* Permite buscar usuarios, agregar y eliminar "amigos".
-* Permite definir la privacidad de los _posts_ (público o solamente para amigos).
-* Permite ver su muro de cualquier usuario "no-amigo" (solamente los
-  posts _públicos_).
-* Permite comentar o responder una publicación.
-* Permite editar perfil.
-
-### Consideraciones técnicas Front-end
-
-El corazón de este proyecto incluye:
-
-* Separar la manipulación del DOM de la lógica (Separación de responsabilidades).
-* Contar con multiples vistas para esto tu aplicacion debera ser una
- [Single Page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
-* Que el sitio sea responsive, ya dicho.
-* Alterar y persistir datos. Los datos que agregues o modifiques deberán
-  persistir a lo largo de la aplicación, te recomendamos que uses
-  [Firebase](https://firebase.google.com/).
-
-Además, podrías agregar algunas tareas nuevas de acuerdo a tus decisiones:
-
-* Recuerda que no hay un setup de **tests** definido, dependerá de
-  la estructura de tu proyecto también, pero algo que no debes de olvidar es
-  pensar en éstas pruebas, incluso te podrían ayudar a definir la estructura y
-  nomenclatura de tu lógica.
-
-### Consideraciones técnicas UX
-
-Desde el punto de vista de UX, deberás:
-
-* Hacer al menos 2 o 3 entrevistas con usuarios.
-* Hacer un  prototipo de baja fidelidad.
-* Asegurarte de que la implementación en código siga los lineamientos del
-  diseño.
-* Hacer sesiones de testing con el producto en HTML.
-
-## Entrega
-
-El proyecto será _entregado_ subiendo tu código a GitHub (`commit`/`push`) y la
-interfaz será desplegada usando GitHub pages u otro servicio de hosting que
-puedas haber encontrado en el camino.
-
-## Evaluación
-
-Recuerda revisar la [rúbrica](https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vRktPN4ilZtkRN5tUb3DVhgeihwlzk63_-JI3moA-bXpKDbHDioAK2H3qbrwWNb0Ql4wX22Tgv7-PDv/pubhtml)
-para ver la descripción detallada de cada habilidad y cada nivel. Esta es una
-lista de todas las habilidades involucradas en este proyecto y que evaluaremos
-cuando lo completes:
-
-### Habilidades Blandas/Socioemocionales
-
-| Habilidad |
-|-----------|
-| Planificación y organización |
-| Autoaprendizaje |
-| Solución de Problemas |
-| Dar y recibir feedback |
-| Adaptabilidad |
-| Trabajo en equipo |
-| Responsabilidad |
-| Comunicación eficaz |
-| Presentaciones |
-
-
-### Habilidades Técnicas, Front-end
-
-| Habilidad |
-|-----------|
-| **JavaScript** |
-| Estilo |
-| Nomenclatura/semántica |
-| Funciones/modularidad |
-| Estructuras de datos |
-| Tests |
-| **HTML** |
-| Validación |
-| Estilo |
-| Semántica |
-| SEO |
-| **CSS** |
-| DRY |
-| Responsive |
-| **SCM** |
-| Git |
-| GitHub |
-| **CS** |
-| Lógica |
-| Arquitectura |
-
-### Habilidades Técnicas, UX
-
-| Habilidad |
-|-----------|
-| User Centricity |
-| Visual Desing |
-
-***
-
-## Pistas / Tips / Lecturas complementarias
-
-### Mobile first
-
-El concepto de [_mobile first_](https://www.mediaclick.es/blog/diseno-web-responsive-design-y-la-importancia-del-mobile-first/)
-hace referencia a un proceso de diseño y desarrollo donde partimos de cómo se ve
-y cómo funciona la aplicación en un dispositivo móvil primero, y más adelante se
-ve como adaptar la aplicación a pantallas progresivamente grandes y
-características específicas del entorno desktop. Esto es en contraposición al
-modelo tradicional, donde primero se diseñaban los websites (o webapps) para
-desktop y después se trataba de _arrugar_ el diseño para que entre en pantallas
-más chicas. La clave acá es asegurarse de que desde el principio diseñan usando
-la vista _responsive_ de las herramientas de desarrollador (developer tools) del
-navegador. De esa forma, partimos de cómo se ve y comporta la aplicación en una
-pantalla y entorno móvil.
-
-### Múltiples vistas
-
-En proyectos anteriores nuestras aplicaciones habían estado compuestas de una
-sola _vista_ principal (una sóla _página_). En este proyecto se introduce la
-necesidad de tener que dividir nuestra interfaz en varias _vistas_ o _páginas_
-y ofrecer una manera de navegar entre estas vistas. Este problema se puede
-afrontar de muchas maneras: con archivos HTML independientes (cada uno con su
-URL) y links tradicionales, manteniendo estado en memoria y rederizando
-condicionalmente (sin refrescar la página), [manipulando el historial del
-navegador](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)
-con [`window.history`](https://developer.mozilla.org/es/docs/Web/API/Window/history).
-En este proyecto te invitamos a explorar opciones y decidir una opción
-de implementación.
-
-### Escritura de datos
-
-En los proyectos anteriores hemos consumido (leído) datos, pero todavía no
-habíamos escrito datos (salvar cambios, crear datos, borrar, ...). En este
-proyecto tendrás que crear (salvar) nuevos datos, así como leer, actualizar y
-modificar datos existentes. Estos datos se podrán guardar de forma remota
-usando [Firebase](https://firebase.google.com/).
-
-Otras:
-
-* [Modulos: Export](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/export)
-* [Modulos: Import](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/import)
-* [Diseño web, responsive design y la importancia del mobile first - Media Click](https://www.mediaclick.es/blog/diseno-web-responsive-design-y-la-importancia-del-mobile-first/)
-* [Mobile First: el enfoque actual del diseño web móvil - 1and1](https://www.1and1.es/digitalguide/paginas-web/diseno-web/mobile-first-la-nueva-tendencia-del-diseno-web/)
-* [Mobile First - desarrolloweb.com](https://desarrolloweb.com/articulos/mobile-first-responsive.html)
-* [Mobile First - ZURB](https://zurb.com/word/mobile-first)
-* [Mobile First Is NOT Mobile Only - Nielsen Norman Group](https://www.nngroup.com/articles/mobile-first-not-mobile-only/)
-
-***
+![Encuesta](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/Readme/encuesta.jpg)
+
+Para acceder a la encuesta haz clic [aquí](https://forms.gle/E9W4kzqcDkDve7Y19)
+
+### Benchmarking
+
+Se consideró dentro del Benchmarking las siguientes aplicaciones:
+
+- [Equipo Completo](https://www.equipocompleto.cl/)
+
+Equipo completo entrega el servicio de mejorar la gestión y organización de actividades deportivas grupales en distintos deportes. 
+
+- [Meetup](https://www.meetup.com/)
+
+Meetup es un servicio usado para organizar grupos _online_ que organizan eventos en persona para personas con similares intereses. Se analizó la manera de organizar y presentar la información tanto de grupos como eventos, ya que consideramos es una forma óptima y sencilla de utilizar por los usuarios, logrando adaptar su modelo a nuestra aplicación.
+
+- [Pitz](https://play.google.com/store/apps/details?id=com.amplemind.dev.pitz&hl=es_CL)
+
+Pitz es una aplicación que permite organizar partidos de fútbol. Se comparó nuestro diagrama de flujo con la usabilidad de la aplicación para durimentar el flujo de decisión de los usuarios dentro de MatchGoal. Además, se analizaron los procesos de creación de partidos y creación de equipos para adaptarlos a nustra aplicación.
+
+### Definición de historias de usuario
+
+La definición fue basada en las funcionalidades que la aplicación debe realizar para cumplir con las necesidades de sus usuarios.
+
+- **Historia de usuario #1 Ingresar a la aplicación**: Yo como jugador(a) de fútbol quisiera ingresar mediante inicio de sesión o registro a la aplicación para acceder a sus servicios
+
+- **Historia de usuario #2 Muro/_timeline_**: Yo como jugador(a) de futbol quisiera visualizar en un sólo lugar los equipos, partidos y ligas disponibles para participar.
+
+- **Historia de usuario #3 Perfil**: Yo como jugador(a) de fútbol quisiera tener un perfil para poder participar dentro de la comunidad
+
+- **Historia de usuario #4 Partidos**: Yo como jugador(a) de futbol quisiera crear, participar o desistir de encuentros futbolísticos
+
+- **Historia de usuario #5 Equipos**: Yo como jugador(a) de fútbol quisiera poder crear y participar de equipos para aumentar mis posibilidades de jugar
+
+- **Historia de usuario #6 Ligas**: Yo como jugador(a) de fútbol quisiera poder participar de ligas como jugador(a) o con mi equipo para aumentar mis posibilidades de jugar e interactuar con la comunidad
+
+
+### Diagrama de flujo
+
+Detalla el proceso que sigue el uso de la aplicación, basado en las historias de usuarios antes definidas.  
+![Diagrama](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/Readme/Diagrama.jpg)
+
+### Prototipo de baja fidelidad
+
+#### Wireframe
+
+Se elaboró el prototipo de baja fidelidad según las primeras lluvias de ideas sobre la aplicación. el cual fue la principal guía para la elaboración del diseño y estructura
+
+Se puede visualizar el _wireframe_ completo [aquí](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/Registrarse/src/assets/img/bajaFidelidad)
+
+#### Definición del nombre de la aplicación
+
+La definición del nombre se realizó mediante el testeo, con seis compañeras del _Bootcamp_, de las cuatro siguientes alternativas:
+- MatchGoal
+- Todos Jugamos
+- FutbolGO
+- MatchRival
+
+Tras obtener 5 votos a favor, MatchGoal fue elegido como nombre para la aplicación.
+
+Algunas consideraciones recibidas respecto al nombre fueron:
+- Es corto y fácil de recordar
+- Se asocia al fútbol porque es una palabra compuesta entre partido (match) y gol (goal)
+
+### Prototipo de alta fidelidad
+
+Se realizó en la aplicación Adobe XD basado en las ideas abstraidas del benchmarking y siguiendo los principios de diseño de balance, énfasis, repetición y proximidad.
+
+![Matchgoal-web](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/Readme/web.jpg)
+
+#### Definición de colores
+
+Se definieron los colores en base a lo que representa la aplicación, también se utilizó una imagen de fondo representativa del pasto de una cancha de fútbol. El color verde como símbolo de la salud, el deporte, el bienestar y la energía, aspectos a los que aspira MatchGoal a entregar a sus usuarios a través de la promoción del jugar al fútbol. Y amarillo como símbolo de la competitividad, el movimiento y la extroversion, con la finalidad de promover la actividad física en comunidad.
+
+![Paleta-de-colores](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/Readme/Colores.png)
+
+#### Testeo con usuarios
+
+#### Modificaciones
+
+## Planificación
+
+- Kanban
+Para la planificación y gestión de las tareas del proyecto se utilizó la metodología ágil Kanban. El tablero se encuentra disponible [aquí](https://trello.com/b/4CMhkDxt)
+
+- _Daily Meeting_
+Reuniones diarias para inspeccionar el trabajo realizado el día anterior y planificar las actividades del día
+
+# Herramientas utilizadas
+
+- [Balsamiq](https://balsamiq.com/)
+
+Herramienta utilizada para elaborar el prototipo de baja fidelidad _Wireframe_. 
+
+- [Lucidchart](https://lucidchart.com/‎)
+
+Herramienta utilizada para elaborar el diagrama de flujo.
+
+- [Google Forms](https://www.google.com/intl/es-419_cl/forms/about/)
+
+Herramienta utilizada para elaborar la encuesta de nuestra hipótesis.
+
+- [Trello](https://trello.com/)
+
+Herramienta utilizada para elaborar el tablero de planificación Kanban.
+
+- [Adobe XD](https://www.adobe.com/la/products/xd.html)
+
+Herramienta utilizada para elaborar el prototipo de alta fidelidad.
+
+- [Firebase](https://firebase.google.com/)
+
+Herramienta utilizada para compilar nuestro proyecto.
+
+# Equipo de trabajo
+
+[Claudia Quezada](https://github.com/ClaudiaQuezadaRiquelme)
+
+[Natalia Galvez](https://github.com/natagalvez)
+
+[Scarlette Villarreal Á.](https://github.com/VillarrealScarlette/)
+
+# Proyecciones Futuras
+
