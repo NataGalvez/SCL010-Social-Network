@@ -1,8 +1,6 @@
 let ifIsNewUser = (firebaseAuthResult) => {
     let isNew = firebaseAuthResult.additionalUserInfo.isNewUser;
-    console.log("es nuevo: "+isNew);
     if (isNew) {
-        console.log("Hi ", firebaseAuthResult.user.displayName + ". Id: "+firebaseAuthResult.user.uid+ ", email: "+ firebaseAuthResult.user.email);
         //comprobar si el usuario había sido eliminado alguna vez y ahora volvió.
         //si el correo del usuario está en database, borra el documento antiguo para escribir el nuevo.
         ifIsReturningUser(firebaseAuthResult)
@@ -11,7 +9,6 @@ let ifIsNewUser = (firebaseAuthResult) => {
 
 const deleteDocumentById = (documentId) => {
     firebase.firestore().collection("Users").doc(documentId).delete().then(function() {
-        console.log("Document successfully deleted!");
     }).catch(function(error) {
         console.error("Error removing document: ", error);
     });
@@ -19,17 +16,12 @@ const deleteDocumentById = (documentId) => {
 
 let ifIsReturningUser = (firebaseAuthResult) => {
     let emailNewUser = firebaseAuthResult.user.email;
-    console.log("emailNewUser:", emailNewUser);
 
     firebase.firestore().collection("Users").get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
-            console.log(doc.id, " => ", doc.data().email);
             if (emailNewUser === doc.data().email) {
-                console.log("YEI id", doc.id);
-                console.log("ya hay un id con el mismo email en database. Vamos a borrarlo");
                 deleteDocumentById(doc.id);
             }
         });
@@ -39,7 +31,6 @@ let ifIsReturningUser = (firebaseAuthResult) => {
 } 
 
 export const writeUserData = (user, infoProfile) => {
-    console.log("write user data");
     firebase.firestore().collection('Users').doc(user.uid).set({
       username: user.displayName,
       email: user.email,
@@ -49,26 +40,27 @@ export const writeUserData = (user, infoProfile) => {
       photo: ""
       //some more user data
     })
-    
     .then(() => {
-        console.log("Document successfully written!");
+        // console.log("Document successfully written!");
     })
     .catch(error => {
-        console.error("Error writing document: ", error);
+        // console.error("Error writing document: ", error);
     });
-    console.log("terminé de agregar datos");
+    // console.log("terminé de agregar datos");
   }
 
 export const loginGoogle = () => {
-    console.log("ingresé a loginGoogle");
     let provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider)
     .then(function(result) {
         //comprobar si el usuario se logueó por primera vez. Si ya estaba logueado, no sobreescribirá sus datos
         ifIsNewUser(result); 
-         window.location.hash = "#/wall";           
-              
-          
+        firebase.firestore().collection("Users").doc(result.user.uid).get().then((userData)=>{
+          let user = userData.data();
+          if (user.type && user.region)
+            window.location.hash = "#/wall";
+        }) 
+         window.location.hash = "#/info";                       
       })
     .catch(function(error) {
         // Handle Errors here.
@@ -92,10 +84,9 @@ export const createAccount = () => {
         //(si fue eliminado y después vuelve, podría estar en database aunque no esté en auth)
         ifIsNewUser(result);
         verification();
-        window.location.hash = "#/info";
-        //window.location.hash = "#/wall";  
+        window.location.hash = "#/wall";
+       
       })
-
     .catch(function(error) {
         // Handle Errors here.
         let errorCode = error.code;
@@ -116,8 +107,13 @@ export const loginAccount = () => {
     const email = document.getElementById("emailLogin").value;
     const password = document.getElementById("passwordLogin").value;
     firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
-       window.location.hash = "#/info";
-       //window.location.hash = "#/wall";  
+      ifIsNewUser()
+       firebase.firestore().collection("Users").doc(result.user.uid).get().then((userData)=>{
+          let user = userData.data()
+          if (user.type && user.region)
+            window.location.hash = "#/wall";
+        }) 
+         window.location.hash = "#/info";          
     })
     .catch(function(error) {
         // Handle Errors here.
@@ -139,8 +135,12 @@ export const loginFacebook = () => {
     firebase.auth().signInWithPopup(provider).then(function(result){
       //comprobar si el usuario se logueó por primera vez. 
       ifIsNewUser(result); 
-       window.location.hash = "#/info";
-       //window.location.hash = "#/wall";  
+       firebase.firestore().collection("Users").doc(result.user.uid).get().then((userData)=>{
+          let user = userData.data()
+          if (user.type && user.region)
+            window.location.hash = "#/wall";
+        }) 
+         window.location.hash = "#/info";  
 })
   .catch(function(error) {
     let errorCode = error.code;

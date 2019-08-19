@@ -1,7 +1,5 @@
-export const profile = () =>{
-	let containerProfile = document.createElement("div");
-	containerProfile.className= "profile";
-	contenProfile= window.innerProfile;
-
+import {templateAditionalInfo} from "./templateAditionalInfo.js"
+export const templateProfile = () =>{
+document.getElementById("root").innerHTML = window.currenUser + window.positionSelect + window.regionSelect;
 }
-profile();
+templateProfile();

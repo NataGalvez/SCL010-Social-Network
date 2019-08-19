@@ -53,13 +53,12 @@ export const templateAditionalInfo = () => {
     let positionSelect=document.getElementById("position").value;
 	let regionSelect=document.getElementById("region").value;
 	let currentUser = getCurrentUser();
-	console.log(currentUser);
-
 	writeUserData(getCurrentUser(), {
 		position: positionSelect,
 		region: regionSelect,
 
 	})
+	window.location.hash= "#/wall";
 })
 return containerAditionalInfo;
 }

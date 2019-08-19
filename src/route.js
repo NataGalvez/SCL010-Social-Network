@@ -3,6 +3,7 @@ import { templateCreateAccount } from "./assets/views/templateCreateAccount.js";
 import { templateHome } from "./assets/views/templateHome.js";
 import { templateAditionalInfo } from "./assets/views/templateAditionalInfo.js";
 import { templateWall } from "./assets/views/templateWall.js";
+import { templateProfile} from "./assets/views/templateProfile.js";
 
 //Envía el nuevo hash para mostrar el template que se va a mostrar a través de ese 
 //nuevo hash
@@ -25,6 +26,9 @@ const changeRouter = (hash) => {
         return showTemplate(hash);
     }
     if (hash === "#/info") {
+        return showTemplate(hash);
+    }
+    if (hash=== "#/profile") {
         return showTemplate(hash);
     }
     
@@ -50,6 +54,9 @@ const showTemplate = (hash) => {
         break;
         case "info":
             containerRoot.appendChild(templateAditionalInfo());
+        break;
+        case "profile":
+        containerRoot.appendChild(templateProfile());
         break;
 
         default:
