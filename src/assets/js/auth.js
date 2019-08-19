@@ -92,21 +92,21 @@ export const createAccount = () => {
         //(si fue eliminado y después vuelve, podría estar en database aunque no esté en auth)
         ifIsNewUser(result);
         verification();
-        //window.location.hash = "#/info";
-        window.location.hash = "#/wall";  
+        window.location.hash = "#/info";
+        //window.location.hash = "#/wall";  
       })
 
     .catch(function(error) {
         // Handle Errors here.
         let errorCode = error.code;
         if (errorCode === "auth/invalid-email") {
-             alert("Ingresa un email");
+             alert("Ingresa una dirección de correo electrónico válida");
         } else if (password == "") {
             alert("Ingresa una contraseña");
         } else if (errorCode === "auth/weak-password") {
             alert("La contraseña debe tener 6 carácteres o más");
         } else if (errorCode === "auth/email-already-in-use") {
-            alert("Este email ya esta en uso"); 
+            alert("La dirección de correo electrónico ya esta en uso"); 
         }
     });
 }    
@@ -116,20 +116,20 @@ export const loginAccount = () => {
     const email = document.getElementById("emailLogin").value;
     const password = document.getElementById("passwordLogin").value;
     firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
-       //window.location.hash = "#/info";
-       window.location.hash = "#/wall";  
+       window.location.hash = "#/info";
+       //window.location.hash = "#/wall";  
     })
     .catch(function(error) {
         // Handle Errors here.
         let errorCode = error.code;
         if (errorCode === "auth/invalid-email") {
-            alert("Email invalido");
+            alert("Ingresa una dirección de correo electrónico válida");
         } else if (password == "") {
            alert("Ingresa una contraseña");
         } else if (errorCode === "auth/wrong-password") {
-           alert("La contraseña ingresada no es valida");
+           alert("La contraseña ingresada no es válida");
         } else if (errorCode === "auth/user-not-found") {
-            alert("Email no registrado")
+            alert("La dirección de correo electrónico no existe")
         }
     })
 }
@@ -139,13 +139,15 @@ export const loginFacebook = () => {
     firebase.auth().signInWithPopup(provider).then(function(result){
       //comprobar si el usuario se logueó por primera vez. 
       ifIsNewUser(result); 
-       //window.location.hash = "#/info";
-       window.location.hash = "#/wall";  
+       window.location.hash = "#/info";
+       //window.location.hash = "#/wall";  
 })
   .catch(function(error) {
     let errorCode = error.code;
       if (errorCode === "auth/account-exists-with-different-credential") {
+
           alert("Ya existe una cuenta con este correo electrónico. Inicia sesión usando la cuenta asociada al correo electrónico.");
+
       }      
 })
 }
@@ -154,7 +156,7 @@ export const verification = ()=>{
       user.sendEmailVerification().then(function() {
         console.log("enviando Correo");
     }).catch(function(error) {
-        console.log("no se enviará correo");
+        alert("Ha fallado el envío de verificación. Por favor, intentalo nuevamente");
     })
 
 }

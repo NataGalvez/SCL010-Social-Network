@@ -1,30 +1,37 @@
 
 export const templateWall = () => {
+    document.querySelector(".menu-bar").style.display="none";
+    document.querySelector(".nav-content").style.display="none";
+    // Boton para ingresar al perfil
+    const profile = `
+    <a href="#/profile" class="btn-profile"><span class="icon-user"></span></a>
+    `
+    document.querySelector(".access-profile").innerHTML = profile;
+    //Muro
     const containerWall = document.createElement("div");
+    containerWall.className = "container-wall";
     const contentWall = `
-<div class="container wall">
     <div class="wall-content">
-        <header id="header">
+        <div id="header">
             <input id="search" placeholder="Búsqueda">
-        </header>
+        </div>
         <div id="teams">
-            <div id="yourTeam"></div>
-            <header>
+            <div class="your-team">
                 <h3>Tus Equipos</h3>
-                <button id="createTeam" class="btn">Crear Equipo</button>
-            </header>
+
+                <button id="createTeam" class="create">Crear Equipo</button>
+            </div>
             <div class="containerTeam" id="containerTeam">
         </div>
         <div id="matches">
             <div id="nextMatches"></div>
-            <header>
+            <div class="teams">
                 <h3>Tus Partidos</h3>
-                <button id="createMatch" class="btn">Crear Partido</button>
-            </header>
+                <button id="createMatch" class="create">Crear Partido</button>
+            </div>
             <div class="containerMatch" id="containerMatch">
         </div>
     </div>
-</div>
 <!-- TeamModal -->
 <div id="createTeamModal" class="modal">
 
@@ -32,12 +39,12 @@ export const templateWall = () => {
   <div class="modal-content">
     <span id="createTeamClose" class="close">&times;</span>
     <table>
-        <tr>
-            <td><p>Nombre Equipo</p></td>
-            <td><input type="text" id="teamName" placeholder="..."></td>
+        <tr class="team">
+            <td><label for="teamName">Nombre del equipo</label></td>
+            <td><input type="text" id="teamName" placeholder="Ejemplo: Friends FC"></td>
         </tr>
-        <tr>
-            <td><p>Jugadores</p></td>
+        <tr class="team">
+            <td><label for="teamType">Modalidad</p></td>
             <td>
             <select id="teamType">
                 <option value="Mixto">Mixto</option>
@@ -46,11 +53,12 @@ export const templateWall = () => {
             </select>
             </td>
         </tr>
-        <tr>
-            <td><input type="text" id="teamPhoto" placeholder="url..."></td>
+        <tr class="team">
+            <td><label for="teamPhoto">Sube una foto de tu equipo</label></td>
+            <td><input type="file" id="teamPhoto" placeholder="Archivos .jpg o .png "></td>
         </tr>
     </table>
-    <button id="saveTeam">Crear Equipo</button>
+    <button id="saveTeam" class="select">Crear Equipo</button>
   </div>
 
 </div>
@@ -61,62 +69,80 @@ export const templateWall = () => {
 <!-- Modal content -->
 <div class="modal-content">
   <span id="createMatchClose" class="close">&times;</span>
-  <table>
-      <tr>
-          <td><p>Equipo Retador</p></td>
-          <td><input type="text" id="challengingTeamName" placeholder="..."></td>
-      </tr>
-      <tr>
-          <td><p>Equipo Desafiado</p></td>
-          <td><input type="text" id="challengedTeamName" placeholder="..."></td>
-      </tr>
-      <tr>
-          <td><p>Tipo de Juego</p></td>
-          <td>
-          <select id="matchGame">
-                <option value="Fútbol 11">Fútbol 11</option>
-                <option value="Futbolito">Futbolito</option>
-                <option value="Baby Fútbol">Baby Fútbol</option>
-          </select>
-          </td>
-      </tr>
-      <tr>
-          <td><p>Jugadores</p></td>
-          <td>
-          <select id="teamTypeMatch">
-                <option value="Mixto">Mixto</option>
-                <option value="Femenino">Femenino</option>
-                <option value="Masculino">Masculino</option>
-          </select>
-          </td>
-      </tr>
-      <tr>
-          <td><p>Encuentro Amistoso o Torneo</p></td>
-          <td>
-          <select id="matchType">
-                <option value="Amistoso">Amistoso</option>
-                <option value="Torneo">Torneo</option>
-          </select>
-          </td>
-      </tr>
-      <tr>
-          <td><p>Organizador</p></td>
-          <td><input type="text" id="organizer" placeholder="..."></td>
-      </tr>
-      <tr>
-          <td><p>Cuándo</p></td>
-          <td>
-          <p>día: </p>
-          <select id="day">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
+  <table>      
+  <tr id="matchDate" class="match">
+  <td><label>Fecha</label></td>
+  <td id="date">
+  <label for="day">día:</label>
+  <select id="day">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+  </select>
+  <label for="month">mes: </label>
+  <select id="month">
+        <option value="enero">enero</option>
+        <option value="febrero">febrero</option>
+        <option value="marzo">marzo</option>
+        <option value="abril">abril</option>
+        <option value="mayo">mayo</option>
+        <option value="junio">junio</option>
+        <option value="julio">julio</option>
+        <option value="agosto">agosto</option>
+        <option value="septiembre">septiembre</option>
+        <option value="octubre">octubre</option>
+        <option value="noviembre">noviembre</option>
+        <option value="diciembre">diciembre</option>
+  </select>
+  <label for="year">año: </label>
+  <select id="year">
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+  </select>
+  </td>
+</tr>
+        <tr class="match">
+          <td><label for="hour">Horario</label></td>
+          <td id="schedule">
+          <select id="hour">
+                <option value="00">00</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
                 <option value="10">10</option>
                 <option value="11">11</option>
                 <option value="12">12</option>
@@ -132,46 +158,59 @@ export const templateWall = () => {
                 <option value="22">22</option>
                 <option value="23">23</option>
                 <option value="24">24</option>
-                <option value="25">25</option>
-                <option value="26">26</option>
-                <option value="27">27</option>
-                <option value="28">28</option>
-                <option value="29">29</option>
+          </select>
+          <select id="min">
+                <option value="00">00</option>
+                <option value="15">15</option>
                 <option value="30">30</option>
-                <option value="31">31</option>
-          </select>
-          <p>, mes: </p>
-          <select id="month">
-                <option value="enero">enero</option>
-                <option value="febrero">febrero</option>
-                <option value="marzo">marzo</option>
-                <option value="abril">abril</option>
-                <option value="mayo">mayo</option>
-                <option value="junio">junio</option>
-                <option value="julio">julio</option>
-                <option value="agosto">agosto</option>
-                <option value="septiembre">septiembre</option>
-                <option value="octubre">octubre</option>
-                <option value="noviembre">noviembre</option>
-                <option value="diciembre">diciembre</option>
-          </select>
-          <p>, año: </p>
-          <select id="year">
-                <option value="2019">2019</option>
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
+                <option value="45">45</option>
           </select>
           </td>
       </tr>
-      <tr>
-          <td><p>Dónde (dirección)</p></td>
-          <td><input type="text" id="address" placeholder="..."></td>
+      <tr class="match">
+      <td><label for="address">Dirección</label></td>
+      <td><input type="text" id="address" placeholder="..."></td>
       </tr>
-
+      <tr class="match">
+          <td><label for="matchGame">Categoría</label></td>
+          <td>
+          <select id="matchGame">
+                <option value="Fútbol 11">Fútbol 11</option>
+                <option value="Futbolito">Futbolito</option>
+                <option value="Baby Fútbol">Baby Fútbol</option>
+          </select>
+          </td>
+      </tr>
+      <tr class="match">
+          <td><label for="teamTypeMatch">Modalidad</label></td>
+          <td>
+          <select id="teamTypeMatch">
+                <option value="Mixto">Mixto</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+          </select>
+          </td>
+      </tr>
+      <tr class="match">
+      <td><label for="challengingTeamName">Equipo Organizador</label></td>
+      <td><input type="text" id="challengingTeamName" placeholder="..."></td>
+  </tr>
+  <tr>
+      <td><label for="challengedTeamName">Equipo Rival</label></td>
+      <td><input type="text" id="challengedTeamName" placeholder="..."></td>
+  </tr>
+      <tr class="match">
+          <td><label for="matchType">Tipo de competencia</label></td>
+          <td>
+          <select id="matchType">
+                <option value="Amistoso">Amistoso</option>
+                <option value="Liga">Liga</option>
+          </select>
+          </td>
+      </tr>
   </table>
-  <button id="saveMatch">Crear Partido</button>
+  <button id="saveMatch" class="select">Crear Partido</button>
 </div>
-
 </div>
 `
 
@@ -220,7 +259,6 @@ window.onclick = function(event) {
 }
 
 
-
 //cuando cargue el usuario actual, si tiene equipos, mostrarlos
 const containerTeam = containerWall.querySelector("#containerTeam");
 //cuando cargue el usuario actual, si tiene partidos, mostrarlos
@@ -237,14 +275,22 @@ if (user != null) {
         const contentTeam = document.createElement("div");
         contentTeam.innerHTML = `
             <div class="team-content" id="team-content">
-                <div class="team-photo"><a href="${doc.data().photo}></div>
-                <p class="team-type">${doc.data().teamType}</p>
-                <h4 class="team-name">${doc.data().teamName}</h4>
-                <p class="team-info">${doc.data().info}</p>
-                <p class="team-members">${doc.data().members}</p>
+                <div class="team-photo"><a href="${doc.data().photo}"></a></div>
+                <div class="team-type"><p>${doc.data().teamType}</p></div>
+                <div class="team-name"><h4>${doc.data().teamName}</h4></div>
+                <div class="team-info"><p>${doc.data().info}</p></div>
+                <button class="select join" id="${doc.data().teamId}" value="${doc.data().teamId}">Unirme</button>
+                 <p id="team-userJoins-${doc.data().teamId}"></p>
             </div>
             `
         containerTeam.appendChild(contentTeam);
+            counterUserJoins(user, doc);//actualizar html id team-userJoins...
+            const btnJoinMe = containerWall.querySelector("#"+doc.data().teamId);
+            btnJoinMe.addEventListener("click", () => {
+                console.log("asignó el listener que querimoh");
+                //cuando presione botón, se guarda en una colección de usuarios del equipo los usuarios que se unieron (para partir, sólo puedo unirme yo mismo)
+                userJoins(user, doc);
+            })
         });
     });
     containerWall.querySelector("#containerTeam");
@@ -258,15 +304,24 @@ if (user != null) {
         const contentMatch = document.createElement("div");
         contentMatch.innerHTML = `
             <div class="match-content" id="match-content">
-                <p class="match-date">${doc.data().date}</p>
-                <p class="match-rivals">${doc.data().challengingTeamName} vs ${doc.data().challengedTeamName}</p>
-                <p class="match-matchGame&teamType">${doc.data().matchGame}, ${doc.data().teamTypeMatch}</p>
-                <p class="match-matchType">${doc.data().matchType}</p>
-                <p class="match-organizer">Organizado por: ${doc.data().organizer}</p>
-                <p class="match-address">${doc.data().address}</p>
+                <div class="match-rivals"><p>${doc.data().challengingTeamName} vs ${doc.data().challengedTeamName}</p></div>
+                <div class="match-date"><p>${doc.data().date}, ${doc.data().schedule}</p></div>
+                <div class="match-matchGame&teamType"><p>${doc.data().matchGame}, ${doc.data().teamTypeMatch}</p></div>
+                <div class="match-matchType"><p>${doc.data().matchType}</p></div>
+                <div class="match-organizer"><p>Organizado por: ${doc.data().challengingTeamName}</p></div>
+                <div class="match-address"><span class="icon-location"></span><p>${doc.data().address}</p></div>
+                <button class="select takePart" id="${doc.data().matchId}" value="${doc.data().matchId}">Participar</button>
+                <p id="match-takePart-${doc.data().matchId}"></p>
             </div>
             `
-        containerMatch.appendChild(contentMatch);
+            containerMatch.appendChild(contentMatch);
+            counterUsersTakePart(user, doc);//actualizar html id match-takePart-...
+            const btnTakePart = containerWall.querySelector("#"+doc.data().matchId);
+            btnTakePart.addEventListener("click", () => {
+                console.log("asignó el listener que querimoh");
+                //cuando presione botón, se guarda en una colección de usuarios del equipo los usuarios que se unieron (para partir, sólo puedo unirme yo mismo)
+                userTakePart(user, doc);
+            })
         });
     });
     containerWall.querySelector("#containerMatch");
@@ -280,32 +335,46 @@ const btnsaveTeam = containerWall.querySelector("#saveTeam");
 btnsaveTeam.addEventListener("click", () => {
     let user = firebase.auth().currentUser;//Obtén el usuario con sesión activa
 
-    if (user != null) { //añade una sub collección al usuario
+    if (user != null) {//añade una sub collección al usuario
         firebase.firestore().collection("Users").doc(user.uid).collection("teams").add({
             teamName: containerWall.querySelector("#teamName").value,
             teamType: containerWall.querySelector("#teamType").value,
             members: 0,
             photo: "",
-            info: ""
+            info: "",
+            teamId: ""
         });
         //imprimir equipos del usuario cuando ya creó equipo nuevo
         firebase.firestore().collection("Users").doc(user.uid).collection("teams").get()
         .then(function(querySnapshot) {
             containerTeam.innerHTML = "";//borra para que no se acumulen
             querySnapshot.forEach(function(doc) {
-            // doc.data() is never undefined for query doc snapshots
-            //console.log(doc.id, " => ", doc.data());
+                // doc.data() is never undefined for query doc snapshots
+                //console.log(doc.id, " => ", doc.data());
+
+                //(1)update id de cada team para que quede guardado en database (no se puede guardar el id con .add, por eso lo añadimos aquí). Se actualizará forever and ever
+                firebase.firestore().collection("Users").doc(user.uid).collection("teams").doc(doc.id).update({
+                    "teamId": doc.id
+                })
+        
             const contentTeam = document.createElement("div");
             contentTeam.innerHTML = `
                 <div class="team-content" id="team-content">
                     <div class="team-photo"><a href="${doc.data().photo}</div>
-                    <p class="team-type">${doc.data().teamType}</p>
-                    <h4 class="team-name">${doc.data().teamName}</h4>
-                    <p class="team-info">${doc.data().info}</p>
-                    <p class="team-members">${doc.data().members}</p>
+                    <div class="team-type"><p>${doc.data().teamType}</p></div>
+                    <div class="team-name"><h4>${doc.data().teamName}</h4></div>
+                    <div class="team-info"><p>${doc.data().info}</p></div>
+                    <button class="select join" id="${doc.data().teamId}" value="${doc.data().teamId}">Unirme</button>
+                     <p id="team-userJoins-${doc.data().teamId}"></p>
                 </div>
                 `
             containerTeam.appendChild(contentTeam);
+                const btnJoinMe = containerWall.querySelector("#"+doc.data().teamId);
+                btnJoinMe.addEventListener("click", () => {
+                    console.log("asignó el listener que querimoh");
+                    //cuando presione botón, se guarda en una colección de usuarios del equipo los usuarios que se unieron (para partir, sólo puedo unirme yo mismo)
+                    userJoins(user, doc);
+                })
             });
         });
     }
@@ -326,33 +395,122 @@ btnsaveMatch.addEventListener("click", () => {
             teamTypeMatch: containerWall.querySelector("#teamTypeMatch").value,
             matchType: containerWall.querySelector("#matchType").value,
             organizer: containerWall.querySelector("#organizer").value,
-            date: containerWall.querySelector("#day").value +" "+ containerWall.querySelector("#month").value +", "+ containerWall.querySelector("#year").value,
-            address: containerWall.querySelector("#address").value
+            date: containerWall.querySelector("#day").value +" "+ containerWall.querySelector("#month").value +" "+ containerWall.querySelector("#year").value,
+            schedule: containerWall.querySelector("#hour").value +":"+ containerWall.querySelector("#min").value,
+            address: containerWall.querySelector("#address").value,
+            organizer: containerWall.querySelector("#organizer").value,
+            matchId: ""
         });
         //imprimir partidos del usuario cuando ya creó un partido nuevo
         firebase.firestore().collection("Users").doc(user.uid).collection("matches").get()
         .then(function(querySnapshot) {
             containerMatch.innerHTML = "";//borra para que no se acumulen
             querySnapshot.forEach(function(doc) {
-            // doc.data() is never undefined for query doc snapshots
-            //console.log(doc.id, " => ", doc.data());
-            const contentMatch = document.createElement("div");
-            contentMatch.innerHTML = `
-            <div class="match-content" id="match-content">
-                <p class="match-date">${doc.data().date}</p>
-                <p class="match-rivals">${doc.data().challengingTeamName} vs ${doc.data().challengedTeamName}</p>
-                <p class="match-matchGame&teamType">${doc.data().matchGame}, ${doc.data().teamTypeMatch}</p>
-                <p class="match-matchType">${doc.data().matchType}</p>
-                <p class="match-organizer">Organizado por: ${doc.data().organizer}</p>
-                <p class="match-address">${doc.data().address}</p>
-            </div>
-            `
-            containerMatch.appendChild(contentMatch);
+                // doc.data() is never undefined for query doc snapshots
+                //console.log(doc.id, " => ", doc.data());
+
+                //(1)update id de cada team para que quede guardado en database (no se puede guardar el id con .add, por eso lo añadimos aquí). Se actualizará forever and ever
+                firebase.firestore().collection("Users").doc(user.uid).collection("matches").doc(doc.id).update({
+                    "matchId": doc.id
+                })
+
+                const contentMatch = document.createElement("div");
+                contentMatch.innerHTML = `
+                <div class="match-content" id="match-content">
+                <div class="match-rivals"><p>${doc.data().challengingTeamName} vs ${doc.data().challengedTeamName}</p></div>
+                <div class="match-date"><p>${doc.data().date}, ${doc.data().schedule}</p></div>
+                <div class="match-matchGame&teamType"><p>${doc.data().matchGame}, ${doc.data().teamTypeMatch}</p></div>
+                <div class="match-matchType"><p>${doc.data().matchType}</p></div>
+                <div class="match-organizer"><p>Organizado por: ${doc.data().challengingTeamName}</p></div>
+                <div class="match-address"><span class="icon-location"></span><p>${doc.data().address}</p></div>
+                <div class="container-takePart><button class="select takePart" id="${doc.data().matchId}" value="${doc.data().matchId}">Participar</button></div>
+                 <p id="match-takePart-${doc.data().matchId}"></p>
+                </div>
+                `
+                containerMatch.appendChild(contentMatch);
+                const btnTakePart = containerWall.querySelector("#"+doc.data().matchId);
+                btnTakePart.addEventListener("click", () => {
+                    console.log("asignó el listener que querimoh");
+                    //cuando presione botón, se guarda en una colección de usuarios del equipo los usuarios que se unieron (para partir, sólo puedo unirme yo mismo)
+                    userTakePart(user, doc);
+                })
             });
         });
     }
     createMatchModal.style.display = "none";
 })
+
+
+const userTakePart = (user, doc) => {
+    firebase.firestore().collection("Users").doc(user.uid).collection("matches").doc(doc.data().matchId).collection("takePart").doc(user.uid).set({
+        username: user.displayName,
+        email: user.email,
+        userId: user.uid,
+        position: "",
+        region: "",
+        photo: ""
+        //some more user data
+    }).then(() => {
+        console.log("Document successfully written!");
+        //añadir la cantidad de personas que se unieron al partido al html
+        counterUsersTakePart(user, doc);
+    })
+    .catch(error => {
+        console.error("Error writing document: ", error);
+    });
+    console.log("terminé de agregar datos");
+}
+
+const userJoins = (user, doc) => {
+    firebase.firestore().collection("Users").doc(user.uid).collection("teams").doc(doc.data().teamId).collection("usersJoin").doc(user.uid).set({
+        username: user.displayName,
+        email: user.email,
+        userId: user.uid,
+        position: "",
+        region: "",
+        photo: ""
+        //some more user data
+    }).then(() => {
+        console.log("Document successfully written!");
+        //añadir la cantidad de personas que se unieron al partido al html
+        counterUserJoins(user, doc);
+    })
+    .catch(error => {
+        console.error("Error writing document: ", error);
+    });
+    console.log("terminé de agregar datos");
+}
+
+const counterUserJoins = (user, doc) => {//añadir la cantidad de personas que se unieron al partido al html
+    firebase.firestore().collection("Users").doc(user.uid).collection("teams").doc(doc.data().teamId).collection("usersJoin").get()
+    .then(function(querySnapshot) {
+        containerWall.querySelector("#team-userJoins-"+doc.data().teamId).innerHTML = "";//borra para que no se acumulen
+        let counter = 0;
+        console.log("counter: "+counter);
+        
+        querySnapshot.forEach(function(doc) {
+            counter++;
+            console.log("counter: "+counter);
+        });
+        containerWall.querySelector("#team-userJoins-"+doc.data().teamId).innerHTML = "Miembros: "+ counter;
+    });
+}
+
+const counterUsersTakePart = (user, doc) => {
+    //añadir la cantidad de personas que se unieron al partido al html
+    firebase.firestore().collection("Users").doc(user.uid).collection("matches").doc(doc.data().matchId).collection("takePart").get()
+    .then(function(querySnapshot) {
+        containerWall.querySelector("#match-takePart-"+doc.data().matchId).innerHTML = "";//borra para que no se acumulen
+        let counter = 0;
+        console.log("counter: "+counter);
+        
+        querySnapshot.forEach(function(doc) {
+            counter++;
+            console.log("counter: "+counter);
+        });
+        containerWall.querySelector("#match-takePart-"+doc.data().matchId).innerHTML = "Participantes: "+counter;
+    });
+}
 
 
 return containerWall;
