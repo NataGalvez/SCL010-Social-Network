@@ -338,7 +338,7 @@ btnsaveTeam.addEventListener("click", () => {
         firebase.firestore().collection("Users").doc(user.uid).collection("teams").add({
             teamName: containerWall.querySelector("#teamName").value,
             teamType: containerWall.querySelector("#teamType").value,
-            members: 1,
+            members: 0,
             photo: "",
             info: "",
             teamId: ""
