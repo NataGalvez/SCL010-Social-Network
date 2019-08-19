@@ -36,7 +36,7 @@
 ***
 # Idea
 
-![Logo](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/Logo.jpg)
+![Logo](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/master/src/assets/img/Logo.jpg)
 
 ## Preámbulo
 
@@ -112,7 +112,7 @@ Con base en lo anterior, se discutió como equipo de trabajo la posibilidad de q
 
 Para la comprobación de la hipótesis se utilizó, como fundamento de nuestra investigación, una encuesta online la cual tuvo un alcance de 31 jugadores(as) de fútbol de todos los niveles.
 
-![Encuesta](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/Readme/encuesta.jpg)
+![Encuesta](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/master/src/assets/img/Readme/encuesta.jpg)
 
 Para acceder a la encuesta haz clic [aquí](https://forms.gle/E9W4kzqcDkDve7Y19)
 
@@ -152,7 +152,7 @@ La definición fue basada en las funcionalidades que la aplicación debe realiza
 ### Diagrama de flujo
 
 Detalla el proceso que sigue el uso de la aplicación, basado en las historias de usuarios antes definidas.  
-![Diagrama](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/Readme/Diagrama.jpg)
+![Diagrama](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/master/src/assets/img/Readme/Diagrama.jpg)
 
 ### Prototipo de baja fidelidad
 
@@ -160,7 +160,7 @@ Detalla el proceso que sigue el uso de la aplicación, basado en las historias d
 
 Se elaboró el prototipo de baja fidelidad según las primeras lluvias de ideas sobre la aplicación. el cual fue la principal guía para la elaboración del diseño y estructura
 
-Se puede visualizar el wireframe completo [aquí](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/bajaFidelidad)
+Se puede visualizar el wireframe completo [aquí](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/master/src/assets/img/bajaFidelidad)
 
 #### Definición del nombre de la aplicación
 
@@ -180,15 +180,15 @@ Algunas consideraciones recibidas respecto al nombre fueron:
 
 Se realizó en la aplicación Adobe XD basado en las ideas abstraidas del benchmarking y siguiendo los principios de diseño de balance, énfasis, repetición y proximidad.
 
-![Matchgoal-web](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/Readme/web.jpg)
+![Matchgoal-web](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/master/src/assets/img/Readme/web.jpg)
 
-Se puede visualizar el diseño completo [aquí](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/Prototipo%20Alta%20Fidelidad%20MatchGoal)
+Se puede visualizar el diseño completo [aquí](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/master/src/assets/img/Prototipo%20Alta%20Fidelidad%20MatchGoal)
 
 #### Definición de colores
 
 Se definieron los colores en base a lo que representa la aplicación, también se utilizó una imagen de fondo representativa del pasto de una cancha de fútbol. El color verde como símbolo de la salud, el deporte, el bienestar y la energía, aspectos a los que aspira MatchGoal a entregar a sus usuarios a través de la promoción del jugar al fútbol. Y amarillo como símbolo de la competitividad, el movimiento y la extroversion, con la finalidad de promover la actividad física en comunidad.
 
-![Paleta-de-colores](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/Readme/Colores.png)
+![Paleta-de-colores](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/master/src/assets/img/Readme/Colores.png)
 
 #### Testeo con usuarios
 
@@ -208,7 +208,7 @@ Identificación de usuario 1
    - Plantea una duda respecto a quién pertenece el perfil, no le queda claro si pertenece a ella como usuario o a otro jugador de la aplicación
    - Entiende que la parte inferior del perfil son equipos, cuando lo que se quiere reflejar son las ligas en las que participa el jugador
 
-![Usuario-1](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/testeos/1)
+![Usuario-1](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/master/src/assets/img/testeos/1)
 
 Identificación de usuario 2
 
@@ -222,7 +222,7 @@ Identificación de usuario 2
    - Expresa que los colores y el diseño le gustan
    - No evidencia mayores complicaciones al utilizar la aplicación
 
-![Usuario-2](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/testeos/2)
+![Usuario-2](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/master/src/assets/img/testeos/2)
 
 Identificación de usuario 3
 
@@ -236,7 +236,7 @@ Identificación de usuario 3
    - Gesticula y verbaliza entender cada acción que realiza
    - No evidencia mayores complicaciones al utilizar la aplicación
 
-![Usuario-3](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/testeos/3)
+![Usuario-3](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/master/src/assets/img/testeos/3)
 
 _Feedback_ entregado por el área de UX de Laboratoria
 
