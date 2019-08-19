@@ -36,7 +36,7 @@
 ***
 # Idea
 
-![Logo](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/Logo.jpg)
+![Logo](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/Logo.jpg)
 
 ## Preámbulo
 
@@ -112,7 +112,7 @@ Con base en lo anterior, se discutió como equipo de trabajo la posibilidad de q
 
 Para la comprobación de la hipótesis se utilizó, como fundamento de nuestra investigación, una encuesta online la cual tuvo un alcance de 31 jugadores(as) de fútbol de todos los niveles.
 
-![Encuesta](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/Readme/encuesta.jpg)
+![Encuesta](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/Readme/encuesta.jpg)
 
 Para acceder a la encuesta haz clic [aquí](https://forms.gle/E9W4kzqcDkDve7Y19)
 
@@ -152,7 +152,7 @@ La definición fue basada en las funcionalidades que la aplicación debe realiza
 ### Diagrama de flujo
 
 Detalla el proceso que sigue el uso de la aplicación, basado en las historias de usuarios antes definidas.  
-![Diagrama](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/Readme/Diagrama.jpg)
+![Diagrama](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/Readme/Diagrama.jpg)
 
 ### Prototipo de baja fidelidad
 
@@ -160,7 +160,7 @@ Detalla el proceso que sigue el uso de la aplicación, basado en las historias d
 
 Se elaboró el prototipo de baja fidelidad según las primeras lluvias de ideas sobre la aplicación. el cual fue la principal guía para la elaboración del diseño y estructura
 
-Se puede visualizar el _wireframe_ completo [aquí](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/Registrarse/src/assets/img/bajaFidelidad)
+Se puede visualizar el wireframe completo [aquí](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/bajaFidelidad)
 
 #### Definición del nombre de la aplicación
 
@@ -180,17 +180,76 @@ Algunas consideraciones recibidas respecto al nombre fueron:
 
 Se realizó en la aplicación Adobe XD basado en las ideas abstraidas del benchmarking y siguiendo los principios de diseño de balance, énfasis, repetición y proximidad.
 
-![Matchgoal-web](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/Readme/web.jpg)
+![Matchgoal-web](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/Readme/web.jpg)
+
+Se puede visualizar el diseño completo [aquí](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/Prototipo%20Alta%20Fidelidad%20MatchGoal)
 
 #### Definición de colores
 
 Se definieron los colores en base a lo que representa la aplicación, también se utilizó una imagen de fondo representativa del pasto de una cancha de fútbol. El color verde como símbolo de la salud, el deporte, el bienestar y la energía, aspectos a los que aspira MatchGoal a entregar a sus usuarios a través de la promoción del jugar al fútbol. Y amarillo como símbolo de la competitividad, el movimiento y la extroversion, con la finalidad de promover la actividad física en comunidad.
 
-![Paleta-de-colores](https://github.com/VillarrealScarlette/SCL010-Social-Network/blob/Registrarse/src/assets/img/Readme/Colores.png)
+![Paleta-de-colores](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/Readme/Colores.png)
 
 #### Testeo con usuarios
 
+Se testeó con 3 usuarios la usabilidad y diseño de la aplicación
+
+#### Usuario 1
+
+Identificación de usuario 1
+
+- **Nombre:** Claudia Carzioglo
+- **Edad:** 55 años
+- **Ocupación:** Trabajadora independiente
+- **Relación con el fútbol:** Fue jugadora hasta los 45 años
+- **Feedback/consideraciones:**
+   - Considera que deberían existir más información sobre el servicio que entrega la aplicación
+   - Dice que no es intuitivo es _scroll_ en las pantallas, aconsejó incluir un botón o flecha que indique que hacia abajo hay más contenido
+   - Plantea una duda respecto a quién pertenece el perfil, no le queda claro si pertenece a ella como usuario o a otro jugador de la aplicación
+   - Entiende que la parte inferior del perfil son equipos, cuando lo que se quiere reflejar son las ligas en las que participa el jugador
+
+![Usuario-1](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/testeos/1)
+
+Identificación de usuario 2
+
+- **Nombre:** Matias Galvez
+- **Edad:** 16 años
+- **Ocupación:** Estudiante
+- **Relación con el fútbol:** Es jugador amateur 
+- **Feedback/consideraciones:**
+   - Sin intención descubre que existe más información haciendo _scroll_ ya que él no expresa que no era intuitivo
+   - Plantea una duda respecto de cómo puede acceder a participar de un partido o equipo
+   - Expresa que los colores y el diseño le gustan
+   - No evidencia mayores complicaciones al utilizar la aplicación
+
+![Usuario-2](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/testeos/2)
+
+Identificación de usuario 3
+
+- **Nombre:** Pablo Galvez
+- **Edad:** 26 años
+- **Ocupación:** Estudiante
+- **Relación con el fútbol:** Juega ocasionalmente
+- **Feedback/consideraciones:**
+   - No pudo acceder a toda la información ya que hacer _scroll_ no fue intuitivo
+   - Dice que entiende el proposito de la aplicación y que le gusta tanto la idea como el diseño
+   - Gesticula y verbaliza entender cada acción que realiza
+   - No evidencia mayores complicaciones al utilizar la aplicación
+
+![Usuario-3](https://github.com/VillarrealScarlette/SCL010-Social-Network/tree/master/src/assets/img/testeos/3)
+
+_Feedback_ entregado por el área de UX de Laboratoria
+
+Coach: Allison
+- Nos planteó que habían elementos no estaban bien alineados
+- Nos hizo ver que había una sobrecarga de colores
+- Nos explicó que los elementos principales deben estar posicionados estrategicamente para que el usuario pueda acceder facilmente a ellos
+- Nos sugirió tanto resaltar la información más relevantes para los usuarios, como minimizar o quitar aquella que no lo era
 #### Modificaciones
+
+Basado en los testeos realizados, nuestras consideraciones son que debemos mejorar la aplicación en aspectos de diseño, existen elementos que a los cuales no se logra acceder por falta de claridad ya que no son intuitivos, el no intuir realizar _scroll_ es una de las consideraciones que se repitió entre los usuarios. Otro aspectos que consideramos relevante de mejorar son las instrucciones, guías e información que se le entrega al usuario para navegar en la aplicación, consideramos que podrían ser más asertivos para no generar dudas en las acciones que se van a realizar.
+
+Considerando el _feedback_ recibido por Allison se modificaron la alineación de los elementos dentro de _main_; los elementos principales como las notificaciones fueron reacomodados de lugar; existian colores, como el gris, que fueron cambiados para evitar generar un sobrecargo de colores; y finalmente se hizo un esfuerzo por optimizar la entrega de la información.
 
 ## Planificación
 

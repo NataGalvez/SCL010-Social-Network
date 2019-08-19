@@ -3,6 +3,7 @@ import { loginGoogle } from "../js/auth.js";
 import { loginFacebook } from "./../js/auth.js";
 //Contenedor y contenido que se va a mostrar al aparecer el Template
 export const templateLogin = () => {
+    document.querySelector(".menu-bar").style.display="none";
     const containerLogin = document.createElement("div");
     const contentLogin = `
 <div class="container login">
