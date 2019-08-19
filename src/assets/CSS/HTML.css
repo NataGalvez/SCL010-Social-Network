@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-family: Montserrat;
+}
+body {
+    background-image: 
+    linear-gradient(
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05)
+      ),
+    url("../img/background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #fff;
+}
+header {
+    width: 100%;
+} 
+nav {
+    width: 95%;
+    max-width: 1300px;
+    background-color: transparent;
+    padding: 20px 0px 20px 20px;
+    font-size: 14px;
+}
+nav img {
+    max-width: 200px;
+    margin-left: 10px;
+}
+.nav-content {
+    float: right;
+}
+nav a, .container-text a, .container-text p {
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    margin: 10px;
+}
+nav a:hover, .container-text a:hover, footer div a {
+    color: #ebff3b;
+}
+.select {
+    overflow: hidden;
+    width: 170px;
+    border: 1px solid transparent;
+    border-color: #D0CECE;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #D8B53C;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+div.container-home {
+    display: flex;
+    justify-content: space-between;
+}
+.home-text, {
+    padding: 40px 20px 20px 20px;
+    margin-left: 10px;
+}
+.slogan {
+    color: #fff;
+    padding: 1px;
+}
+.slogan h4 {
+    font-size: 120px;
+}
+.slogan p {
+    font-size: 40px;
+    justify-content: flex-start;
+}
+.ball {
+    max-width: 350px;
+    padding-top: 40px;
+    padding-right: 20px; 
+}
+.container-text {
+    width: 650px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-left: 10px;
+}
+.container-text p {
+    font-size: 23px;
+    font-weight: normal;
+}
+section {
+    padding: 20px;
+    color: #156020;
+    text-align: center;
+    background-color: #FFF;
+}
+section h1 {
+    font-size: 45px;
+}
+section p {
+    font-size: 20px;
+}
+section h1, section img, section p {
+    padding: 5px 0px;
+}
+.menu-bar {
+    display: none;
+}
+footer {
+    padding: 30px;
+    background-color: #fff;
+}
+footer div {
+    margin: 20px 0px;
+}
+footer div h4 {
+    margin-bottom: 10px;
+    color: #0C3412;
+}
+.footer-follow h4 {
+    text-align: center;
+}
+.footer-follow a {
+    color: #0C3412;
+}
+footer div a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #D0CECE;
+    cursor: pointer;
+}
+footer div ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.access-profile {
+    padding: 20px;
+    float: right;
+}
+.btn-profile {
+    margin-right: 20px;
+    color: #fff;
+    font-size: 30px;
+    text-decoration: none;
+}
+/* Responsive */
+@media screen and (max-width: 800px) {
+    body {
+        background-image: 
+        linear-gradient(
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05)
+      ),
+      url("../img/background-mobile.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: #fff;
+    }
+    header {
+        background-color:  rgba(24, 162, 45, 0.5);
+    }
+    .nav-content {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+        right: -100%;
+        margin-top: 20px;
+        float: none;
+        position: fixed;
+        background-color: rgba(24, 162, 45, 0.5);
+    }
+    header nav img {
+        margin: 0;
+    }
+    .menu-bar {
+        display: block;
+        background-color: rgba(24, 162, 45, 0.5);
+    }
+    .menu-bar a, .access-profile a {
+        float: right;
+    }
+    .btn-menu, .btn-profile {
+        padding: 20px;
+        color: #fff;
+        text-decoration: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;  
+    }
+    .btn-menu {
+        font-size: 20px;
+    }
+    .btn-profile {
+        font-size: 30px;
+    }
+    .container-home {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .home-text {
+        padding-top: 20px;
+        margin: 0;
+    }
+    .slogan {
+        color: #fff;
+        padding: 1px;
+        text-align: center;
+    }
+    .slogan h4 {
+        font-size: 57px;
+    }
+    .slogan p {
+        font-size: 20px;
+        justify-content: center;
+    }
+    div.ball-home {
+        display: flex;
+        justify-content: center;
+    }
+    .ball {
+        max-width: 150px;
+        padding-right: 0;
+    }
+    .container-text {
+        max-width: 335px;
+        height: 180px;
+        padding: 30px 20px 20px 20px;
+        display: flex;
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container-text p {
+        font-size: 16px;
+        text-align: center;
+    }
+    section {
+        padding: 30px;
+        color: #156020;
+        text-align: center;
+        background-color: #FFF;
+    }
+    section img {
+        max-width: 320px;
+    }
+    section p {
+        font-size: 16px;
+    }
+}

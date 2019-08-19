@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Social Network</title>
+    <script src="https://kit.fontawesome.com/2cc889939c.js"></script>
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="./assets/CSS/HTML.css">
+    <link rel="stylesheet" href="./assets/CSS/templateLogin.css">
+    <link rel="stylesheet" href="./assets/CSS/templateWall.css">
+    <link rel="stylesheet" href="./assets/CSS/style.css">
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyBZCjSxngOkdTvwIVi1BygDB_JfXh3aM-8",
+          authDomain: "matchgoal-a542a.firebaseapp.com",
+          databaseURL: "https://matchgoal-a542a.firebaseio.com",
+          projectId: "matchgoal-a542a",
+          storageBucket: "matchgoal-a542a.appspot.com",
+          messagingSenderId: "936608425621",
+          appId: "1:936608425621:web:ce11a16812473985"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      </script>
+</head>
+<body>
+    <header>
+        <div class="menu-bar">
+            <a href="#" class="btn-menu"><span class="icon-menu"></span></a>
+        </div>
+        <div class="access-profile">
+        </div>
+        <nav>
+            <a href="#"><img src="./assets/img/MatchGoal.png"></a>
+            <div class="nav-content">
+                <a class="mbl-none" href="#">Sobre MatchGoal</a>
+                <button class="select login"><a href="#/login">Iniciar sesión</a></button>
+                <button class="select enter"><a href="#/create">Regístrate</a></button>
+            </div>
+        </nav>
+    </header>
+    <main id="main">
+        <div id="root"></div> 
+    </main>
+    <script type="module" src="./app.js"></script>
+    <!-- Menú desplegable -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="./assets/views/menu.js"></script>
+</body>
+</html>
