@@ -1,3 +1,4 @@
+
 export const templateWall = () => {
     const containerWall = document.createElement("div");
     const contentWall = `
