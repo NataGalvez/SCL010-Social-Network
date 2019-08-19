@@ -34,17 +34,17 @@ input, select {
     margin: 5px;
 }
 select {
-    width: 240px;
+    width: 95%;
     background-color: #fff;
 }
 .selectors {
-    width: 240px;
+    width: auto;
 }
 .btn, select {
     padding: 5px;
     margin: 5px;
     cursor: pointer;
-    color: #0C3412;;
+    color: #0C3412;
 }
 p {
     font-size: 14px;

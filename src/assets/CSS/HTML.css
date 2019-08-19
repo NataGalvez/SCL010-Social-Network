@@ -140,6 +140,16 @@ footer div ul {
     display: flex;
     justify-content: center;
 }
+.access-profile {
+    padding: 20px;
+    float: right;
+}
+.btn-profile {
+    margin-right: 20px;
+    color: #fff;
+    font-size: 30px;
+    text-decoration: none;
+}
 /* Responsive */
 @media screen and (max-width: 800px) {
     body {
@@ -175,16 +185,22 @@ footer div ul {
         display: block;
         background-color: rgba(24, 162, 45, 0.5);
     }
-    .menu-bar a {
+    .menu-bar a, .access-profile a {
         float: right;
     }
-    .menu-bar .btn-menu {
+    .btn-menu, .btn-profile {
         padding: 20px;
         color: #fff;
         text-decoration: none;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;  
+    }
+    .btn-menu {
+        font-size: 20px;
+    }
+    .btn-profile {
+        font-size: 30px;
     }
     .container-home {
         flex-direction: column-reverse;
