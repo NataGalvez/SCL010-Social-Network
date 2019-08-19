@@ -120,6 +120,7 @@ tr {
     border-style: solid !important;
     border-width: 1px !important;
     margin-right: 5px; 
+    margin-bottom: 5px;
   }
   .match-date p {
     font-weight: bold;
