@@ -295,3 +295,7 @@ Herramienta utilizada para compilar nuestro proyecto.
 
 # Proyecciones Futuras
 
+- Implementar un buscador interno, mediante la función de filtrar, para permitir al usuario encontrar información de forma más rápida
+- Añadir secciones "Tus próximos partidos" y "Tus equipos" al comienzo del muro del usuario para facilitar la vasualización de la información más relevante para los usuarios 
+- Modificar y mejorar el estilo del diseño y la usabilidad de la aplicación con la finalidad de crear una experiencia de usuario más satisfaciente
+- Funcionalidades que permita al usuario añadir amigos, enviar invitaciones a partidos, equipos o ligas, como también poder visualizar aquellos jugadores asistentes a los encuentros
