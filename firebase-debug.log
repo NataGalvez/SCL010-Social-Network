@@ -170,3 +170,121 @@
 [debug] [2019-08-19T19:27:33.437Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-08-19T21:07:27.675Z] ----------------------------------------------------------------------
+[debug] [2019-08-19T21:07:27.683Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Nata Gálvez\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-08-19T21:07:27.684Z] CLI Version:   7.2.2
+[debug] [2019-08-19T21:07:27.684Z] Platform:      win32
+[debug] [2019-08-19T21:07:27.684Z] Node Version:  v10.16.0
+[debug] [2019-08-19T21:07:27.687Z] Time:          Mon Aug 19 2019 17:07:27 GMT-0400 (GMT-04:00)
+[debug] [2019-08-19T21:07:27.688Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-19T21:07:27.722Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-19T21:07:27.726Z] > authorizing via signed-in user
+[debug] [2019-08-19T21:07:27.726Z] [iam] checking project matchgoal-a542a for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2019-08-19T21:07:27.733Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/matchgoal-a542a:testIamPermissions  
+
+[debug] [2019-08-19T21:07:31.843Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-19T21:07:31.853Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a  
+ 
+[debug] [2019-08-19T21:07:33.068Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'matchgoal-a542a'...
+[info] 
+[info] i  deploying database, firestore, hosting
+[info] i  database: checking rules syntax...
+[debug] [2019-08-19T21:07:33.080Z] >>> HTTP REQUEST PUT https://matchgoal-a542a.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+[debug] [2019-08-19T21:07:33.987Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database matchgoal-a542a is valid
+[info] i  firestore: checking firestore.rules for compilation errors...
+[info] i  firestore: reading indexes from firestore.indexes.json...
+[debug] [2019-08-19T21:07:33.995Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/matchgoal-a542a:test  
+
+[debug] [2019-08-19T21:07:35.048Z] <<< HTTP RESPONSE 200
+[info] +  firestore: rules file firestore.rules compiled successfully
+[debug] [2019-08-19T21:07:35.053Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/matchgoal-a542a/versions  
+
+[debug] [2019-08-19T21:07:36.144Z] <<< HTTP RESPONSE 500
+[debug] [2019-08-19T21:07:36.145Z] <<< HTTP RESPONSE BODY
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2019-08-19T21:07:36.391Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": {
+      "error": {
+        "code": 500,
+        "message": "Internal error encountered.",
+        "status": "INTERNAL"
+      }
+    },
+    "headers": {
+      "vary": "X-Origin, Referer, Origin,Accept-Encoding",
+      "content-type": "application/json; charset=UTF-8",
+      "date": "Mon, 19 Aug 2019 21:07:35 GMT",
+      "server": "ESF",
+      "cache-control": "private",
+      "x-xss-protection": "0",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "alt-svc": "quic=\":443\"; ma=2592000; v=\"46,43,39\"",
+      "accept-ranges": "none",
+      "transfer-encoding": "chunked"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "firebasehosting.googleapis.com",
+        "port": 443,
+        "hostname": "firebasehosting.googleapis.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1beta1/sites/matchgoal-a542a/versions",
+        "path": "/v1beta1/sites/matchgoal-a542a/versions",
+        "href": "https://firebasehosting.googleapis.com/v1beta1/sites/matchgoal-a542a/versions"
+      },
+      "method": "POST"
+    }
+  }
+}
+[debug] [2019-08-19T21:08:34.089Z] ----------------------------------------------------------------------
+[debug] [2019-08-19T21:08:34.096Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Nata Gálvez\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-08-19T21:08:34.097Z] CLI Version:   7.2.2
+[debug] [2019-08-19T21:08:34.097Z] Platform:      win32
+[debug] [2019-08-19T21:08:34.097Z] Node Version:  v10.16.0
+[debug] [2019-08-19T21:08:34.100Z] Time:          Mon Aug 19 2019 17:08:34 GMT-0400 (GMT-04:00)
+[debug] [2019-08-19T21:08:34.101Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-19T21:08:34.130Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-19T21:08:34.134Z] > authorizing via signed-in user
+[debug] [2019-08-19T21:08:34.134Z] [iam] checking project matchgoal-a542a for permissions ["firebase.projects.get"]
+[debug] [2019-08-19T21:08:34.141Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/matchgoal-a542a:testIamPermissions  
+
+[debug] [2019-08-19T21:08:35.292Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-19T21:08:35.298Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a  
+ 
+[debug] [2019-08-19T21:08:35.659Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Nata Gálvez\Desktop\SCL010-Social-Network'...
+[info] 
+[debug] [2019-08-19T21:08:35.669Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a/webApps/-/config  
+ 
+[debug] [2019-08-19T21:08:36.851Z] <<< HTTP RESPONSE 200
+[warn] !  hosting: Port 5000 is not available. Trying another port...
+[info] i  hosting: Serving hosting files from: src
+[info] +  hosting: Local server: http://localhost:5005
