@@ -17,7 +17,7 @@ export const templateWall = () => {
         </div>
         <div id="teams">
             <div class="your-team">
-                <h3>Tus Equipos</h3>
+                <h3>Equipos</h3>
 
                 <button id="createTeam" class="create">Crear Equipo</button>
             </div>
@@ -26,7 +26,7 @@ export const templateWall = () => {
         <div id="matches">
             <div id="nextMatches"></div>
             <div class="teams">
-                <h3>Tus Partidos</h3>
+                <h3>Partidos</h3>
                 <button id="createMatch" class="create">Crear Partido</button>
             </div>
             <div class="containerMatch" id="containerMatch">
