@@ -50,7 +50,7 @@ MatchGoal es una red social que permite al alcance de la mano y en poco tiempo, 
 
 ¿Cómo funciona? ¡Rápido y sencillo! Solo debes crear un perfil en la aplicación, inscribirte para jugar en un partido con un sólo clic y listo, ya puedes divertirte jugando a lo que más te gusta.
 
-> [Demo MatchGoal](https://villarrealscarlette.github.io/SCL010-data-lovers/src/index.html) 
+> [Demo MatchGoal](https://villarrealscarlette.github.io/SCL010-Social-Network/src/index.html) 
 
 ## Funcionalidades
 
@@ -87,7 +87,7 @@ Promover, de manera inclusiva, la práctica de jugar al fútbol a todo aquel que
 
 ## Cómo usar la aplicación
 
-- El usuario debe acceder al sitio web de [MatchGoal](https://villarrealscarlette.github.io/SCL010-data-lovers/src/index.html)
+- El usuario debe acceder al sitio web de [MatchGoal](https://villarrealscarlette.github.io/SCL010-Social-Network/src/index.html)
 - Para ingresar dentro de la aplicación deberá iniciar sesión o registrarse
 - Al registrarse deberá completar información adicional de su perfil como lo son la posición de juego de su preferencia y la Región donde se ubica.
 - Al ingresar a la aplicación se visualizará el muro (panel) de acceso a su perfil de jugador, notificaciones, sus equipos, sus próximos partidos, partidos disponibles para participar, otros equipos y el navegador de búsqueda.
