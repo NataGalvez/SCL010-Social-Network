@@ -278,7 +278,7 @@ if (user != null) {
                 <div class="team-type"><p>${doc.data().teamType}</p></div>
                 <div class="team-name"><h4>${doc.data().teamName}</h4></div>
                 <div class="team-info"><p>${doc.data().info}</p></div>
-                <button class="joinMe" id="${doc.data().teamId}" value="${doc.data().teamId}">Unirme</button>
+                <button class="select join" id="${doc.data().teamId}" value="${doc.data().teamId}">Unirme</button>
                  <p id="team-userJoins-${doc.data().teamId}"></p>
             </div>
             `
@@ -309,7 +309,7 @@ if (user != null) {
                 <div class="match-matchType"><p>${doc.data().matchType}</p></div>
                 <div class="match-organizer"><p>Organizado por: ${doc.data().challengingTeamName}</p></div>
                 <div class="match-address"><span class="icon-location"></span><p>${doc.data().address}</p></div>
-                <button class="takePart" id="${doc.data().matchId}" value="${doc.data().matchId}">Participar</button>
+                <button class="select takePart" id="${doc.data().matchId}" value="${doc.data().matchId}">Participar</button>
                 <p id="match-takePart-${doc.data().matchId}"></p>
             </div>
             `
@@ -363,7 +363,7 @@ btnsaveTeam.addEventListener("click", () => {
                     <div class="team-type"><p>${doc.data().teamType}</p></div>
                     <div class="team-name"><h4>${doc.data().teamName}</h4></div>
                     <div class="team-info"><p>${doc.data().info}</p></div>
-                    <button class="joinMe" id="${doc.data().teamId}" value="${doc.data().teamId}">Unirme</button>
+                    <button class="select join" id="${doc.data().teamId}" value="${doc.data().teamId}">Unirme</button>
                      <p id="team-userJoins-${doc.data().teamId}"></p>
                 </div>
                 `
@@ -397,7 +397,7 @@ btnsaveMatch.addEventListener("click", () => {
             date: containerWall.querySelector("#day").value +" "+ containerWall.querySelector("#month").value +" "+ containerWall.querySelector("#year").value,
             schedule: containerWall.querySelector("#hour").value +":"+ containerWall.querySelector("#min").value,
             address: containerWall.querySelector("#address").value,
-            organizer: containerWall.querySelector("#organizer").value
+            organizer: containerWall.querySelector("#organizer").value,
             matchId: ""
         });
         //imprimir partidos del usuario cuando ya creó un partido nuevo
@@ -422,7 +422,7 @@ btnsaveMatch.addEventListener("click", () => {
                 <div class="match-matchType"><p>${doc.data().matchType}</p></div>
                 <div class="match-organizer"><p>Organizado por: ${doc.data().challengingTeamName}</p></div>
                 <div class="match-address"><span class="icon-location"></span><p>${doc.data().address}</p></div>
-                 <button class="takePart" id="${doc.data().matchId}" value="${doc.data().matchId}">Participar</button>
+                <div class="container-takePart><button class="select takePart" id="${doc.data().matchId}" value="${doc.data().matchId}">Participar</button></div>
                  <p id="match-takePart-${doc.data().matchId}"></p>
                 </div>
                 `

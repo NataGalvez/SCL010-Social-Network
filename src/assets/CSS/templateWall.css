@@ -139,6 +139,12 @@ tr {
     display: flex;
     justify-content: flex-start;
   }
+  .takePart {
+    width: 40%;
+  }
+  .join {
+    width: 120px;
+  }
   @media screen and (max-width: 800px) {
     .wall-content {
       background-color: transparent;
