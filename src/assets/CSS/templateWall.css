@@ -1,4 +1,4 @@
-.wall-content, .team-content {
+.wall-content, .team-content, .match-content {
   border: 1px solid transparent;
     border-color: #D0CECE !important;
     border-radius: 5px;
