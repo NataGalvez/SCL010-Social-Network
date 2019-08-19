@@ -67,8 +67,8 @@ export const loginGoogle = () => {
         //comprobar si el usuario se logueó por primera vez. Si ya estaba logueado, no sobreescribirá sus datos
         ifIsNewUser(result); 
          window.location.hash = "#/wall";           
-         //window.location.hash = "#/info";       
-         // window.location.hash = "#/wall";   
+              
+          
       })
     .catch(function(error) {
         // Handle Errors here.
