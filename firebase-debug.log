@@ -1,0 +1,29 @@
+[debug] [2019-08-21T21:15:25.032Z] ----------------------------------------------------------------------
+[debug] [2019-08-21T21:15:25.078Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Nata Gálvez\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-08-21T21:15:25.079Z] CLI Version:   7.2.2
+[debug] [2019-08-21T21:15:25.079Z] Platform:      win32
+[debug] [2019-08-21T21:15:25.079Z] Node Version:  v10.16.0
+[debug] [2019-08-21T21:15:25.140Z] Time:          Wed Aug 21 2019 17:15:25 GMT-0400 (GMT-04:00)
+[debug] [2019-08-21T21:15:25.140Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-21T21:15:25.264Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-21T21:15:25.268Z] > authorizing via signed-in user
+[debug] [2019-08-21T21:15:25.269Z] [iam] checking project matchgoal-a542a for permissions ["firebase.projects.get"]
+[debug] [2019-08-21T21:15:25.276Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-08-21T21:15:25.277Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-08-21T21:15:26.132Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T21:15:26.173Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/matchgoal-a542a:testIamPermissions  
+
+[debug] [2019-08-21T21:15:27.294Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T21:15:27.297Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a  
+ 
+[debug] [2019-08-21T21:15:28.553Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Nata Gálvez\Desktop\Trabajos Laboratoria\SCL010-Social-Network'...
+[info] 
+[debug] [2019-08-21T21:15:28.587Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/matchgoal-a542a/webApps/-/config  
+ 
+[debug] [2019-08-21T21:15:29.904Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] +  hosting: Local server: http://localhost:5000
