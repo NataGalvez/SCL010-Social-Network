@@ -14,7 +14,11 @@
       * [Misión](#misión)
       * [Cómo usar la aplicación](#cómo-usar-la-aplicación)
   - [Metodología](#metodología)
+
      * [Experiencia de Usuario](#experiencia-de-usuario)
+
+     * [UX: Experiencia de Usuario](#experiencia-de-usuario)
+
         *   [Hipótesis](#hipótesis)
              * [Investigación](#investigación)
              *  [Benchmarking](#benchmarking)
@@ -245,6 +249,7 @@ Coach: Allison
 - Nos hizo ver que había una sobrecarga de colores
 - Nos explicó que los elementos principales deben estar posicionados estrategicamente para que el usuario pueda acceder facilmente a ellos
 - Nos sugirió tanto resaltar la información más relevantes para los usuarios, como minimizar o quitar aquella que no lo era
+
 #### Modificaciones
 
 Basado en los testeos realizados, nuestras consideraciones son que debemos mejorar la aplicación en aspectos de diseño, existen elementos que a los cuales no se logra acceder por falta de claridad ya que no son intuitivos, el no intuir realizar scroll es una de las consideraciones que se repitió entre los usuarios. Otro aspectos que consideramos relevante de mejorar son las instrucciones, guías e información que se le entrega al usuario para navegar en la aplicación, consideramos que podrían ser más asertivos para no generar dudas en las acciones que se van a realizar.
@@ -296,6 +301,16 @@ Herramienta utilizada para compilar nuestro proyecto.
 # Proyecciones Futuras
 
 - Implementar un buscador interno, mediante la función de filtrar, para permitir al usuario encontrar información de forma más rápida
+
 - Añadir secciones "Tus próximos partidos" y "Tus equipos" al comienzo del muro del usuario para facilitar la vasualización de la información más relevante para los usuarios 
 - Modificar y mejorar el estilo del diseño y la usabilidad de la aplicación con la finalidad de crear una experiencia de usuario más satisfaciente
 - Funcionalidades que permita al usuario añadir amigos, enviar invitaciones a partidos, equipos o ligas, como también poder visualizar aquellos jugadores asistentes a los encuentros
+
+- Añadir secciones "Tus próximos partidos" y "Tus equipos" al comienzo del muro del usuario para facilitar la vasualización de la información más relevante para los usuarios
+- Añadir la sección del perfil en el muro y permitir al usuario editar sus datos
+- Añadir la sección "Ligas" 
+- Añadir botón de cerrar sesión para finalizar la sesión del usuario
+- Añadir función (contador) que visualize la cantidad de jugadores faltantes en un partido o liga, donde en ésta última también muestre los equipos faltantes
+- Modificar y mejorar el estilo del diseño y la usabilidad de la aplicación con la finalidad de crear una experiencia de usuario más satisfaciente
+- Funcionalidades que permita al usuario añadir amigos, enviar invitaciones a partidos, equipos o ligas, como también poder visualizar aquellos jugadores asistentes a los encuentros
+
