@@ -155,7 +155,8 @@ tr {
     }
     #search {
       min-width: 55%;
-      display: none;
+
+      display:none;
     }
     h3 {
       font-size: 19px;
